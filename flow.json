@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "6d56b95c5cf209f2",
+        "type": "tab",
+        "label": "Alerts To DB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "937754e7ea577683",
         "type": "ui_group",
         "name": "WSJT Map",
@@ -301,7 +309,7 @@
     {
         "id": "951e388692504675",
         "type": "sqlitedb",
-        "db": "/home/pi/wsjtv1.db",
+        "db": "/home/pi/eSOTAAlerts.db",
         "mode": "RWC"
     },
     {
@@ -2231,5 +2239,263 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "dd89e6c95fecbc7c",
+        "type": "http request",
+        "z": "6d56b95c5cf209f2",
+        "name": "Get all ALERTS from SOTA via HTTP",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "https://api2.sota.org.uk/api/alerts/all",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 650,
+        "y": 120,
+        "wires": [
+            [
+                "2caf81e7978f455c"
+            ]
+        ]
+    },
+    {
+        "id": "6dd4cb31756627c0",
+        "type": "inject",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "b817be8e9e290f2d"
+            ]
+        ]
+    },
+    {
+        "id": "5d92dfc20f8c2b20",
+        "type": "inject",
+        "z": "6d56b95c5cf209f2",
+        "name": "SOTA Summits",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "https://api2.sota.org.uk/api/summits/gw/nw-001",
+        "payloadType": "str",
+        "x": 260,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b817be8e9e290f2d",
+        "type": "change",
+        "z": "6d56b95c5cf209f2",
+        "name": "ALERT Count = Zero",
+        "rules": [
+            {
+                "t": "set",
+                "p": "actCount",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "dd89e6c95fecbc7c"
+            ]
+        ]
+    },
+    {
+        "id": "143dbe3cfa45df3d",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "List of Planned Acts",
+        "func": "var actCount = flow.get('actCount');\nlet summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\nif (actCount <= msg.payload.length) {\n\n    assoc = msg.payload[actCount].associationCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload[actCount].summitCode;\n    msg.payload = tString.concat(\"/\", summit);\n\n    //msg.payload = summitURL;\n\n    //payload[0].associationCode\n    //payload[1].associationCode\n    //payload[0].associationCode\n\n    //actCount++;\n    //flow.set('actCount', actCount);\n}\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "237f3e0cfd8c5b0b",
+        "type": "sqlite",
+        "z": "6d56b95c5cf209f2",
+        "mydb": "951e388692504675",
+        "sqlquery": "prepared",
+        "sql": "insert into SOTAAlerts (AId, ATimeStamp, AActDate, AAssocCode, ASummitCode, AActCallSign, AFreq, AComments) values ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq, $alertComments )",
+        "name": "ALERTS to DB",
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "3e1b5372d060c240"
+            ]
+        ]
+    },
+    {
+        "id": "ba65bc4b4d1c0572",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "Extract Call/Lat/Lon",
+        "func": "msg.params = { $OpCall: msg.payload.name, $OpLat: msg.payload.lat, $OpLon: msg.payload.lon }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "036ca714fcfa5d76",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "All ALERTS in DB now",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "c2188fa1f1d4f6d4",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "2caf81e7978f455c",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "Extract ALERT Details",
+        "func": "var actCount = flow.get('actCount');\n\nif (actCount <= msg.payload.length) {\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency,\n                    $alertComments: msg.payload[actCount].comments};\n}\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 300,
+        "wires": [
+            [
+                "237f3e0cfd8c5b0b"
+            ]
+        ]
+    },
+    {
+        "id": "1636bae559489079",
+        "type": "switch",
+        "z": "6d56b95c5cf209f2",
+        "name": "Any more ALERTS",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 810,
+        "y": 420,
+        "wires": [
+            [
+                "2caf81e7978f455c"
+            ],
+            [
+                "036ca714fcfa5d76"
+            ]
+        ]
+    },
+    {
+        "id": "3e1b5372d060c240",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 300,
+        "wires": []
     }
 ]
