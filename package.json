@@ -1,0 +1,12 @@
+{
+    "name": "eSOTA2023",
+    "description": "Increase awareness and effacy on Summit. to Summot opportunities",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flow.json",
+            "credentialsFile": "flow_cred.json"
+        }
+    }
+}
