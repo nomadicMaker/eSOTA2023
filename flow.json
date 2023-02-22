@@ -2370,7 +2370,7 @@
         "z": "6d56b95c5cf209f2",
         "mydb": "951e388692504675",
         "sqlquery": "prepared",
-        "sql": "",
+        "sql": "insert into SOTAAlerts (AId, ATimeStamp, AActDate, AAssocCode, ASummitCode, AActCallSign, AFreq, AComments) values ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq, $alertComments )",
         "name": "ALERTS to DB",
         "x": 680,
         "y": 300,
