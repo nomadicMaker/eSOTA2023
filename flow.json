@@ -2429,7 +2429,7 @@
         "y": 300,
         "wires": [
             [
-                "3e1b5372d060c240"
+                "63a04875dbb6d9fb"
             ]
         ]
     },
@@ -2482,5 +2482,21 @@
         "x": 900,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "63a04875dbb6d9fb",
+        "type": "sqlite",
+        "z": "6d56b95c5cf209f2",
+        "mydb": "951e388692504675",
+        "sqlquery": "prepared",
+        "sql": "insert into Alerts (Id) values ($alertId)",
+        "name": "Alert to DB",
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "3e1b5372d060c240"
+            ]
+        ]
     }
 ]
