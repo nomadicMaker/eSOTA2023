@@ -2294,33 +2294,6 @@
         ]
     },
     {
-        "id": "5d92dfc20f8c2b20",
-        "type": "inject",
-        "z": "6d56b95c5cf209f2",
-        "name": "SOTA Summits",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": "",
-        "topic": "",
-        "payload": "https://api2.sota.org.uk/api/summits/gw/nw-001",
-        "payloadType": "str",
-        "x": 260,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "b817be8e9e290f2d",
         "type": "change",
         "z": "6d56b95c5cf209f2",
@@ -2348,73 +2321,6 @@
         ]
     },
     {
-        "id": "143dbe3cfa45df3d",
-        "type": "function",
-        "z": "6d56b95c5cf209f2",
-        "name": "List of Planned Acts",
-        "func": "var actCount = flow.get('actCount');\nlet summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\nif (actCount <= msg.payload.length) {\n\n    assoc = msg.payload[actCount].associationCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload[actCount].summitCode;\n    msg.payload = tString.concat(\"/\", summit);\n\n    //msg.payload = summitURL;\n\n    //payload[0].associationCode\n    //payload[1].associationCode\n    //payload[0].associationCode\n\n    //actCount++;\n    //flow.set('actCount', actCount);\n}\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 200,
-        "y": 600,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ba65bc4b4d1c0572",
-        "type": "function",
-        "z": "6d56b95c5cf209f2",
-        "name": "Extract Call/Lat/Lon",
-        "func": "msg.params = { $OpCall: msg.payload.name, $OpLat: msg.payload.lat, $OpLon: msg.payload.lon }\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "036ca714fcfa5d76",
-        "type": "debug",
-        "z": "6d56b95c5cf209f2",
-        "name": "All ALERTS in DB now",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "params",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "c2188fa1f1d4f6d4",
-        "type": "debug",
-        "z": "6d56b95c5cf209f2",
-        "name": "debug 25",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 720,
-        "wires": []
-    },
-    {
         "id": "2caf81e7978f455c",
         "type": "function",
         "z": "6d56b95c5cf209f2",
@@ -2429,41 +2335,7 @@
         "y": 300,
         "wires": [
             [
-                "63a04875dbb6d9fb",
                 "3e1b5372d060c240"
-            ]
-        ]
-    },
-    {
-        "id": "1636bae559489079",
-        "type": "switch",
-        "z": "6d56b95c5cf209f2",
-        "name": "Any more ALERTS",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 810,
-        "y": 420,
-        "wires": [
-            [
-                "2caf81e7978f455c"
-            ],
-            [
-                "036ca714fcfa5d76"
             ]
         ]
     },
@@ -2485,17 +2357,32 @@
         "wires": []
     },
     {
-        "id": "63a04875dbb6d9fb",
-        "type": "sqlite",
+        "id": "35fd4accb13cc184",
+        "type": "inject",
         "z": "6d56b95c5cf209f2",
-        "mydb": "951e388692504675",
-        "sqlquery": "prepared",
-        "sql": "insert into Alerts (ActDate) values ($alertActDate)",
-        "name": "Alert to DB",
-        "x": 730,
-        "y": 260,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 400,
         "wires": [
-            []
+            [
+                "2caf81e7978f455c"
+            ]
         ]
     }
 ]
