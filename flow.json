@@ -312,7 +312,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 170,
+        "x": 190,
         "y": 240,
         "wires": [
             [
@@ -335,8 +335,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 130,
-        "y": 460,
+        "x": 410,
+        "y": 560,
         "wires": []
     },
     {
@@ -360,8 +360,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 40,
+        "x": 140,
+        "y": 60,
         "wires": [
             [
                 "eca26b7f6e0e9f96"
@@ -381,8 +381,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 150,
-        "y": 400,
+        "x": 370,
+        "y": 500,
         "wires": []
     },
     {
@@ -604,8 +604,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 80,
-        "y": 300,
+        "x": 140,
+        "y": 360,
         "wires": [
             [
                 "703f20ae0f95b5c1"
@@ -631,8 +631,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 150,
-        "y": 120,
+        "x": 190,
+        "y": 140,
         "wires": [
             [
                 "703f20ae0f95b5c1"
@@ -741,14 +741,14 @@
         "id": "25073da1e1297a95",
         "type": "function",
         "z": "a6d97f83866efa29",
-        "name": "List of Planned Acts",
+        "name": "Alert/Spot stuff",
         "func": "//var newMsg = { payload: msg.payload.length };\n\nvar actCount = flow.get('actCount');\nlet summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\nif (actCount <= msg.payload.length) {\n\n    //assoc = flow.plannedActivations[actCount].associationCode;\n    //summit = flow.plannedActivations[actCount].summitCode;\n    tString = summitURL.concat(assoc);\n \n    msg.payload = tString.concat(\"/\", summit);\n\n    //payload[0].associationCode\n    //payload[1].associationCode\n    //payload[0].associationCode\n\n    actCount++;\n    flow.set('actCount', actCount);\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 220,
+        "x": 200,
         "y": 620,
         "wires": [
             []
