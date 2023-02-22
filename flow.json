@@ -2365,22 +2365,6 @@
         ]
     },
     {
-        "id": "237f3e0cfd8c5b0b",
-        "type": "sqlite",
-        "z": "6d56b95c5cf209f2",
-        "mydb": "951e388692504675",
-        "sqlquery": "prepared",
-        "sql": "insert into Alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq) values ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq)",
-        "name": "ALERTS to DB",
-        "x": 720,
-        "y": 260,
-        "wires": [
-            [
-                "3e1b5372d060c240"
-            ]
-        ]
-    },
-    {
         "id": "ba65bc4b4d1c0572",
         "type": "function",
         "z": "6d56b95c5cf209f2",
