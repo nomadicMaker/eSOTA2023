@@ -2331,8 +2331,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 300,
+        "x": 480,
+        "y": 360,
         "wires": [
             [
                 "3e1b5372d060c240"
@@ -2352,37 +2352,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 300,
+        "x": 880,
+        "y": 420,
         "wires": []
-    },
-    {
-        "id": "35fd4accb13cc184",
-        "type": "inject",
-        "z": "6d56b95c5cf209f2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 400,
-        "wires": [
-            [
-                "2caf81e7978f455c"
-            ]
-        ]
     }
 ]
