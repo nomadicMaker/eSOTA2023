@@ -2372,8 +2372,8 @@
         "sqlquery": "prepared",
         "sql": "insert into Alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq, Comments) values ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq, $alertComments )",
         "name": "ALERTS to DB",
-        "x": 680,
-        "y": 300,
+        "x": 720,
+        "y": 260,
         "wires": [
             [
                 "3e1b5372d060c240"
@@ -2445,7 +2445,7 @@
         "y": 300,
         "wires": [
             [
-                "237f3e0cfd8c5b0b"
+                "3e1b5372d060c240"
             ]
         ]
     },
