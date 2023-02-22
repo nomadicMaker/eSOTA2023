@@ -2489,7 +2489,7 @@
         "z": "6d56b95c5cf209f2",
         "mydb": "951e388692504675",
         "sqlquery": "prepared",
-        "sql": "insert into Alerts (ActId) values ($alertId)",
+        "sql": "insert into Alerts (ActDate) values ($alertActDate)",
         "name": "Alert to DB",
         "x": 730,
         "y": 260,
