@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "3e863ac0512b83c0",
+        "type": "tab",
+        "label": "WSJT Capture and Parse",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "937754e7ea577683",
         "type": "ui_group",
         "name": "WSJT Map",
@@ -295,6 +303,46 @@
         "type": "sqlitedb",
         "db": "/home/pi/wsjtv1.db",
         "mode": "RWC"
+    },
+    {
+        "id": "56e465bf4966c07d",
+        "type": "ui_spacer",
+        "z": "3e863ac0512b83c0",
+        "name": "spacer",
+        "group": "3b3b1ea2e881c63a",
+        "order": 5,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "8f232b7bf1c5a22d",
+        "type": "ui_spacer",
+        "z": "3e863ac0512b83c0",
+        "name": "spacer",
+        "group": "3b3b1ea2e881c63a",
+        "order": 7,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "cf1bb7807fb68054",
+        "type": "ui_spacer",
+        "z": "3e863ac0512b83c0",
+        "name": "spacer",
+        "group": "3b3b1ea2e881c63a",
+        "order": 9,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "8b270468fbb92d8b",
+        "type": "ui_spacer",
+        "z": "3e863ac0512b83c0",
+        "name": "spacer",
+        "group": "3b3b1ea2e881c63a",
+        "order": 10,
+        "width": 12,
+        "height": 1
     },
     {
         "id": "703f20ae0f95b5c1",
@@ -1862,5 +1910,326 @@
         "x": 470,
         "y": 1520,
         "wires": []
+    },
+    {
+        "id": "e83b5168468ec975",
+        "type": "udp in",
+        "z": "3e863ac0512b83c0",
+        "name": "WSJT UDP Input",
+        "iface": "",
+        "port": "2237",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "d8e6dfd7cee7cf16"
+            ]
+        ]
+    },
+    {
+        "id": "6162852ded87eb51",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "Status",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "d8e6dfd7cee7cf16",
+        "type": "wsjt-x-decode",
+        "z": "3e863ac0512b83c0",
+        "name": "",
+        "x": 340,
+        "y": 200,
+        "wires": [
+            [
+                "fc472390b948856d"
+            ]
+        ]
+    },
+    {
+        "id": "33650acbec34041d",
+        "type": "comment",
+        "z": "3e863ac0512b83c0",
+        "name": "Overview",
+        "info": "Hello\n\nYes I said Hello\n\n",
+        "x": 100,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "fc472390b948856d",
+        "type": "switch",
+        "z": "3e863ac0512b83c0",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "status",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "decode",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 240,
+        "wires": [
+            [
+                "6162852ded87eb51"
+            ],
+            [
+                "882b6a4c34507fdf",
+                "dea2f328ef12cd44"
+            ]
+        ]
+    },
+    {
+        "id": "882b6a4c34507fdf",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "Decode",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7dd1c9d1210f8c3b",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "CQ etc",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "dea2f328ef12cd44",
+        "type": "function",
+        "z": "3e863ac0512b83c0",
+        "name": "CQ??",
+        "func": "// Assume msg.payload is \"CQ K1DD FM04\"\n\n// Split the string into an array of values using ; as the delimiter\nvar last4chars = msg.payload.message.slice(-4);\n\nvar parts = msg.payload.message.split(\" \");\n\nif (parts.shift()==\"CQ\") {\n    // + CQ\n    msg.payload.message = last4chars;\n} else if (last4chars.includes('+') || last4chars.includes('-') || last4chars.includes(\"RR73\") || last4chars.includes(\" 73\")) {\n    // trash \n    // a signal report r-13, r+19 ....look for +/-\n    // b rr73\n    // keep\n    // a. grid exchange\n    msg.payload.message = \"\"\n} else {\n    // + RSP\n    msg.payload.message = last4chars;\n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 240,
+        "wires": [
+            [
+                "a684d4fd1a8daf1f",
+                "7d93f46683d1bee5"
+            ]
+        ]
+    },
+    {
+        "id": "a684d4fd1a8daf1f",
+        "type": "function",
+        "z": "3e863ac0512b83c0",
+        "name": "Maidenhead to Lat/Lon",
+        "func": "var mh = msg.payload.message;\n\nif (mh.length < 4) {\n    return \"\";\n}\n\nvar lat1 = mh.charCodeAt(1);\nvar lat2 = mh.charCodeAt(3);\nvar lon1 = mh.charCodeAt(0);\nvar lon2 = mh.charCodeAt(2);\n\n/* \nmsg.payload.lat1 = lat1\nmsg.payload.lat2 = lat2\nmsg.payload.lon1 = lon1\nmsg.payload.lon2 = lon2\n*/\n\nvar latlon = { \n    \"name\" : \"!\",\n    \"mode\" : \"FT8\",\n    \"lat\": 99.99,\n    \"lon\": -99.99,\n    \"layer\": \"WSJT\",\n    \"radius\":\"35000\",\n    \"color\":\"yellow\"\n    };\n\nlatlon.name = msg.payload.message_decode.de_call;\nlatlon.lat = ((lat1-65)*10-90)+(lat2-48);\nlatlon.lon = (lon1-65)*20-180+(lon2-48)*2;\n\nmsg.payload = latlon;\n\n/*\nif (mh.length > 4) {\n    var lat3 = mh.charCodeAt(5);\n    var lon3 = mh.charCodeAt(4);\n    msg.payload.lat = msg.payload.lat + (lat3-65) / 24 + 1/48;\n    msg.payload.lon = msg.payload.lon + (lon3-65) / 12 + 1/24;\n} \n*/\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 440,
+        "wires": [
+            [
+                "dc4122d69d055790",
+                "95e55e1bf802e588",
+                "487c47351611a43b"
+            ]
+        ],
+        "info": "// fe user_loc = \"KO03ka\"\r\n\r\n$loc = $user_data['user_loc'];\r\n\r\n$lat= \r\n(ord(substr($loc, 1, 1))-65) * 10 - 90 +\r\n(ord(substr($loc, 3, 1))-48) +\r\n(ord(substr($loc, 5, 1))-65) / 24 + 1/48;\r\n$lng= \r\n(ord(substr($loc, 0, 1))-65) * 20 - 180 +\r\n(ord(substr($loc, 2, 1))-48) * 2 +\r\n(ord(substr($loc, 4, 1))-65) / 12 + 1/24;"
+    },
+    {
+        "id": "7d93f46683d1bee5",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "Griddy",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "dc4122d69d055790",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "95e55e1bf802e588",
+        "type": "ui_worldmap",
+        "z": "3e863ac0512b83c0",
+        "group": "937754e7ea577683",
+        "order": 1,
+        "width": "22",
+        "height": "14",
+        "name": "Blah",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "EsriDG",
+        "cluster": "4",
+        "maxage": "120",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "showgrid": "true",
+        "showruler": "true",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,DN,TL,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 930,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f62672ee5ae4fdc5",
+        "type": "sqlite",
+        "z": "3e863ac0512b83c0",
+        "mydb": "951e388692504675",
+        "sqlquery": "prepared",
+        "sql": "insert into wsjtQs (OpCall, OpLat, OpLon, Qtime) values ($OpCall, $OpLat, $OpLon, datetime(\"now\"))",
+        "name": "DB of Lat/Long/Call etc",
+        "x": 1330,
+        "y": 620,
+        "wires": [
+            [
+                "955d72067b482140"
+            ]
+        ]
+    },
+    {
+        "id": "487c47351611a43b",
+        "type": "function",
+        "z": "3e863ac0512b83c0",
+        "name": "Extract Call/Lat/Lon",
+        "func": "msg.params = { $OpCall: msg.payload.name, $OpLat: msg.payload.lat, $OpLon: msg.payload.lon }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 520,
+        "wires": [
+            [
+                "9613c46acf836f5a",
+                "f62672ee5ae4fdc5"
+            ]
+        ]
+    },
+    {
+        "id": "9613c46acf836f5a",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "debug 14",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "955d72067b482140",
+        "type": "debug",
+        "z": "3e863ac0512b83c0",
+        "name": "debug 15",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "b4b0eb5cf1f58a95",
+        "type": "link call",
+        "z": "3e863ac0512b83c0",
+        "name": "",
+        "links": [],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            []
+        ]
     }
 ]
