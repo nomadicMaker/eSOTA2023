@@ -2339,7 +2339,7 @@
         "spltType": "str",
         "arraySplt": 1,
         "arraySpltType": "len",
-        "stream": false,
+        "stream": true,
         "addname": "",
         "x": 710,
         "y": 400,
@@ -2396,6 +2396,23 @@
         "libs": [],
         "x": 200,
         "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7148ace64a44524",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "Extract ALERT Details FOREACH",
+        "func": "msg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 660,
         "wires": [
             []
         ]
