@@ -2256,7 +2256,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
+        "x": 410,
         "y": 160,
         "wires": [
             [
@@ -2286,8 +2286,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 120,
+        "x": 200,
+        "y": 80,
         "wires": [
             [
                 "dd89e6c95fecbc7c"
@@ -2306,7 +2306,7 @@
         "finalize": "",
         "libs": [],
         "x": 220,
-        "y": 400,
+        "y": 500,
         "wires": [
             []
         ]
@@ -2325,7 +2325,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 880,
-        "y": 420,
+        "y": 500,
         "wires": []
     },
     {
@@ -2377,7 +2377,26 @@
         "y": 320,
         "wires": [
             [
-                "3e1b5372d060c240"
+                "83e589280cb7e083"
+            ]
+        ]
+    },
+    {
+        "id": "e89637634dc3b720",
+        "type": "split",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "e5908cb896fbae41"
             ]
         ]
     },
@@ -2393,27 +2412,24 @@
         "finalize": "",
         "libs": [],
         "x": 220,
-        "y": 660,
+        "y": 620,
         "wires": [
             []
         ]
     },
     {
-        "id": "e89637634dc3b720",
-        "type": "split",
+        "id": "83e589280cb7e083",
+        "type": "sqlite",
         "z": "6d56b95c5cf209f2",
+        "mydb": "951e388692504675",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO  alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq) VALUES ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq)",
         "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 510,
-        "y": 220,
+        "x": 850,
+        "y": 380,
         "wires": [
             [
-                "e5908cb896fbae41"
+                "3e1b5372d060c240"
             ]
         ]
     }
