@@ -2337,7 +2337,7 @@
         "name": "",
         "splt": "\\n",
         "spltType": "str",
-        "arraySplt": "msg.payload.length ",
+        "arraySplt": "2",
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
