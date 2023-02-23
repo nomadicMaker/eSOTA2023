@@ -2256,11 +2256,12 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 670,
-        "y": 160,
+        "x": 630,
+        "y": 180,
         "wires": [
             [
-                "2caf81e7978f455c"
+                "2caf81e7978f455c",
+                "6f21faa34ff0b328"
             ]
         ]
     },
@@ -2354,6 +2355,39 @@
         "statusType": "auto",
         "x": 880,
         "y": 420,
+        "wires": []
+    },
+    {
+        "id": "11f3154dda7d26ab",
+        "type": "split",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 310,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f21faa34ff0b328",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 100,
         "wires": []
     }
 ]
