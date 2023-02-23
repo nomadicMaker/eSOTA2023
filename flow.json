@@ -2256,8 +2256,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 630,
-        "y": 180,
+        "x": 530,
+        "y": 160,
         "wires": [
             [
                 "2caf81e7978f455c",
@@ -2290,33 +2290,6 @@
         "y": 120,
         "wires": [
             [
-                "b817be8e9e290f2d"
-            ]
-        ]
-    },
-    {
-        "id": "b817be8e9e290f2d",
-        "type": "change",
-        "z": "6d56b95c5cf209f2",
-        "name": "ALERT Count = Zero",
-        "rules": [
-            {
-                "t": "set",
-                "p": "actCount",
-                "pt": "flow",
-                "to": "0",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 120,
-        "wires": [
-            [
                 "dd89e6c95fecbc7c"
             ]
         ]
@@ -2336,7 +2309,7 @@
         "y": 360,
         "wires": [
             [
-                "3e1b5372d060c240"
+                "11f3154dda7d26ab"
             ]
         ]
     },
@@ -2368,25 +2341,28 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 310,
-        "y": 480,
+        "x": 710,
+        "y": 400,
         "wires": [
-            []
+            [
+                "3e1b5372d060c240"
+            ]
         ]
     },
     {
         "id": "6f21faa34ff0b328",
         "type": "debug",
         "z": "6d56b95c5cf209f2",
-        "name": "debug 27",
+        "name": "Display HTTP from SOTA web site",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
+        "x": 940,
         "y": 100,
         "wires": []
     },
