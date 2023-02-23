@@ -2339,7 +2339,7 @@
         "type": "debug",
         "z": "6d56b95c5cf209f2",
         "name": "Display HTTP from SOTA web site",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2498,6 +2498,67 @@
         "statusType": "auto",
         "x": 640,
         "y": 480,
+        "wires": []
+    },
+    {
+        "id": "715c38fe5f578310",
+        "type": "inject",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 760,
+        "wires": [
+            [
+                "0bfa5540355b114c"
+            ]
+        ]
+    },
+    {
+        "id": "0bfa5540355b114c",
+        "type": "sqlite",
+        "z": "6d56b95c5cf209f2",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "prepared",
+        "sql": "select distinct ActCallSign from alerts",
+        "name": "Unique call signs",
+        "x": 370,
+        "y": 820,
+        "wires": [
+            [
+                "3a221b662d391c3c"
+            ]
+        ]
+    },
+    {
+        "id": "3a221b662d391c3c",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 820,
         "wires": []
     }
 ]
