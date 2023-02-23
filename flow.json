@@ -2537,29 +2537,13 @@
         "sqlquery": "fixed",
         "sql": "Select distinct ActCallSign, AssocCode, SummitCode from alerts ",
         "name": "Unique call signs",
-        "x": 370,
-        "y": 820,
+        "x": 290,
+        "y": 800,
         "wires": [
             [
                 "d4424aaa9b03ee15"
             ]
         ]
-    },
-    {
-        "id": "3a221b662d391c3c",
-        "type": "debug",
-        "z": "6d56b95c5cf209f2",
-        "name": "debug 28",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1100,
-        "y": 840,
-        "wires": []
     },
     {
         "id": "d4424aaa9b03ee15",
@@ -2572,8 +2556,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 610,
-        "y": 820,
+        "x": 490,
+        "y": 860,
         "wires": [
             [
                 "f51dda2493be251f"
@@ -2591,12 +2575,146 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
-        "y": 820,
+        "x": 660,
+        "y": 780,
         "wires": [
             [
-                "3a221b662d391c3c"
+                "322a792a52eae953"
             ]
         ]
+    },
+    {
+        "id": "fa12966acc766531",
+        "type": "http request",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "x": 1030,
+        "y": 760,
+        "wires": [
+            [
+                "1da930c4f936dd6b"
+            ]
+        ]
+    },
+    {
+        "id": "322a792a52eae953",
+        "type": "change",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 680,
+        "wires": [
+            [
+                "f7cbe0b59bb97654",
+                "fa12966acc766531"
+            ]
+        ]
+    },
+    {
+        "id": "4768fc085a56b25b",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "1da930c4f936dd6b",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "Summit to /MAP pars",
+        "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n    \"name\": \"!\",\n    \"mode\": \"FM\",\n    \"lat\": 99.99,\n    \"lon\": -99.99,\n    \"layer\": \"SOTA\",\n    \"radius\": \"15000\",\n    \"color\": \"yellow\"\n};\n\nlatlon.name = msg.payload.name;\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 940,
+        "wires": [
+            [
+                "4768fc085a56b25b",
+                "a4e7e566a995dfc9"
+            ]
+        ]
+    },
+    {
+        "id": "a4e7e566a995dfc9",
+        "type": "ui_worldmap",
+        "z": "6d56b95c5cf209f2",
+        "group": "937754e7ea577683",
+        "order": 1,
+        "width": "22",
+        "height": "14",
+        "name": "Blah",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "EsriDG",
+        "cluster": "4",
+        "maxage": "120",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "showgrid": "true",
+        "showruler": "true",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,DN,TL,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1250,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "f7cbe0b59bb97654",
+        "type": "debug",
+        "z": "6d56b95c5cf209f2",
+        "name": "Activation URL",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "url",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 580,
+        "wires": []
     }
 ]
