@@ -2299,7 +2299,7 @@
         "type": "function",
         "z": "6d56b95c5cf209f2",
         "name": "Extract ALERT Details FOREACH",
-        "func": "msg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
+        "func": "var i = 0;\n\nmsg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params[i] = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n    i++;\n\n})\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
