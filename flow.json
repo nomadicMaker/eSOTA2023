@@ -2248,7 +2248,7 @@
         "method": "GET",
         "ret": "obj",
         "paytoqs": "body",
-        "url": "https://api2.sota.org.uk/api/alerts/all",
+        "url": "https://api2.sota.org.uk/api/alerts/5/all",
         "tls": "",
         "persist": false,
         "proxy": "",
