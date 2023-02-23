@@ -2326,7 +2326,7 @@
         "type": "function",
         "z": "6d56b95c5cf209f2",
         "name": "Extract ALERT Details",
-        "func": "var actCount = flow.get('actCount');\n\nif (actCount <= msg.payload.length) {\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency};\n}\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
+        "func": "msg.payload.array.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2379,7 +2379,7 @@
         "type": "debug",
         "z": "6d56b95c5cf209f2",
         "name": "debug 27",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2389,5 +2389,22 @@
         "x": 860,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "01891ca437ebc7d5",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "Extract ALERT Details",
+        "func": "var actCount = flow.get('actCount');\n\nif (actCount <= msg.payload.length) {\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency};\n}\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 640,
+        "wires": [
+            []
+        ]
     }
 ]
