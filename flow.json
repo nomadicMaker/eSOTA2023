@@ -2309,7 +2309,7 @@
         "y": 300,
         "wires": [
             [
-                "11f3154dda7d26ab"
+                "3e1b5372d060c240"
             ]
         ]
     },
@@ -2329,25 +2329,6 @@
         "x": 880,
         "y": 420,
         "wires": []
-    },
-    {
-        "id": "11f3154dda7d26ab",
-        "type": "split",
-        "z": "6d56b95c5cf209f2",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": "2",
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 710,
-        "y": 400,
-        "wires": [
-            [
-                "3e1b5372d060c240"
-            ]
-        ]
     },
     {
         "id": "6f21faa34ff0b328",
