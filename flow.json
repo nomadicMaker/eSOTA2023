@@ -353,6 +353,12 @@
         "height": 1
     },
     {
+        "id": "4441a65c13a15ee4",
+        "type": "sqlitedb",
+        "db": "/home/pi/alerts.db",
+        "mode": "RWC"
+    },
+    {
         "id": "703f20ae0f95b5c1",
         "type": "http request",
         "z": "a6d97f83866efa29",
@@ -2421,15 +2427,58 @@
         "id": "83e589280cb7e083",
         "type": "sqlite",
         "z": "6d56b95c5cf209f2",
-        "mydb": "951e388692504675",
+        "mydb": "4441a65c13a15ee4",
         "sqlquery": "prepared",
         "sql": "INSERT INTO  alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq) VALUES ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq)",
         "name": "",
-        "x": 850,
+        "x": 830,
         "y": 380,
         "wires": [
             [
                 "3e1b5372d060c240"
+            ]
+        ]
+    },
+    {
+        "id": "b11a31a6443de6a5",
+        "type": "sqlite",
+        "z": "6d56b95c5cf209f2",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE alerts (A_Id INTEGER PRIMARY KEY,ActId TEXT NOT NULL,ActTimeStamp TEXT NOT NULL,ActDate TEXT NOT NULL,AssocCode TEXT NOT NULL,SummitCode TEXT NOT NULL,ActCallSign TEXT NOT NULL,Freq TEXT NOT NULL);\n",
+        "name": "Create table in alerts.db",
+        "x": 350,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf2b3c16f4163ced",
+        "type": "inject",
+        "z": "6d56b95c5cf209f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "b11a31a6443de6a5"
             ]
         ]
     }
