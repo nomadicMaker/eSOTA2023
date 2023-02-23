@@ -2535,7 +2535,7 @@
         "z": "6d56b95c5cf209f2",
         "mydb": "4441a65c13a15ee4",
         "sqlquery": "fixed",
-        "sql": "select distinct ActCallSign from alerts",
+        "sql": "Select distinct ActCallSign, AssocCode, SummitCode from alerts ",
         "name": "Unique call signs",
         "x": 370,
         "y": 820,
@@ -2578,6 +2578,23 @@
             [
                 "3a221b662d391c3c"
             ]
+        ]
+    },
+    {
+        "id": "f51dda2493be251f",
+        "type": "function",
+        "z": "6d56b95c5cf209f2",
+        "name": "function 1",
+        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\n    assoc = msg.payload.associationCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload[actCount].summitCode;\n    msg.payload = tString.concat(\"/\", summit);\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 1,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 700,
+        "wires": [
+            []
         ]
     }
 ]
