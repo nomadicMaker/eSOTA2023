@@ -2856,14 +2856,14 @@
         "id": "e0fc15e4335d3281",
         "type": "function",
         "z": "3d5c21ab41d1c469",
-        "name": "Extract new hour ONLY",
-        "func": "msg.utcHr = msg.utc.getHours();\nreturn msg;",
+        "name": "Extract original hour ONLY",
+        "func": "msg.utcHr = new Date(msg.payload).getHours();\n//msg.utcHr = msg.utcHr.toISOString();\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1030,
+        "x": 1040,
         "y": 580,
         "wires": [
             [
