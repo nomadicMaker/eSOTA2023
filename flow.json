@@ -2894,7 +2894,7 @@
         "type": "function",
         "z": "3d5c21ab41d1c469",
         "name": "function 1",
-        "func": "msg.tmpTime = Date.parse('2023-02-24T18:16:32');\nreturn msg;",
+        "func": "msg.tmpTime = Date.parse('1956-03-31T18:15:00');\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
