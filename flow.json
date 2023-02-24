@@ -2803,7 +2803,7 @@
         "type": "function",
         "z": "3d5c21ab41d1c469",
         "name": "Add one HOUR",
-        "func": "var ts = \"1970-01-01 \" + msg.payload;  // build an epoch datetime\nvar ms = Date.parse(ts) + 3600000;  // add 1 hour in milliseconds\nvar tm = new Date(ms).toTimeString();  // convert to time string\n\nmsg.payload = tm.substring(0, 5);\nreturn msg;",
+        "func": "var ts = \"1970-01-01 \" + msg.payload;  // build an epoch datetime\nvar ms = Date.parse(ts) + 3600000;  // add 1 hour in milliseconds\nvar tm = new Date(ms).toTimeString();  // convert to time string\n\nmsg.payload = tm.substring(0, 5);\n\nmsg.utc = (new Date(msg.payload));\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
