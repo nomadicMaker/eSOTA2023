@@ -2826,7 +2826,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
+        "complete": "utc",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
