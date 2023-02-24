@@ -2893,18 +2893,19 @@
         "id": "a8c136216cdd766a",
         "type": "function",
         "z": "3d5c21ab41d1c469",
-        "name": "function 1",
+        "name": "YYYY-MM-DD conversion",
         "func": "msg.tmpTime = Date.parse('1956-03-31T18:15:00');\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
+        "x": 790,
         "y": 700,
         "wires": [
             [
-                "834d53f9c73bded1"
+                "834d53f9c73bded1",
+                "2cb5e503d80bdade"
             ]
         ]
     },
@@ -2921,7 +2922,43 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
+        "x": 1040,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2cb5e503d80bdade",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "function 1",
+        "func": "msg.utc = new Date(msg.tmpTime);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 760,
+        "wires": [
+            [
+                "be18f6ce6aa3f393"
+            ]
+        ]
+    },
+    {
+        "id": "be18f6ce6aa3f393",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 32",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "utc",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
         "y": 700,
         "wires": []
     }
