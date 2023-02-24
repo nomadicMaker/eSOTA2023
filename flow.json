@@ -2857,7 +2857,7 @@
         "type": "function",
         "z": "3d5c21ab41d1c469",
         "name": "Extract original hour ONLY",
-        "func": "msg.utcHr = new Date(msg.payload).getHours();\n//msg.utcHr = msg.utcHr.toISOString();\n\n\nreturn msg;",
+        "func": "msg.utcHr = new Date(msg.payload).getUTCHours();\n//msg.utcHr = msg.utcHr.toISOString();\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
