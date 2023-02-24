@@ -48,6 +48,22 @@
         "env": []
     },
     {
+        "id": "b2ea45338eb51cf5",
+        "type": "tab",
+        "label": "DB to Map",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f7e1a35dfed587da",
+        "type": "tab",
+        "label": "Create ALERTS.DB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "937754e7ea577683",
         "type": "ui_group",
         "name": "WSJT Map",
@@ -2301,23 +2317,6 @@
         ]
     },
     {
-        "id": "2caf81e7978f455c",
-        "type": "function",
-        "z": "6d56b95c5cf209f2",
-        "name": "Extract ALERT Details FOREACH",
-        "func": "\n\nmsg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 220,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3e1b5372d060c240",
         "type": "debug",
         "z": "6d56b95c5cf209f2",
@@ -2350,23 +2349,6 @@
         "x": 840,
         "y": 80,
         "wires": []
-    },
-    {
-        "id": "97ac9bdc6f7737df",
-        "type": "function",
-        "z": "6d56b95c5cf209f2",
-        "name": "Extract ALERT Details ACT COUNT",
-        "func": "var actCount = flow.get('actCount');\n\n\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency};\n\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 220,
-        "y": 560,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "e5908cb896fbae41",
@@ -2407,23 +2389,6 @@
         ]
     },
     {
-        "id": "f7148ace64a44524",
-        "type": "function",
-        "z": "6d56b95c5cf209f2",
-        "name": "Extract ALERT Details FOREACH",
-        "func": "msg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 220,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "83e589280cb7e083",
         "type": "sqlite",
         "z": "6d56b95c5cf209f2",
@@ -2440,25 +2405,9 @@
         ]
     },
     {
-        "id": "b11a31a6443de6a5",
-        "type": "sqlite",
-        "z": "6d56b95c5cf209f2",
-        "mydb": "4441a65c13a15ee4",
-        "sqlquery": "fixed",
-        "sql": "CREATE TABLE alerts (A_Id INTEGER PRIMARY KEY,ActId TEXT NOT NULL,ActTimeStamp TEXT NOT NULL,ActDate TEXT NOT NULL,AssocCode TEXT NOT NULL,SummitCode TEXT NOT NULL,ActCallSign TEXT NOT NULL,Freq TEXT NOT NULL)\n",
-        "name": "Create table in alerts.db",
-        "x": 350,
-        "y": 360,
-        "wires": [
-            [
-                "1a09be788d92da73"
-            ]
-        ]
-    },
-    {
-        "id": "bf2b3c16f4163ced",
+        "id": "3a03244380a72b00",
         "type": "inject",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "",
         "props": [
             {
@@ -2476,79 +2425,34 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 260,
+        "x": 120,
+        "y": 560,
         "wires": [
             [
-                "b11a31a6443de6a5"
+                "c80733d345ddbb75"
             ]
         ]
     },
     {
-        "id": "1a09be788d92da73",
-        "type": "debug",
-        "z": "6d56b95c5cf209f2",
-        "name": "debug 27",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "715c38fe5f578310",
-        "type": "inject",
-        "z": "6d56b95c5cf209f2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 760,
-        "wires": [
-            [
-                "0bfa5540355b114c"
-            ]
-        ]
-    },
-    {
-        "id": "0bfa5540355b114c",
+        "id": "c80733d345ddbb75",
         "type": "sqlite",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "mydb": "4441a65c13a15ee4",
         "sqlquery": "fixed",
         "sql": "Select distinct ActCallSign, AssocCode, SummitCode from alerts ",
         "name": "Unique call signs",
-        "x": 290,
-        "y": 800,
+        "x": 310,
+        "y": 600,
         "wires": [
             [
-                "d4424aaa9b03ee15"
+                "9f4218d09eab62a9"
             ]
         ]
     },
     {
-        "id": "d4424aaa9b03ee15",
+        "id": "9f4218d09eab62a9",
         "type": "split",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -2556,53 +2460,53 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 490,
-        "y": 860,
+        "x": 510,
+        "y": 660,
         "wires": [
             [
-                "f51dda2493be251f"
+                "e2f773776966be42"
             ]
         ]
     },
     {
-        "id": "f51dda2493be251f",
+        "id": "e2f773776966be42",
         "type": "function",
-        "z": "6d56b95c5cf209f2",
-        "name": "function 1",
+        "z": "b2ea45338eb51cf5",
+        "name": "function 2",
         "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\n    assoc = msg.payload.AssocCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload.SummitCode;\n    msg.payload = tString.concat(\"/\", summit);\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 780,
+        "x": 680,
+        "y": 580,
         "wires": [
             [
-                "322a792a52eae953"
+                "6838bde64f1930fa"
             ]
         ]
     },
     {
-        "id": "fa12966acc766531",
+        "id": "15ee454f2da76a46",
         "type": "http request",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "",
         "method": "GET",
         "ret": "txt",
         "url": "",
-        "x": 1030,
-        "y": 760,
+        "x": 1050,
+        "y": 560,
         "wires": [
             [
-                "1da930c4f936dd6b"
+                "a2c40be54f48d0ed"
             ]
         ]
     },
     {
-        "id": "322a792a52eae953",
+        "id": "6838bde64f1930fa",
         "type": "change",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "",
         "rules": [
             {
@@ -2618,19 +2522,19 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 680,
+        "x": 870,
+        "y": 480,
         "wires": [
             [
-                "f7cbe0b59bb97654",
-                "fa12966acc766531"
+                "1d1b3d31cb9799f3",
+                "15ee454f2da76a46"
             ]
         ]
     },
     {
-        "id": "4768fc085a56b25b",
+        "id": "78209fe35efe1ed5",
         "type": "debug",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2640,14 +2544,14 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1250,
-        "y": 1080,
+        "x": 1270,
+        "y": 880,
         "wires": []
     },
     {
-        "id": "1da930c4f936dd6b",
+        "id": "a2c40be54f48d0ed",
         "type": "function",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "Summit to /MAP pars",
         "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n    \"name\": \"!\",\n    \"mode\": \"FM\",\n    \"lat\": 99.99,\n    \"lon\": -99.99,\n    \"layer\": \"SOTA\",\n    \"radius\": \"15500\",\n    \"color\": \"yellow\"\n};\n\nlatlon.name = msg.payload.name;\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
         "outputs": 1,
@@ -2655,19 +2559,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 940,
+        "x": 1000,
+        "y": 740,
         "wires": [
             [
-                "4768fc085a56b25b",
-                "a4e7e566a995dfc9"
+                "78209fe35efe1ed5",
+                "db5508ef120e57d9"
             ]
         ]
     },
     {
-        "id": "a4e7e566a995dfc9",
+        "id": "db5508ef120e57d9",
         "type": "ui_worldmap",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "group": "937754e7ea577683",
         "order": 1,
         "width": "22",
@@ -2696,14 +2600,14 @@
         "mapurl": "",
         "mapopt": "",
         "mapwms": false,
-        "x": 1250,
-        "y": 860,
+        "x": 1270,
+        "y": 660,
         "wires": []
     },
     {
-        "id": "f7cbe0b59bb97654",
+        "id": "1d1b3d31cb9799f3",
         "type": "debug",
-        "z": "6d56b95c5cf209f2",
+        "z": "b2ea45338eb51cf5",
         "name": "Activation URL",
         "active": true,
         "tosidebar": true,
@@ -2713,8 +2617,120 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 580,
+        "x": 1260,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2caf81e7978f455c",
+        "type": "function",
+        "z": "f7e1a35dfed587da",
+        "name": "Extract ALERT Details FOREACH",
+        "func": "\n\nmsg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97ac9bdc6f7737df",
+        "type": "function",
+        "z": "f7e1a35dfed587da",
+        "name": "Extract ALERT Details ACT COUNT",
+        "func": "var actCount = flow.get('actCount');\n\n\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency};\n\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7148ace64a44524",
+        "type": "function",
+        "z": "f7e1a35dfed587da",
+        "name": "Extract ALERT Details FOREACH",
+        "func": "msg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b11a31a6443de6a5",
+        "type": "sqlite",
+        "z": "f7e1a35dfed587da",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE alerts (A_Id INTEGER PRIMARY KEY,ActId TEXT NOT NULL,ActTimeStamp TEXT NOT NULL,ActDate TEXT NOT NULL,AssocCode TEXT NOT NULL,SummitCode TEXT NOT NULL,ActCallSign TEXT NOT NULL,Freq TEXT NOT NULL)\n",
+        "name": "Create table in alerts.db",
+        "x": 710,
+        "y": 280,
+        "wires": [
+            [
+                "1a09be788d92da73"
+            ]
+        ]
+    },
+    {
+        "id": "bf2b3c16f4163ced",
+        "type": "inject",
+        "z": "f7e1a35dfed587da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 280,
+        "wires": [
+            [
+                "b11a31a6443de6a5"
+            ]
+        ]
+    },
+    {
+        "id": "1a09be788d92da73",
+        "type": "debug",
+        "z": "f7e1a35dfed587da",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 340,
         "wires": []
     }
 ]
