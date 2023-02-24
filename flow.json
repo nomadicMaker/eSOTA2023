@@ -64,6 +64,14 @@
         "env": []
     },
     {
+        "id": "3d5c21ab41d1c469",
+        "type": "tab",
+        "label": "Time Experiments",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "937754e7ea577683",
         "type": "ui_group",
         "name": "WSJT Map",
@@ -2739,6 +2747,106 @@
         "statusType": "auto",
         "x": 980,
         "y": 340,
+        "wires": []
+    },
+    {
+        "id": "aea5e101d4b722ac",
+        "type": "inject",
+        "z": "3d5c21ab41d1c469",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "e393f1ea420c154b"
+            ]
+        ]
+    },
+    {
+        "id": "e393f1ea420c154b",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "Time Now",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "3cfab5178123dd75",
+                "ac487e074030e769"
+            ]
+        ]
+    },
+    {
+        "id": "3cfab5178123dd75",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "Add one HOUR",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 420,
+        "wires": [
+            [
+                "dfc7abec7e082a62"
+            ]
+        ]
+    },
+    {
+        "id": "dfc7abec7e082a62",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ac487e074030e769",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 300,
         "wires": []
     }
 ]
