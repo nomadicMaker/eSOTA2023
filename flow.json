@@ -2814,7 +2814,8 @@
         "wires": [
             [
                 "dfc7abec7e082a62",
-                "e0fc15e4335d3281"
+                "e0fc15e4335d3281",
+                "a8c136216cdd766a"
             ]
         ]
     },
@@ -2863,8 +2864,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 580,
+        "x": 890,
+        "y": 540,
         "wires": [
             [
                 "8d18f0483b765700"
@@ -2886,6 +2887,42 @@
         "statusType": "auto",
         "x": 1120,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a8c136216cdd766a",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "function 1",
+        "func": "msg.tmpTime = new Date('2023 - 02 - 24T18: 16: 32');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 700,
+        "wires": [
+            [
+                "834d53f9c73bded1"
+            ]
+        ]
+    },
+    {
+        "id": "834d53f9c73bded1",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 31",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "tmpTime",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 700,
         "wires": []
     }
 ]
