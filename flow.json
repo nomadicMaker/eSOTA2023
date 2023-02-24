@@ -2278,8 +2278,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 410,
-        "y": 160,
+        "x": 590,
+        "y": 420,
         "wires": [
             [
                 "6f21faa34ff0b328",
@@ -2308,8 +2308,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
-        "y": 80,
+        "x": 380,
+        "y": 340,
         "wires": [
             [
                 "dd89e6c95fecbc7c"
@@ -2329,8 +2329,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 500,
+        "x": 1060,
+        "y": 760,
         "wires": []
     },
     {
@@ -2346,8 +2346,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 80,
+        "x": 1020,
+        "y": 340,
         "wires": []
     },
     {
@@ -2361,8 +2361,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
-        "y": 320,
+        "x": 800,
+        "y": 580,
         "wires": [
             [
                 "83e589280cb7e083"
@@ -2380,8 +2380,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 470,
-        "y": 240,
+        "x": 650,
+        "y": 500,
         "wires": [
             [
                 "e5908cb896fbae41"
@@ -2396,8 +2396,8 @@
         "sqlquery": "prepared",
         "sql": "INSERT INTO  alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq) VALUES ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq)",
         "name": "",
-        "x": 830,
-        "y": 380,
+        "x": 1010,
+        "y": 640,
         "wires": [
             [
                 "3e1b5372d060c240"
