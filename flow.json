@@ -2803,7 +2803,7 @@
         "type": "function",
         "z": "3d5c21ab41d1c469",
         "name": "Add one HOUR",
-        "func": "msg.utc = new Date(msg.payload + 3600000);\nreturn msg;",
+        "func": "msg.utc = new Date(msg.payload + 3600000);\nmsg.utc = msg.utc.toISOString();\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
