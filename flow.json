@@ -3004,5 +3004,91 @@
         "x": 1140,
         "y": 700,
         "wires": []
+    },
+    {
+        "id": "53a5b5873f6ea326",
+        "type": "ui_button",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "group": "937754e7ea577683",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Uno",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "4f971f18e2f23183"
+            ]
+        ]
+    },
+    {
+        "id": "bf4bfd70b4f983e2",
+        "type": "ui_button",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "group": "937754e7ea577683",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Duo",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 360,
+        "wires": [
+            [
+                "4f971f18e2f23183"
+            ]
+        ]
+    },
+    {
+        "id": "4f971f18e2f23183",
+        "type": "ui_ui_control",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "events": "all",
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "a868717944349d9e"
+            ]
+        ]
+    },
+    {
+        "id": "a868717944349d9e",
+        "type": "debug",
+        "z": "12c7debef331bf5d",
+        "name": "debug 33",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 300,
+        "wires": []
     }
 ]
