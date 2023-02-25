@@ -2996,7 +2996,7 @@
         "height": "1",
         "name": "",
         "label": "UTC :",
-        "format": "{{msg.payload}}",
+        "format": "{{msg.utc}}",
         "layout": "row-spread",
         "className": "",
         "x": 450,
