@@ -2959,5 +2959,31 @@
                 "4f971f18e2f23183"
             ]
         ]
+    },
+    {
+        "id": "ce1d8bc5735e9431",
+        "type": "ui_text_input",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "label": "SUMMIT :  ",
+        "tooltip": "",
+        "group": "937754e7ea577683",
+        "order": 5,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 380,
+        "y": 480,
+        "wires": [
+            [
+                "4f971f18e2f23183"
+            ]
+        ]
     }
 ]
