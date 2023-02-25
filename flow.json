@@ -2910,11 +2910,11 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 310,
+        "x": 170,
         "y": 380,
         "wires": [
             [
-                "4f971f18e2f23183"
+                "b341981d25c5cf32"
             ]
         ]
     },
@@ -3023,11 +3023,11 @@
         "height": 1,
         "name": "",
         "label": "NAME :",
-        "format": "{{msg.payload}}",
+        "format": "{{msg.opname}}",
         "layout": "row-spread",
         "className": "",
-        "x": 320,
-        "y": 460,
+        "x": 720,
+        "y": 440,
         "wires": []
     },
     {
@@ -3075,6 +3075,26 @@
         "wires": [
             [
                 "c25f86dbe6fba2d1"
+            ]
+        ]
+    },
+    {
+        "id": "b341981d25c5cf32",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "function 2",
+        "func": "msg.opname = 'Mark';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 340,
+        "wires": [
+            [
+                "4f971f18e2f23183",
+                "75e2d3d21d3f8210"
             ]
         ]
     }
