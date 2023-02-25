@@ -318,15 +318,6 @@
         "mode": "RWC"
     },
     {
-        "id": "1c67a074.861f4",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "8e4884bb.ff1388",
-        "order": 1,
-        "disp": true,
-        "width": "6"
-    },
-    {
         "id": "8e4884bb.ff1388",
         "type": "ui_tab",
         "name": "testing",
