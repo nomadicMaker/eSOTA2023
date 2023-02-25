@@ -3031,7 +3031,7 @@
         "name": "Text on the screen",
         "label": "",
         "format": "{{msg.payload}}",
-        "layout": "row-left",
+        "layout": "col-center",
         "className": "",
         "x": 730,
         "y": 440,
