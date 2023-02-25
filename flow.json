@@ -328,6 +328,13 @@
         "height": 1
     },
     {
+        "id": "5d28162245cadc89",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
         "id": "703f20ae0f95b5c1",
         "type": "http request",
         "z": "a6d97f83866efa29",
