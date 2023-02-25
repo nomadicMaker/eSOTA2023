@@ -2985,5 +2985,22 @@
                 "4f971f18e2f23183"
             ]
         ]
+    },
+    {
+        "id": "c25f86dbe6fba2d1",
+        "type": "ui_text",
+        "z": "12c7debef331bf5d",
+        "group": "937754e7ea577683",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "UTC :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 370,
+        "y": 300,
+        "wires": []
     }
 ]
