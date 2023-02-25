@@ -335,6 +335,31 @@
         "order": 2
     },
     {
+        "id": "9224e7358c1036ac",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    },
+    {
+        "id": "5b0751bf6a495fde",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "5d28162245cadc89",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "0da33e22d2c5081a",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "9224e7358c1036ac",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
         "id": "703f20ae0f95b5c1",
         "type": "http request",
         "z": "a6d97f83866efa29",
