@@ -2999,8 +2999,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 370,
-        "y": 300,
+        "x": 450,
+        "y": 200,
         "wires": []
     },
     {
@@ -3043,6 +3043,25 @@
         "payloadType": "date",
         "x": 120,
         "y": 240,
+        "wires": [
+            [
+                "647360c57dac0e61"
+            ]
+        ]
+    },
+    {
+        "id": "647360c57dac0e61",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "Time Now",
+        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(0,19);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 280,
         "wires": [
             [
                 "c25f86dbe6fba2d1"
