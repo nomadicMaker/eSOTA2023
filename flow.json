@@ -318,12 +318,6 @@
         "mode": "RWC"
     },
     {
-        "id": "8e4884bb.ff1388",
-        "type": "ui_tab",
-        "name": "testing",
-        "icon": "dashboard"
-    },
-    {
         "id": "703f20ae0f95b5c1",
         "type": "http request",
         "z": "a6d97f83866efa29",
