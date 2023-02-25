@@ -378,16 +378,6 @@
         "mode": "RWC"
     },
     {
-        "id": "20ec120557ab9985",
-        "type": "ui_group",
-        "name": "Map",
-        "tab": "ef10a04c.589f3",
-        "order": 9,
-        "disp": true,
-        "width": "20",
-        "collapse": false
-    },
-    {
         "id": "ef10a04c.589f3",
         "type": "ui_tab",
         "name": "Map",
