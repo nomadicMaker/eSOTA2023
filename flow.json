@@ -654,46 +654,9 @@
         "y": 520,
         "wires": [
             [
-                "1ef9987c.956c78",
-                "a5b35bb0fe867f8d"
+                "1ef9987c.956c78"
             ]
         ]
-    },
-    {
-        "id": "a5b35bb0fe867f8d",
-        "type": "ui_worldmap",
-        "z": "a6d97f83866efa29",
-        "group": "937754e7ea577683",
-        "order": 1,
-        "width": "22",
-        "height": "14",
-        "name": "Blah",
-        "lat": "",
-        "lon": "",
-        "zoom": "",
-        "layer": "EsriDG",
-        "cluster": "4",
-        "maxage": "120",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "false",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "false",
-        "coords": "deg",
-        "showgrid": "true",
-        "showruler": "true",
-        "allowFileDrop": "false",
-        "path": "/worldmap",
-        "overlist": "DR,CO,DN,TL,HM",
-        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
-        "mapname": "",
-        "mapurl": "",
-        "mapopt": "",
-        "mapwms": false,
-        "x": 1150,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "96ac449cbe22c880",
@@ -2155,7 +2118,6 @@
         "wires": [
             [
                 "dc4122d69d055790",
-                "95e55e1bf802e588",
                 "487c47351611a43b"
             ]
         ],
@@ -2192,42 +2154,6 @@
         "statusType": "auto",
         "x": 1100,
         "y": 420,
-        "wires": []
-    },
-    {
-        "id": "95e55e1bf802e588",
-        "type": "ui_worldmap",
-        "z": "3e863ac0512b83c0",
-        "group": "937754e7ea577683",
-        "order": 1,
-        "width": "22",
-        "height": "14",
-        "name": "Blah",
-        "lat": "",
-        "lon": "",
-        "zoom": "",
-        "layer": "EsriDG",
-        "cluster": "4",
-        "maxage": "120",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "false",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "false",
-        "coords": "deg",
-        "showgrid": "true",
-        "showruler": "true",
-        "allowFileDrop": "false",
-        "path": "/worldmap",
-        "overlist": "DR,CO,DN,TL,HM",
-        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
-        "mapname": "",
-        "mapurl": "",
-        "mapopt": "",
-        "mapwms": false,
-        "x": 930,
-        "y": 680,
         "wires": []
     },
     {
