@@ -2919,7 +2919,7 @@
         "width": "4",
         "height": "1",
         "name": "Text on the screen",
-        "label": "",
+        "label": "CALL: ",
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
