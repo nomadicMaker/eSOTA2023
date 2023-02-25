@@ -2956,7 +2956,7 @@
         "wires": [
             [
                 "4f971f18e2f23183",
-                "13d07722f1449007"
+                "90fe8df37ddb0b57"
             ]
         ]
     },
@@ -2985,7 +2985,7 @@
         "wires": [
             [
                 "4f971f18e2f23183",
-                "9b99733bc5dd3e79"
+                "90fe8df37ddb0b57"
             ]
         ]
     },
@@ -3021,35 +3021,20 @@
         "wires": []
     },
     {
-        "id": "13d07722f1449007",
-        "type": "debug",
+        "id": "90fe8df37ddb0b57",
+        "type": "ui_text",
         "z": "12c7debef331bf5d",
-        "name": "debug 34",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "9b99733bc5dd3e79",
-        "type": "debug",
-        "z": "12c7debef331bf5d",
-        "name": "debug 35",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 480,
+        "group": "937754e7ea577683",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Text on the screen",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 540,
         "wires": []
     }
 ]
