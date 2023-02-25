@@ -330,9 +330,11 @@
     {
         "id": "1abc6f0e000f5aee",
         "type": "ui_tab",
-        "name": "Tab 2",
+        "name": "TAB 2 TAB 2 TAB 2",
         "icon": "dashboard",
-        "order": 2
+        "order": 2,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "703f20ae0f95b5c1",
