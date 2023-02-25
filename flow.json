@@ -2833,7 +2833,7 @@
         "width": "1",
         "height": "1",
         "passthru": false,
-        "label": "Call:",
+        "label": ">Log",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -2844,11 +2844,10 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 450,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
-                "4f971f18e2f23183",
-                "90fe8df37ddb0b57"
+                "4f971f18e2f23183"
             ]
         ]
     },
@@ -2876,8 +2875,7 @@
         "y": 360,
         "wires": [
             [
-                "4f971f18e2f23183",
-                "90fe8df37ddb0b57"
+                "4f971f18e2f23183"
             ]
         ]
     },
@@ -2950,9 +2948,7 @@
         "x": 380,
         "y": 540,
         "wires": [
-            [
-                "90fe8df37ddb0b57"
-            ]
+            []
         ]
     }
 ]
