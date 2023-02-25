@@ -3054,7 +3054,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Time Now",
-        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(11);\nreturn msg;",
+        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(11,19);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
