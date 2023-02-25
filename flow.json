@@ -93,7 +93,7 @@
     {
         "id": "7a6b7462852c07e3",
         "type": "ui_tab",
-        "name": "evOTA",
+        "name": "evOTA Visualizer",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
