@@ -2843,7 +2843,7 @@
         "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "LOG IT!",
+        "label": "ADD",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -2853,7 +2853,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 580,
+        "x": 570,
         "y": 700,
         "wires": [
             [
