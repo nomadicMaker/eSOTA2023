@@ -2976,7 +2976,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "",
-        "payload": "Duo",
+        "payload": "Due",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
