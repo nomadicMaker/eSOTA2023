@@ -3029,7 +3029,7 @@
         "width": "2",
         "height": "1",
         "name": "Text on the screen",
-        "label": "text",
+        "label": "Pressed = ",
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
