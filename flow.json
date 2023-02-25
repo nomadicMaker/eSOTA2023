@@ -91,17 +91,6 @@
         "className": ""
     },
     {
-        "id": "3b3b1ea2e881c63a",
-        "type": "ui_group",
-        "name": "K3s 1",
-        "tab": "",
-        "order": 2,
-        "disp": true,
-        "width": 14,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "7a6b7462852c07e3",
         "type": "ui_tab",
         "name": "evOTA",
@@ -268,15 +257,6 @@
         "db": "db_002"
     },
     {
-        "id": "d40ead3e.334ab",
-        "type": "ui_group",
-        "name": "Group 1",
-        "tab": "",
-        "order": 1,
-        "disp": true,
-        "width": 6
-    },
-    {
         "id": "9e26b870b7cef5c2",
         "type": "serial-port",
         "serialport": "/dev/ttyUSB0",
@@ -332,59 +312,10 @@
         "mode": "RWC"
     },
     {
-        "id": "56e465bf4966c07d",
-        "type": "ui_spacer",
-        "z": "3e863ac0512b83c0",
-        "name": "spacer",
-        "group": "3b3b1ea2e881c63a",
-        "order": 5,
-        "width": 8,
-        "height": 1
-    },
-    {
-        "id": "8f232b7bf1c5a22d",
-        "type": "ui_spacer",
-        "z": "3e863ac0512b83c0",
-        "name": "spacer",
-        "group": "3b3b1ea2e881c63a",
-        "order": 7,
-        "width": 9,
-        "height": 1
-    },
-    {
-        "id": "cf1bb7807fb68054",
-        "type": "ui_spacer",
-        "z": "3e863ac0512b83c0",
-        "name": "spacer",
-        "group": "3b3b1ea2e881c63a",
-        "order": 9,
-        "width": 12,
-        "height": 1
-    },
-    {
-        "id": "8b270468fbb92d8b",
-        "type": "ui_spacer",
-        "z": "3e863ac0512b83c0",
-        "name": "spacer",
-        "group": "3b3b1ea2e881c63a",
-        "order": 10,
-        "width": 12,
-        "height": 1
-    },
-    {
         "id": "4441a65c13a15ee4",
         "type": "sqlitedb",
         "db": "/home/pi/alerts.db",
         "mode": "RWC"
-    },
-    {
-        "id": "ef10a04c.589f3",
-        "type": "ui_tab",
-        "name": "Map",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "1c67a074.861f4",
