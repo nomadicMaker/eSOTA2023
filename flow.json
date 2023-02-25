@@ -2928,30 +2928,6 @@
         "wires": []
     },
     {
-        "id": "eed12e2a9fb24b6f",
-        "type": "ui_text_input",
-        "z": "12c7debef331bf5d",
-        "name": "",
-        "label": "Call Sign",
-        "tooltip": "Filter on this CALL SIGN",
-        "group": "937754e7ea577683",
-        "order": 4,
-        "width": "4",
-        "height": "1",
-        "passthru": true,
-        "mode": "text",
-        "delay": 300,
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 380,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "af728c94ad8f7259",
         "type": "ui_button",
         "z": "12c7debef331bf5d",
