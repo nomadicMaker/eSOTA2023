@@ -3084,7 +3084,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
+        "complete": "topic",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
