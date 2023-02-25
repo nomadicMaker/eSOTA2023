@@ -2843,8 +2843,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 430,
-        "y": 220,
+        "x": 550,
+        "y": 680,
         "wires": [
             [
                 "4f971f18e2f23183"
