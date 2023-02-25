@@ -2911,23 +2911,6 @@
         "wires": []
     },
     {
-        "id": "90fe8df37ddb0b57",
-        "type": "ui_text",
-        "z": "12c7debef331bf5d",
-        "group": "937754e7ea577683",
-        "order": 3,
-        "width": "4",
-        "height": "1",
-        "name": "Text on the screen",
-        "label": "CALL: ",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "className": "",
-        "x": 730,
-        "y": 440,
-        "wires": []
-    },
-    {
         "id": "af728c94ad8f7259",
         "type": "ui_button",
         "z": "12c7debef331bf5d",
@@ -2977,6 +2960,32 @@
         "y": 360,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "0540d768c9eb2522",
+        "type": "ui_text_input",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "label": "CALL: ",
+        "tooltip": "",
+        "group": "937754e7ea577683",
+        "order": 5,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 470,
+        "y": 560,
+        "wires": [
+            [
+                "4f971f18e2f23183"
+            ]
         ]
     }
 ]
