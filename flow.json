@@ -82,7 +82,7 @@
     {
         "id": "937754e7ea577683",
         "type": "ui_group",
-        "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P  ||   S2S: 4 || Chaser Pts: 23  ||  Qs: 12",
+        "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P  ||   S2S: 4 || Chaser Pts: 23  ||  Qs: 12  || 09:43 UTC",
         "tab": "7a6b7462852c07e3",
         "order": 1,
         "disp": true,
@@ -2880,7 +2880,7 @@
         "type": "debug",
         "z": "12c7debef331bf5d",
         "name": "debug 33",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2888,8 +2888,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
-        "y": 300,
+        "x": 860,
+        "y": 260,
         "wires": []
     },
     {
