@@ -82,7 +82,7 @@
     {
         "id": "937754e7ea577683",
         "type": "ui_group",
-        "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P     S2S: 4    Chaser Pts: 23   Qs: 12",
+        "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P  ||   S2S: 4 || Chaser Pts: 23  ||  Qs: 12",
         "tab": "7a6b7462852c07e3",
         "order": 1,
         "disp": true,
@@ -324,6 +324,16 @@
         "name": "spacer",
         "group": "937754e7ea577683",
         "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c4113105f0e036d7",
+        "type": "ui_spacer",
+        "z": "12c7debef331bf5d",
+        "name": "spacer",
+        "group": "937754e7ea577683",
+        "order": 1,
         "width": 1,
         "height": 1
     },
