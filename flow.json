@@ -370,6 +370,15 @@
         "height": 1
     },
     {
+        "id": "80fb6e02592e4587",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "7a6b7462852c07e3",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
         "id": "703f20ae0f95b5c1",
         "type": "http request",
         "z": "a6d97f83866efa29",
