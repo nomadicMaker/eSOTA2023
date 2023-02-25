@@ -2839,12 +2839,12 @@
         "bgcolor": "",
         "className": "",
         "icon": "",
-        "payload": "Call",
+        "payload": "LogQ",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 450,
-        "y": 280,
+        "x": 470,
+        "y": 400,
         "wires": [
             [
                 "4f971f18e2f23183"
@@ -2861,7 +2861,7 @@
         "width": "1",
         "height": "1",
         "passthru": false,
-        "label": "Band:",
+        "label": "Band",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -2871,8 +2871,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 450,
-        "y": 360,
+        "x": 350,
+        "y": 300,
         "wires": [
             [
                 "4f971f18e2f23183"
@@ -2947,6 +2947,58 @@
         "topicType": "msg",
         "x": 380,
         "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af728c94ad8f7259",
+        "type": "ui_button",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "group": "937754e7ea577683",
+        "order": 4,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "Call",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Next two hours",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "605e551106d13545",
+        "type": "ui_button",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "group": "937754e7ea577683",
+        "order": 4,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "Mode",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Next two hours",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 360,
         "wires": [
             []
         ]
