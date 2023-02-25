@@ -94,7 +94,7 @@
         "id": "3b3b1ea2e881c63a",
         "type": "ui_group",
         "name": "K3s 1",
-        "tab": "3402ec103460987c",
+        "tab": "",
         "order": 2,
         "disp": true,
         "width": 14,
@@ -105,14 +105,6 @@
         "id": "7a6b7462852c07e3",
         "type": "ui_tab",
         "name": "Chart House",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "3402ec103460987c",
-        "type": "ui_tab",
-        "name": "Radio Fun",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
