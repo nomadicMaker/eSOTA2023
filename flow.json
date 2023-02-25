@@ -3019,5 +3019,34 @@
         "x": 320,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "372c2bbaee5be19a",
+        "type": "inject",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "c25f86dbe6fba2d1"
+            ]
+        ]
     }
 ]
