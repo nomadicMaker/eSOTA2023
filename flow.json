@@ -3181,7 +3181,8 @@
         "y": 320,
         "wires": [
             [
-                "7496a89e31423ad4"
+                "7496a89e31423ad4",
+                "83435177e6d5472e"
             ]
         ]
     },
@@ -3228,6 +3229,41 @@
         "statusType": "auto",
         "x": 700,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "83435177e6d5472e",
+        "type": "file",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "filename": "/home/pi/sota.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "92f834db96834c0b"
+            ]
+        ]
+    },
+    {
+        "id": "92f834db96834c0b",
+        "type": "debug",
+        "z": "26510e2df6dde045",
+        "name": "debug 35",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 600,
         "wires": []
     }
 ]
