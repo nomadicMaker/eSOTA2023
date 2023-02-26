@@ -3450,29 +3450,65 @@
         "y": 180,
         "wires": [
             [
-                "9a8b64e80d3d8946"
+                "5a1041991e6548ef"
             ]
         ]
     },
     {
-        "id": "9a8b64e80d3d8946",
-        "type": "debug",
+        "id": "f60651a0661b91a8",
+        "type": "link in",
         "z": "eede5f8dff6cdb3d",
-        "name": "debug 37",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
+        "name": "Set to W6PNG Function",
+        "links": [],
+        "x": 155,
+        "y": 180,
+        "wires": [
+            [
+                "c7b416acc9a7c702"
+            ]
+        ]
+    },
+    {
+        "id": "5a1041991e6548ef",
+        "type": "link out",
+        "z": "eede5f8dff6cdb3d",
+        "name": "link out 1",
+        "mode": "return",
+        "links": [],
+        "x": 625,
         "y": 180,
         "wires": []
     },
     {
-        "id": "fcadabf18b30c456",
+        "id": "9b5b1059a1848d26",
+        "type": "comment",
+        "z": "eede5f8dff6cdb3d",
+        "name": "return to caller.....",
+        "info": "",
+        "x": 180,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "bf1c659feb500855",
+        "type": "link call",
+        "z": "eede5f8dff6cdb3d",
+        "name": "",
+        "links": [
+            "f60651a0661b91a8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 430,
+        "y": 520,
+        "wires": [
+            [
+                "43ad3461c163e7f7"
+            ]
+        ]
+    },
+    {
+        "id": "98f2c2ead601eeb0",
         "type": "inject",
         "z": "eede5f8dff6cdb3d",
         "name": "",
@@ -3492,12 +3528,28 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 180,
+        "x": 180,
+        "y": 520,
         "wires": [
             [
-                "c7b416acc9a7c702"
+                "bf1c659feb500855"
             ]
         ]
+    },
+    {
+        "id": "43ad3461c163e7f7",
+        "type": "debug",
+        "z": "eede5f8dff6cdb3d",
+        "name": "debug 37",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 520,
+        "wires": []
     }
 ]
