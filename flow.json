@@ -3205,7 +3205,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "SOTAQ",
-        "payload": "{\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0945\",\"freqKhz\":\"7165.5\",\"mode\":\"SSB\",\"otherCall\":\"WC6J\",\"otherSummit\":\"W6/NS-001\",\"comment\":\"S2S \"}",
+        "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0945\",\"freqKhz\":\"7165.5\",\"mode\":\"SSB\",\"otherCall\":\"WC6J\",\"otherSummit\":\"W6/NS-001\",\"comment\":\"S2S \"}",
         "payloadType": "json",
         "x": 150,
         "y": 280,
