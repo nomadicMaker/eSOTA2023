@@ -3566,8 +3566,8 @@
         "z": "eede5f8dff6cdb3d",
         "name": "Link to flow....",
         "info": "",
-        "x": 170,
-        "y": 440,
+        "x": 190,
+        "y": 480,
         "wires": []
     },
     {
@@ -3706,8 +3706,8 @@
         "z": "eede5f8dff6cdb3d",
         "name": "Link to different tab....",
         "info": "",
-        "x": 200,
-        "y": 800,
+        "x": 180,
+        "y": 860,
         "wires": []
     },
     {
