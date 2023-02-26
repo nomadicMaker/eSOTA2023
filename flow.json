@@ -80,6 +80,14 @@
         "env": []
     },
     {
+        "id": "26510e2df6dde045",
+        "type": "tab",
+        "label": "CSV Logs etc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "937754e7ea577683",
         "type": "ui_group",
         "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P  ||   S2S: 4 || Chaser Pts: 23  ||  Qs: 12  || 09:43 UTC",
@@ -370,16 +378,6 @@
         "name": "spacer",
         "group": "5b0751bf6a495fde",
         "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "423bc5b3a9f69990",
-        "type": "ui_spacer",
-        "z": "12c7debef331bf5d",
-        "name": "spacer",
-        "group": "80fb6e02592e4587",
-        "order": 2,
         "width": 1,
         "height": 1
     },
@@ -3163,5 +3161,73 @@
                 "75e2d3d21d3f8210"
             ]
         ]
+    },
+    {
+        "id": "f875f97d92d0799d",
+        "type": "csv",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 490,
+        "y": 340,
+        "wires": [
+            [
+                "7496a89e31423ad4"
+            ]
+        ]
+    },
+    {
+        "id": "b70e9607826f31f9",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SOTAQ",
+        "payload": "{\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0945\",\"freqKhz\":\"7165.5\",\"mode\":\"SSB\",\"otherCall\":\"WC6J\",\"comment\":\"S2S W6/NS-001\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "f875f97d92d0799d"
+            ]
+        ]
+    },
+    {
+        "id": "7496a89e31423ad4",
+        "type": "debug",
+        "z": "26510e2df6dde045",
+        "name": "debug 34",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 340,
+        "wires": []
     }
 ]
