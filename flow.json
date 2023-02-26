@@ -2930,7 +2930,7 @@
         "type": "ui_ui_control",
         "z": "12c7debef331bf5d",
         "name": "",
-        "events": "all",
+        "events": "change",
         "x": 680,
         "y": 300,
         "wires": [
