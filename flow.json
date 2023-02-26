@@ -3421,8 +3421,8 @@
         "scope": [
             "680c48c0c844d7de"
         ],
-        "x": 300,
-        "y": 620,
+        "x": 220,
+        "y": 560,
         "wires": [
             [
                 "27afb2cf3779d431"
@@ -3437,9 +3437,10 @@
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
+        "tostatus": true,
+        "complete": "p",
+        "targetType": "msg",
+        "statusVal": "p",
         "statusType": "auto",
         "x": 520,
         "y": 640,
