@@ -3190,7 +3190,7 @@
         "id": "b70e9607826f31f9",
         "type": "inject",
         "z": "26510e2df6dde045",
-        "name": "",
+        "name": "WC6J",
         "props": [
             {
                 "p": "payload"
@@ -3208,7 +3208,7 @@
         "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0945\",\"freqKhz\":\"7165.5\",\"mode\":\"SSB\",\"otherCall\":\"WC6J\",\"otherSummit\":\"W6/NS-001\",\"comment\":\"S2S \"}",
         "payloadType": "json",
         "x": 150,
-        "y": 280,
+        "y": 200,
         "wires": [
             [
                 "f875f97d92d0799d"
@@ -3265,5 +3265,92 @@
         "x": 880,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "3598f2c7f8a02cfd",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "KX6I",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SOTAQ",
+        "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0946\",\"freqKhz\":\"7165.5\",\"mode\":\"SSB\",\"otherCall\":\"KX6I\",\"otherSummit\":\"W6/SD-001\",\"comment\":\"S2S \"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "f875f97d92d0799d"
+            ]
+        ]
+    },
+    {
+        "id": "680c48c0c844d7de",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "M0SNA/P",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SOTAQ",
+        "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0947\",\"freqKhz\":\"14165.5\",\"mode\":\"SSB\",\"otherCall\":\"M0SNA/P\",\"otherSummit\":\"GM/SS-001\",\"comment\":\"S2S \"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "f875f97d92d0799d"
+            ]
+        ]
+    },
+    {
+        "id": "010e77f709d33182",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "N6JFD/P",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SOTAQ",
+        "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31-12-2022\",\"actUTC\":\"0950\",\"freqKhz\":\"21365.5\",\"mode\":\"SSB\",\"otherCall\":\"N6JFD/P\",\"otherSummit\":\"W6/NS-001\",\"comment\":\"S2S \"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "f875f97d92d0799d"
+            ]
+        ]
     }
 ]
