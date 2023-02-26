@@ -3238,7 +3238,7 @@
         "name": "",
         "filename": "/home/pi/sota.csv",
         "filenameType": "str",
-        "appendNewline": true,
+        "appendNewline": false,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
