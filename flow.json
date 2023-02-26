@@ -3458,7 +3458,7 @@
         "id": "f60651a0661b91a8",
         "type": "link in",
         "z": "eede5f8dff6cdb3d",
-        "name": "Set to W6PNG Function",
+        "name": "FUNCTION: Set to W6PNG",
         "links": [],
         "x": 155,
         "y": 180,
@@ -3499,8 +3499,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 430,
-        "y": 520,
+        "x": 440,
+        "y": 300,
         "wires": [
             [
                 "43ad3461c163e7f7"
@@ -3529,7 +3529,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 180,
-        "y": 520,
+        "y": 300,
         "wires": [
             [
                 "bf1c659feb500855"
@@ -3549,7 +3549,147 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 720,
-        "y": 520,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ddf5a971bfb3ae0c",
+        "type": "comment",
+        "z": "eede5f8dff6cdb3d",
+        "name": "Link to flow....",
+        "info": "",
+        "x": 170,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "fcc7900d8d20908d",
+        "type": "link in",
+        "z": "eede5f8dff6cdb3d",
+        "name": "link in 1",
+        "links": [
+            "dd2a9bf68215991a"
+        ],
+        "x": 195,
+        "y": 560,
+        "wires": [
+            [
+                "3cc19f52bf634c69"
+            ]
+        ]
+    },
+    {
+        "id": "8ebf06f67e023621",
+        "type": "link out",
+        "z": "eede5f8dff6cdb3d",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "643dec7c703fc705"
+        ],
+        "x": 575,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "3cc19f52bf634c69",
+        "type": "change",
+        "z": "eede5f8dff6cdb3d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Basic Link In and Link Out",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 560,
+        "wires": [
+            [
+                "8ebf06f67e023621"
+            ]
+        ]
+    },
+    {
+        "id": "f3ed1c977354f2c8",
+        "type": "debug",
+        "z": "eede5f8dff6cdb3d",
+        "name": "debug 38",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "643dec7c703fc705",
+        "type": "link in",
+        "z": "eede5f8dff6cdb3d",
+        "name": "link in 2",
+        "links": [
+            "8ebf06f67e023621"
+        ],
+        "x": 575,
+        "y": 700,
+        "wires": [
+            [
+                "f3ed1c977354f2c8"
+            ]
+        ]
+    },
+    {
+        "id": "a8f7397663cdaa1a",
+        "type": "inject",
+        "z": "eede5f8dff6cdb3d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 700,
+        "wires": [
+            [
+                "dd2a9bf68215991a"
+            ]
+        ]
+    },
+    {
+        "id": "dd2a9bf68215991a",
+        "type": "link out",
+        "z": "eede5f8dff6cdb3d",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "fcc7900d8d20908d"
+        ],
+        "x": 315,
+        "y": 740,
         "wires": []
     }
 ]
