@@ -3359,14 +3359,14 @@
         "z": "26510e2df6dde045",
         "name": "",
         "scope": [
-            "83435177e6d5472e"
+            "680c48c0c844d7de"
         ],
         "uncaught": false,
-        "x": 710,
+        "x": 510,
         "y": 180,
         "wires": [
             [
-                "1d8a6b7df12ced20"
+                "2491e553e8673a61"
             ]
         ]
     },
@@ -3385,5 +3385,32 @@
         "x": 900,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "2491e553e8673a61",
+        "type": "change",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "M0SNA/P UP!!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 180,
+        "wires": [
+            [
+                "1d8a6b7df12ced20"
+            ]
+        ]
     }
 ]
