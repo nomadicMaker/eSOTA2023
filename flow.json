@@ -2929,9 +2929,9 @@
         "id": "4f971f18e2f23183",
         "type": "ui_ui_control",
         "z": "12c7debef331bf5d",
-        "name": "",
+        "name": "msg.payload",
         "events": "change",
-        "x": 680,
+        "x": 690,
         "y": 300,
         "wires": [
             [
