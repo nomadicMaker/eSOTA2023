@@ -409,7 +409,7 @@
         "tab": "5d28162245cadc89",
         "order": 1,
         "disp": true,
-        "width": "15",
+        "width": "20",
         "collapse": false,
         "className": ""
     },
@@ -3556,8 +3556,8 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 470,
-        "y": 520,
+        "x": 550,
+        "y": 540,
         "wires": []
     },
     {
@@ -3593,14 +3593,14 @@
         "id": "02ac5b1ec9c62bf7",
         "type": "function",
         "z": "26510e2df6dde045",
-        "name": "function 4",
+        "name": "One QSO pre canned",
         "func": "msg.payload = [\n    {\n        \"version\": \"V2\",\n        \"myCall\": \"W6PNG\",\n        \"mySummit\": \"W6/SC-369\",\n        \"actDate\": \"31-12-2022\",\n        \"actUTC\": \"0950\",\n        \"freqKhz\": \"21.365Mhz\",\n        \"mode\": \"SSB\",\n        \"otherCall\": \"N6JFD/P\",\n        \"otherSummit\": \"W6/NS-001\",\n        \"comment\": \"S2S \"\n    }\n\n]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 360,
         "y": 480,
         "wires": [
             [
