@@ -3594,7 +3594,7 @@
         "type": "function",
         "z": "26510e2df6dde045",
         "name": "One QSO pre canned",
-        "func": "msg.payload = [\n    {\n        \"version\": \"V2\",\n        \"myCall\": \"W6PNG\",\n        \"mySummit\": \"W6/SC-369\",\n        \"actDate\": \"31-12-2022\",\n        \"actUTC\": \"0950\",\n        \"freqKhz\": \"21.365Mhz\",\n        \"mode\": \"SSB\",\n        \"otherCall\": \"N6JFD/P\",\n        \"otherSummit\": \"W6/NS-001\",\n        \"comment\": \"S2S \"\n    }\n\n]\nreturn msg;",
+        "func": "msg.payload = [\n    {\n        \"version\": \"V2\",\n        \"myCall\": \"N6PNG\",\n        \"mySummit\": \"W6/SC-369\",\n        \"actDate\": \"31-12-2022\",\n        \"actUTC\": \"0950\",\n        \"freqKhz\": \"21.365Mhz\",\n        \"mode\": \"SSB\",\n        \"otherCall\": \"N6JFD/P\",\n        \"otherSummit\": \"W6/NS-001\",\n        \"comment\": \"S2S \"\n    }\n\n]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
