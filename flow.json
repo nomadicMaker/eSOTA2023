@@ -3417,8 +3417,7 @@
         "y": 380,
         "wires": [
             [
-                "f875f97d92d0799d",
-                "6cf2110436dd0cea"
+                "f875f97d92d0799d"
             ]
         ]
     },
@@ -3554,43 +3553,60 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "columns": [
-            {
-                "field": "",
-                "title": "UTC",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "payload.myCall",
-                "title": "Call",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "",
-                "title": "Band",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
+        "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 430,
-        "y": 420,
+        "x": 470,
+        "y": 520,
         "wires": []
+    },
+    {
+        "id": "d78773c2d54dfa4c",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "02ac5b1ec9c62bf7"
+            ]
+        ]
+    },
+    {
+        "id": "02ac5b1ec9c62bf7",
+        "type": "function",
+        "z": "26510e2df6dde045",
+        "name": "function 4",
+        "func": "msg.payload = [\n    {\n        \"version\": \"V2\",\n        \"myCall\": \"W6PNG\",\n        \"mySummit\": \"W6/SC-369\",\n        \"actDate\": \"31-12-2022\",\n        \"actUTC\": \"0950\",\n        \"freqKhz\": \"21.365Mhz\",\n        \"mode\": \"SSB\",\n        \"otherCall\": \"N6JFD/P\",\n        \"otherSummit\": \"W6/NS-001\",\n        \"comment\": \"S2S \"\n    }\n\n]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "6cf2110436dd0cea"
+            ]
+        ]
     },
     {
         "id": "c7b416acc9a7c702",
