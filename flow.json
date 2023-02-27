@@ -3556,8 +3556,28 @@
         "height": 0,
         "columns": [
             {
-                "field": "kk",
-                "title": "HH",
+                "field": "",
+                "title": "UTC",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "",
+                "title": "Call",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "",
+                "title": "Band",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
