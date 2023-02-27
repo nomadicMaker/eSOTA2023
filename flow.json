@@ -3480,18 +3480,69 @@
         ]
     },
     {
-        "id": "475791860ed2a4b9",
-        "type": "link call",
+        "id": "ddbfc66cd4b451d2",
+        "type": "file in",
         "z": "26510e2df6dde045",
         "name": "",
-        "links": [],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 270,
-        "y": 700,
+        "filename": "/home/pi/sota.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 350,
+        "y": 620,
         "wires": [
-            []
+            [
+                "ae039d409dd7c65c"
+            ]
         ]
+    },
+    {
+        "id": "5b43b4e908faaef1",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "ddbfc66cd4b451d2"
+            ]
+        ]
+    },
+    {
+        "id": "ae039d409dd7c65c",
+        "type": "debug",
+        "z": "26510e2df6dde045",
+        "name": "debug 41",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 660,
+        "wires": []
     },
     {
         "id": "c7b416acc9a7c702",
