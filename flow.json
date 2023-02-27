@@ -3566,7 +3566,7 @@
                 }
             },
             {
-                "field": "",
+                "field": "myCall",
                 "title": "Call",
                 "width": "",
                 "align": "left",
