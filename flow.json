@@ -3554,7 +3554,18 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "columns": [],
+        "columns": [
+            {
+                "field": "kk",
+                "title": "HH",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
         "outputs": 0,
         "cts": false,
         "x": 430,
