@@ -3488,11 +3488,11 @@
         "name": "",
         "filename": "/home/pi/sota.csv",
         "filenameType": "str",
-        "format": "lines",
+        "format": "stream",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "allProps": true,
+        "allProps": false,
         "x": 350,
         "y": 600,
         "wires": [
