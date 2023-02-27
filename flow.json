@@ -3566,7 +3566,7 @@
                 }
             },
             {
-                "field": "myCall",
+                "field": "payload.myCall",
                 "title": "Call",
                 "width": "",
                 "align": "left",
