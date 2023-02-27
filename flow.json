@@ -3493,8 +3493,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": true,
-        "x": 350,
-        "y": 600,
+        "x": 430,
+        "y": 740,
         "wires": [
             []
         ]
@@ -3520,8 +3520,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 540,
+        "x": 160,
+        "y": 700,
         "wires": [
             [
                 "ddbfc66cd4b451d2"
@@ -3556,8 +3556,8 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 550,
-        "y": 540,
+        "x": 590,
+        "y": 580,
         "wires": []
     },
     {
@@ -3600,8 +3600,56 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 480,
+        "x": 380,
+        "y": 520,
+        "wires": [
+            [
+                "6cf2110436dd0cea"
+            ]
+        ]
+    },
+    {
+        "id": "392d143018998999",
+        "type": "inject",
+        "z": "26510e2df6dde045",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            [
+                "fb674f68e5fb70fa"
+            ]
+        ]
+    },
+    {
+        "id": "fb674f68e5fb70fa",
+        "type": "function",
+        "z": "26510e2df6dde045",
+        "name": "Add QSO pre canned",
+        "func": "msg.payload = \n\n{\n    command: \"addRow\",\n    arguments: [\n    {\n        \"version\": \"V2\",\n        \"myCall\": \"N6PNG\",\n        \"mySummit\": \"W6/SC-369\",\n        \"actDate\": \"31-12-2022\",\n        \"actUTC\": \"0950\",\n        \"freqKhz\": \"21.365Mhz\",\n        \"mode\": \"SSB\",\n        \"otherCall\": \"N6JFD/P\",\n        \"otherSummit\": \"W6/NS-001\",\n        \"comment\": \"S2S \"\n    },\n        true\n    ],\n    returnPromise: true\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 600,
         "wires": [
             [
                 "6cf2110436dd0cea"
