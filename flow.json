@@ -3127,7 +3127,7 @@
         "format": "{{msg.opname}}",
         "layout": "row-spread",
         "className": "",
-        "x": 480,
+        "x": 560,
         "y": 760,
         "wires": []
     },
@@ -3275,7 +3275,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "qData to JSON in payload",
-        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = {\n    command: \"addData\",\n        arguments: [\n            {\n                \"callSign\": callSign,\n                \"opName\": opName,\n                \"opSummit\": opSummit,\n                \"qBand\": qBand,\n                \"qMode\": qMode,\n                \"qUTC\": qUTC\n            },\n            true\n        ],\n        returnPromise: true\n}\n\nreturn msg;",
+        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = {\n    command: \"addRow\",\n        arguments: [\n            {\n                \"callSign\": 'WA1w',\n                \"opName\": 'George',\n                \"opSummit\": 'W1/GA-999',\n                \"qBand\": '21Mhz',\n                \"qMode\": 'SSB',\n                \"qUTC\": 123456\n            },\n            true\n        ],\n        returnPromise: true\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3446,6 +3446,52 @@
         "x": 780,
         "y": 720,
         "wires": []
+    },
+    {
+        "id": "1b574f6b94085dbb",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "qData to JSON in payload",
+        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = {\n    command: \"addData\",\n        arguments: [\n            {\n                \"callSign\": callSign,\n                \"opName\": opName,\n                \"opSummit\": opSummit,\n                \"qBand\": qBand,\n                \"qMode\": qMode,\n                \"qUTC\": qUTC\n            },\n            true\n        ],\n        returnPromise: true\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bea04c82ee38cff4",
+        "type": "inject",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "59414ac75e624ea2"
+            ]
+        ]
     },
     {
         "id": "f875f97d92d0799d",
