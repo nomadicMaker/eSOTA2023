@@ -3241,11 +3241,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
+        "x": 390,
         "y": 100,
         "wires": [
             [
-                "f765388ecd978607"
+                "59414ac75e624ea2"
             ]
         ]
     },
@@ -3290,9 +3290,28 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
-        "y": 100,
+        "x": 760,
+        "y": 180,
         "wires": []
+    },
+    {
+        "id": "59414ac75e624ea2",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "qData to JSON in payload",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 100,
+        "wires": [
+            [
+                "f765388ecd978607"
+            ]
+        ]
     },
     {
         "id": "f875f97d92d0799d",
