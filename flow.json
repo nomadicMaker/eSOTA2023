@@ -3358,7 +3358,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "qSummit",
+                "p": "opSummit",
                 "pt": "flow",
                 "to": "payload",
                 "tot": "msg"
