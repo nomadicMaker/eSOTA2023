@@ -3275,7 +3275,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "qData to JSON in payload",
-        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = [{\n    \"callSign\" : callSign,\n    \"opName\" : opName,\n    \"opSummit\" : opSummit,\n    \"qBand\" : qBand,\n    \"qMode\" : qMode,\n    \"qUTC\" : qUTC\n}];\n\nreturn msg;",
+        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = {\n    command: \"addRow\",\n        arguments: [\n            {\n                \"callSign\": callSign,\n                \"opName\": opName,\n                \"opSummit\": opSummit,\n                \"qBand\": qBand,\n                \"qMode\": qMode,\n                \"qUTC\": qUTC\n            },\n            true\n        ],\n            returnPromise: true\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
