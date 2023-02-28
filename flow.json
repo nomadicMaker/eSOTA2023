@@ -3282,12 +3282,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 680,
+        "x": 590,
+        "y": 640,
         "wires": [
             [
-                "8899c8c7d6baa47f",
-                "a378541b1942e9b8"
+                "0aa158dda57c14aa"
             ]
         ]
     },
@@ -3433,19 +3432,19 @@
         "wires": []
     },
     {
-        "id": "a378541b1942e9b8",
-        "type": "debug",
+        "id": "0aa158dda57c14aa",
+        "type": "ui_table",
         "z": "12c7debef331bf5d",
-        "name": "debug 44",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 760,
+        "group": "5b0751bf6a495fde",
+        "name": "",
+        "order": 1,
+        "width": "20",
+        "height": "12",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 810,
+        "y": 600,
         "wires": []
     },
     {
