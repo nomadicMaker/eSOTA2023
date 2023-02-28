@@ -3023,7 +3023,7 @@
         "height": 1,
         "passthru": true,
         "mode": "text",
-        "delay": 300,
+        "delay": "0",
         "topic": "callSign",
         "sendOnBlur": true,
         "className": "",
@@ -3032,7 +3032,7 @@
         "y": 440,
         "wires": [
             [
-                "6b278cc40fddc06b"
+                "c0e156d2436f7c72"
             ]
         ]
     },
@@ -3320,7 +3320,7 @@
         "to": "",
         "reg": false,
         "x": 300,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "c0e156d2436f7c72"
