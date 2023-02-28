@@ -3336,7 +3336,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "callSign",
+        "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
