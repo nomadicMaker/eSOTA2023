@@ -3024,7 +3024,7 @@
         "passthru": true,
         "mode": "text",
         "delay": "0",
-        "topic": "callSign",
+        "topic": "payload",
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
@@ -3310,7 +3310,7 @@
                 "t": "set",
                 "p": "callSign",
                 "pt": "flow",
-                "to": "callSign",
+                "to": "payload",
                 "tot": "msg"
             }
         ],
