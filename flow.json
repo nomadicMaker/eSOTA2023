@@ -3299,7 +3299,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "qData to JSON in payload",
-        "func": "\nreturn msg;",
+        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\n\nmsg.payload = {\n    \"callSign\" : callSign,\n    \"opName\" : opName,\n    \"opSummit\" : opSummit,\n    \"qBand\" : qBand,\n    \"qMode\" : qMode\n};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
