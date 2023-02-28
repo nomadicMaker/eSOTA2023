@@ -2985,25 +2985,11 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 580,
-        "y": 700,
+        "x": 140,
+        "y": 680,
         "wires": [
             [
-                "4f971f18e2f23183"
-            ]
-        ]
-    },
-    {
-        "id": "4f971f18e2f23183",
-        "type": "ui_ui_control",
-        "z": "12c7debef331bf5d",
-        "name": "msg.payload",
-        "events": "change",
-        "x": 690,
-        "y": 300,
-        "wires": [
-            [
-                "a868717944349d9e"
+                "0231f1f14b5c6800"
             ]
         ]
     },
@@ -3020,8 +3006,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 260,
+        "x": 820,
+        "y": 420,
         "wires": []
     },
     {
@@ -3038,16 +3024,14 @@
         "passthru": true,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "callSign",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 170,
-        "y": 380,
+        "topicType": "flow",
+        "x": 130,
+        "y": 440,
         "wires": [
-            [
-                "b341981d25c5cf32"
-            ]
+            []
         ]
     },
     {
@@ -3064,16 +3048,14 @@
         "passthru": true,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "qBand",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 340,
+        "topicType": "flow",
+        "x": 140,
         "y": 560,
         "wires": [
-            [
-                "4f971f18e2f23183"
-            ]
+            []
         ]
     },
     {
@@ -3090,16 +3072,14 @@
         "passthru": true,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "qMode",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 400,
+        "topicType": "flow",
+        "x": 140,
         "y": 620,
         "wires": [
-            [
-                "4f971f18e2f23183"
-            ]
+            []
         ]
     },
     {
@@ -3116,16 +3096,14 @@
         "passthru": true,
         "mode": "text",
         "delay": 300,
-        "topic": "topic",
+        "topic": "opSummit",
         "sendOnBlur": true,
         "className": "",
-        "topicType": "msg",
-        "x": 400,
-        "y": 680,
+        "topicType": "flow",
+        "x": 140,
+        "y": 500,
         "wires": [
-            [
-                "4f971f18e2f23183"
-            ]
+            []
         ]
     },
     {
@@ -3158,8 +3136,8 @@
         "format": "{{msg.opname}}",
         "layout": "row-spread",
         "className": "",
-        "x": 720,
-        "y": 440,
+        "x": 500,
+        "y": 700,
         "wires": []
     },
     {
@@ -3211,31 +3189,11 @@
         ]
     },
     {
-        "id": "b341981d25c5cf32",
-        "type": "function",
-        "z": "12c7debef331bf5d",
-        "name": "function 2",
-        "func": "msg.opname = 'Mark';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 340,
-        "wires": [
-            [
-                "4f971f18e2f23183",
-                "75e2d3d21d3f8210"
-            ]
-        ]
-    },
-    {
         "id": "f62becd6087bf41d",
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Initialize logging system",
-        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\n\nreturn msg;",
+        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3244,9 +3202,7 @@
         "x": 390,
         "y": 100,
         "wires": [
-            [
-                "59414ac75e624ea2"
-            ]
+            []
         ]
     },
     {
@@ -3295,21 +3251,48 @@
         "wires": []
     },
     {
+        "id": "0231f1f14b5c6800",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "qUTC",
+                "pt": "flow",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 580,
+        "wires": [
+            [
+                "59414ac75e624ea2"
+            ]
+        ]
+    },
+    {
         "id": "59414ac75e624ea2",
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "qData to JSON in payload",
-        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\n\nmsg.payload = {\n    \"callSign\" : callSign,\n    \"opName\" : opName,\n    \"opSummit\" : opSummit,\n    \"qBand\" : qBand,\n    \"qMode\" : qMode\n};\n\nreturn msg;",
+        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = {\n    \"callSign\" : callSign,\n    \"opName\" : opName,\n    \"opSummit\" : opSummit,\n    \"qBand\" : qBand,\n    \"qMode\" : qMode,\n    \"qUTC\" : qUTC\n};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 100,
+        "x": 550,
+        "y": 420,
         "wires": [
             [
-                "f765388ecd978607"
+                "a868717944349d9e"
             ]
         ]
     },
