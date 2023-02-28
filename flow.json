@@ -3184,7 +3184,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Initialize logging system",
-        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\nreturn msg;",
+        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\n\n    msg.payload = [{\n        \"callSign\": 'M0SNA/A',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'GM/AA-999',\n        \"qBand\": '1240Mhz',\n        \"qMode\": 'DATA',\n        \"qUTC\": '12345678'\n    }];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3194,7 +3194,8 @@
         "y": 100,
         "wires": [
             [
-                "f765388ecd978607"
+                "f765388ecd978607",
+                "8899c8c7d6baa47f"
             ]
         ]
     },
@@ -3329,7 +3330,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
+        "x": 560,
         "y": 540,
         "wires": []
     },
@@ -3426,8 +3427,8 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 850,
-        "y": 680,
+        "x": 810,
+        "y": 520,
         "wires": []
     },
     {
