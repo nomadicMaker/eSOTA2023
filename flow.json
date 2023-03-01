@@ -3176,16 +3176,18 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Initialize logging system",
-        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\n\n    msg.payload = [{\n        \"callSign\": 'M0SNA/A',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'GM/AA-999',\n        \"qBand\": '1240Mhz',\n        \"qMode\": 'DATA',\n        \"qUTC\": '12345678'\n    },\n    {\n        \"callSign\": 'M0SNA/M',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'G/SB-999',\n        \"qBand\": '7Mhz',\n        \"qMode\": 'SSB',\n        \"qUTC\": '12348678'\n    }];\n\nreturn msg;",
+        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\n\n    msg.payload = [{\n        \"callSign\": flow.get('callSign'),\n        \"opName\": 'pNicki',\n        \"opSummit\": 'GM/AA-999',\n        \"qBand\": '1240Mhz',\n        \"qMode\": 'DATA',\n        \"qUTC\": '12345678'\n    },\n    {\n        \"callSign\": 'M0SNA/M',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'G/SB-999',\n        \"qBand\": '7Mhz',\n        \"qMode\": 'SSB',\n        \"qUTC\": '12348678'\n    }];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 100,
+        "y": 80,
         "wires": [
-            []
+            [
+                "f765388ecd978607"
+            ]
         ]
     },
     {
@@ -3213,7 +3215,7 @@
         "y": 100,
         "wires": [
             [
-                "31175a5d0f54523b"
+                "f62becd6087bf41d"
             ]
         ]
     },
@@ -3265,15 +3267,15 @@
         "id": "59414ac75e624ea2",
         "type": "function",
         "z": "12c7debef331bf5d",
-        "name": "qData to JSON in payload",
-        "func": "var callSign = flow.get('callSign');\nvar opName = flow.get('opName');\nvar opSummit = flow.get('opSummit');\nvar qBand = flow.get('qBand');\nvar qMode = flow.get('qMode');\nvar qUTC = flow.get('qUTC');\n\nmsg.payload = [\n            {\n                \"callSign\": callSign,\n                \"opName\": 'George',\n                \"opSummit\": 'W1/GA-999',\n                \"qBand\": '7Mhz',\n                \"qMode\": 'SSB',\n                \"qUTC\": 123456\n            }]\n\nreturn msg;",
+        "name": "qData to JSON in payload Fix + CALL",
+        "func": "//var callSign = flow.get('callSign');\n//var opName = flow.get('opName');\n//var opSummit = flow.get('opSummit');\n//var qBand = flow.get('qBand');\n//var qMode = flow.get('qMode');\n//var qUTC = flow.get('qUTC');\n\nmsg.payload = [\n            {\n        \"callSign\": flow.get('callSign'),\n                \"opName\": 'George',\n                \"opSummit\": 'W1/GA-999',\n                \"qBand\": '7Mhz',\n                \"qMode\": 'SSB',\n                \"qUTC\": 123456\n            }]\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 800,
+        "x": 390,
+        "y": 360,
         "wires": [
             []
         ]
@@ -3509,13 +3511,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 140,
+        "x": 550,
+        "y": 400,
         "wires": [
-            [
-                "f765388ecd978607",
-                "6cf2110436dd0cea"
-            ]
+            []
         ]
     },
     {
