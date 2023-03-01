@@ -424,6 +424,17 @@
         "height": 1
     },
     {
+        "id": "96497aade1213555",
+        "type": "ui_group",
+        "name": "Event Logs",
+        "tab": "5d28162245cadc89",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "0b6304b6d7c9e265",
         "type": "function",
         "z": "e699a6c8314d41b4",
@@ -3425,7 +3436,8 @@
         "y": 620,
         "wires": [
             [
-                "b2cbe28750d4be9a"
+                "b2cbe28750d4be9a",
+                "80d728d0c089bd5e"
             ]
         ]
     },
@@ -3488,6 +3500,22 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "80d728d0c089bd5e",
+        "type": "ui_table",
+        "z": "12c7debef331bf5d",
+        "group": "96497aade1213555",
+        "name": "Q Logs",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 760,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "f875f97d92d0799d",
