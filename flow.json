@@ -3187,7 +3187,7 @@
         "wires": [
             [
                 "f765388ecd978607",
-                "44333c8a2dc0cb48"
+                "6cf2110436dd0cea"
             ]
         ]
     },
@@ -3470,7 +3470,7 @@
         ]
     },
     {
-        "id": "44333c8a2dc0cb48",
+        "id": "6cf2110436dd0cea",
         "type": "ui_table",
         "z": "12c7debef331bf5d",
         "group": "5b0751bf6a495fde",
@@ -3481,8 +3481,8 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 760,
-        "y": 420,
+        "x": 780,
+        "y": 440,
         "wires": []
     },
     {
@@ -3800,22 +3800,6 @@
         "wires": []
     },
     {
-        "id": "6cf2110436dd0cea",
-        "type": "ui_table",
-        "z": "26510e2df6dde045",
-        "group": "5b0751bf6a495fde",
-        "name": "Q Table",
-        "order": 1,
-        "width": "18",
-        "height": "8",
-        "columns": [],
-        "outputs": 0,
-        "cts": false,
-        "x": 680,
-        "y": 580,
-        "wires": []
-    },
-    {
         "id": "d78773c2d54dfa4c",
         "type": "inject",
         "z": "26510e2df6dde045",
@@ -3858,9 +3842,7 @@
         "x": 380,
         "y": 520,
         "wires": [
-            [
-                "6cf2110436dd0cea"
-            ]
+            []
         ]
     },
     {
@@ -3906,9 +3888,7 @@
         "x": 380,
         "y": 600,
         "wires": [
-            [
-                "6cf2110436dd0cea"
-            ]
+            []
         ]
     },
     {
