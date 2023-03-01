@@ -3533,7 +3533,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "SOTAQ",
-        "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31/12/2022\",\"actUTC\":\"09:45\",\"freqMhz\":\"7.005Mhz\",\"mode\":\"SSB\",\"otherCall\":\"WC6J\",\"otherSummit\":\"W6/NS-001\",\"comment\":\"S2S \"}",
+        "payload": "{\"version\":\"V2\",\"myCall\":\"W6PNG\",\"mySummit\":\"W6/SC-369\",\"actDate\":\"31/12/2022\",\"actUTC\":\"09:45\",\"freqMhz\":\"7.0Mhz\",\"mode\":\"SSB\",\"otherCall\":\"WC6J\",\"otherSummit\":\"W6/NS-001\",\"comment\":\"S2S \"}",
         "payloadType": "json",
         "x": 150,
         "y": 200,
