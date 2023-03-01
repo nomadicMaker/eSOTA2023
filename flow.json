@@ -3176,7 +3176,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Initialize logging system",
-        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\n\n    msg.payload = [{\n        \"callSign\": 'M0SNA/A',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'GM/AA-999',\n        \"qBand\": '1240Mhz',\n        \"qMode\": 'DATA',\n        \"qUTC\": '12345678'\n    }];\n\nreturn msg;",
+        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\n\n    msg.payload = [{\n        \"callSign\": 'M0SNA/A',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'GM/AA-999',\n        \"qBand\": '1240Mhz',\n        \"qMode\": 'DATA',\n        \"qUTC\": '12345678'\n    },\n    {\n        \"callSign\": 'M0SNA/M',\n        \"opName\": 'pNicki',\n        \"opSummit\": 'G/SB-999',\n        \"qBand\": '7Mhz',\n        \"qMode\": 'SSB',\n        \"qUTC\": '12348678'\n    }];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
