@@ -3176,7 +3176,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Initialize logging system dataLog",
-        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','pNicki');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\nvar tableData = [];\nflow.set(\"savedLogs\", tableData);\n\nmsg.payload = tableData;\n\nreturn msg;",
+        "func": "flow.set('callSign','MOSNA/A');\nflow.set('opName','');\nflow.set('opSummit','GM/AA-999');\nflow.set('qBand','1240Mhz');\nflow.set('qMode','AM');\nflow.set('qUTC','99:99:99');\n\nvar tableData = [];\nflow.set(\"savedLogs\", tableData);\n\nmsg.payload = tableData;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
