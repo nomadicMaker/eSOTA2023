@@ -3185,10 +3185,7 @@
         "x": 390,
         "y": 100,
         "wires": [
-            [
-                "f765388ecd978607",
-                "6cf2110436dd0cea"
-            ]
+            []
         ]
     },
     {
@@ -3216,7 +3213,7 @@
         "y": 100,
         "wires": [
             [
-                "f62becd6087bf41d"
+                "31175a5d0f54523b"
             ]
         ]
     },
@@ -3500,6 +3497,26 @@
         "x": 800,
         "y": 680,
         "wires": []
+    },
+    {
+        "id": "31175a5d0f54523b",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "qData to JSON in payload",
+        "func": "//var callSign = flow.get('callSign');\n//var opName = flow.get('opName');\n//var opSummit = flow.get('opSummit');\n//var qBand = flow.get('qBand');\n//var qMode = flow.get('qMode');\n//var qUTC = flow.get('qUTC');\n\nmsg.payload = {\ncommand: \"addRow\",\narguments: [\n{\n\"callSign\": flow.get('callSign'),\n\"opName\": flow.get('opName'),\n\"opSummit\": flow.get('opSummit'),\n\"qBand\": flow.get('qBand'),\n\"qMode\": flow.get('qMode'),\n\"qUTC\": '34'\n},\ntrue,2\n],\nreturnPromise: true\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "f765388ecd978607",
+                "6cf2110436dd0cea"
+            ]
+        ]
     },
     {
         "id": "f875f97d92d0799d",
