@@ -106,7 +106,7 @@
     {
         "id": "e6aff00207da0509",
         "type": "tab",
-        "label": "ADI Experiments that DONT belong here",
+        "label": "Cabrillo LOG Experiments that DONT belong here",
         "disabled": false,
         "info": "",
         "env": []
@@ -4400,8 +4400,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 270,
-        "y": 320,
+        "x": 390,
+        "y": 340,
         "wires": [
             [
                 "b5f09b2231b93494"
@@ -4433,7 +4433,7 @@
         "y": 160,
         "wires": [
             [
-                "e4612828b1cfb472"
+                "fdd6acbb7e026eda"
             ]
         ]
     },
@@ -4441,18 +4441,38 @@
         "id": "b5f09b2231b93494",
         "type": "function",
         "z": "e6aff00207da0509",
-        "name": "function 4",
+        "name": "Cabrillo Log line to JSON",
         "func": "msg.payload = {\n    'freq' : msg.payload.col2,\n    'mode' : msg.payload.col3,\n    'date' : msg.payload.col4,\n    'utc' : msg.payload.col5,\n    'callSign' : msg.payload.col22,\n    'callPower' : msg.payload.col32\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 220,
+        "x": 550,
+        "y": 240,
         "wires": [
             [
                 "fc614cd108d13b00"
+            ]
+        ]
+    },
+    {
+        "id": "fdd6acbb7e026eda",
+        "type": "file in",
+        "z": "e6aff00207da0509",
+        "name": "ARRL SSB DX Logs",
+        "filename": "/home/pi/arrldxssb2023.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "e4612828b1cfb472"
             ]
         ]
     }
