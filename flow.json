@@ -4394,7 +4394,7 @@
         "y": 160,
         "wires": [
             [
-                "fc614cd108d13b00"
+                "337726c8129e91e9"
             ]
         ]
     },
@@ -4410,8 +4410,24 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
+        "x": 620,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "337726c8129e91e9",
+        "type": "xml",
+        "z": "e6aff00207da0509",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "fc614cd108d13b00"
+            ]
+        ]
     }
 ]
