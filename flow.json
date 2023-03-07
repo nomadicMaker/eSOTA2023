@@ -104,6 +104,14 @@
         "env": []
     },
     {
+        "id": "e6aff00207da0509",
+        "type": "tab",
+        "label": "ADI Experiments that DONT belong here",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e699a6c8314d41b4",
         "type": "subflow",
         "name": "Radio Subflow",
@@ -4359,6 +4367,51 @@
         ],
         "x": 605,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "06e99d70c41a2060",
+        "type": "inject",
+        "z": "e6aff00207da0509",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "<CALL:6>XE1ZTW <QSO_DATE:8>20230304 <TIME_ON:6>000334 <TIME_OFF:6>000334 <BAND:3>10M <STATION_CALLSIGN:5>W6PNG <FREQ:8>28.53300 <CONTEST_ID:11>ARRL-DX-SSB <FREQ_RX:8>28.53300 <MODE:3>SSB <RST_RCVD:2>59 <RST_SENT:2>59 <RX_PWR:3>100 <OPERATOR:5>W6PNG <CQZ:1>6 <STX:1>1 <APP_N1MM_POINTS:1>3 <APP_N1MM_RADIO_NR:1>1 <APP_N1MM_CONTINENT:2>NA <APP_N1MM_RUN1RUN2:1>1 <APP_N1MM_RADIOINTERFACED:1>1 <APP_N1MM_ISORIGINAL:4>True <APP_N1MM_NETBIOSNAME:6>SIRIUS <APP_N1MM_ISRUNQSO:1>0 <PFX:3>XE1 <APP_N1MM_MULT1:1>1 <APP_N1MM_MULT2:1>0 <APP_N1MM_MULT3:1>0 <APP_N1MM_ID:32>d36f6e9029444a39bfe3d83d4ebf5a29 <APP_N1MM_CLAIMEDQSO:1>1 <EOR>",
+        "payloadType": "str",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "fc614cd108d13b00"
+            ]
+        ]
+    },
+    {
+        "id": "fc614cd108d13b00",
+        "type": "debug",
+        "z": "e6aff00207da0509",
+        "name": "debug 46",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 160,
         "wires": []
     }
 ]
