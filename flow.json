@@ -4518,7 +4518,7 @@
         "type": "debug",
         "z": "f083648b1148f65c",
         "name": "debug 47",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4541,8 +4541,26 @@
         "y": 280,
         "wires": [
             [
-                "eafee9bab4ddcd0f"
+                "eafee9bab4ddcd0f",
+                "6174a08e8b97757f"
             ]
         ]
+    },
+    {
+        "id": "6174a08e8b97757f",
+        "type": "debug",
+        "z": "f083648b1148f65c",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.spot.app[0]",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 360,
+        "wires": []
     }
 ]
