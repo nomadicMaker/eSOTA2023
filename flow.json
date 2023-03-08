@@ -4555,7 +4555,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload.spot.app[0]",
+        "complete": "payload.spot.app",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
