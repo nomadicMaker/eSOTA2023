@@ -112,6 +112,14 @@
         "env": []
     },
     {
+        "id": "f083648b1148f65c",
+        "type": "tab",
+        "label": "N1mm Spot XML",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e699a6c8314d41b4",
         "type": "subflow",
         "name": "Radio Subflow",
@@ -4473,6 +4481,67 @@
         "wires": [
             [
                 "e4612828b1cfb472"
+            ]
+        ]
+    },
+    {
+        "id": "c57cf5ee5a88f0ff",
+        "type": "inject",
+        "z": "f083648b1148f65c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "<?xml version=\"1.0\" encoding=\"utf-8\"?> <spot>     <app>N1MM</app>     <StationName>CONTEST-PC</StationName>     <dxcall>AL3CDE</dxcall>     <frequency>7061.2</frequency>     <spottercall>K2PO/7-#</spottercall>     <timestamp>2O20-Ol-l7 17:19:37</timestamp>     <action>add</action>     <mode>CW</mode>     <comment>CW 9 DB 18 WPM CQ AK </comment>     <status>single mult</status>     <statuslist>single mult</statuslist> </spot>",
+        "payloadType": "str",
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "f9c6d9d640a4b080"
+            ]
+        ]
+    },
+    {
+        "id": "eafee9bab4ddcd0f",
+        "type": "debug",
+        "z": "f083648b1148f65c",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f9c6d9d640a4b080",
+        "type": "xml",
+        "z": "f083648b1148f65c",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "eafee9bab4ddcd0f"
             ]
         ]
     }
