@@ -2678,9 +2678,9 @@
         "type": "worldmap in",
         "z": "b2ea45338eb51cf5",
         "name": "",
-        "path": "/worldmap",
+        "path": "/gld",
         "events": "connect,disconnect,point,layer,bounds,files,draw,other",
-        "x": 1160,
+        "x": 1150,
         "y": 980,
         "wires": [
             [
