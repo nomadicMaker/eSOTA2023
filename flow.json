@@ -2589,7 +2589,7 @@
         "type": "function",
         "z": "b2ea45338eb51cf5",
         "name": "Summit to /MAP pars",
-        "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n    \"name\": \"!\",\n    \"lat\": 99.99,\n    \"lon\": -99.99,\n    \"label\" : \"Hi\",\n    \"layer\" : \"GLD\",\n //   \"radius\": \"15500\",\n    \"iconColor\" : \"orange\"\n //   \"color\": \"yellow\"\n};\n\nlatlon.name = msg.payload.name;\nlatlon.label = msg.payload.name;\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
+        "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n    \"name\": \"!\",\n    \"lat\": 99.99,\n    \"lon\": -99.99,\n    \"label\" : \"Hi\",\n    \"layer\" : \"GLD\",\n //   \"radius\": \"15500\",\n \"icon\" : \"friend\",\n    \"iconColor\" : \"orange\"\n //   \"color\": \"yellow\"\n};\n\nlatlon.name = msg.payload.name;\nlatlon.label = msg.payload.name;\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
