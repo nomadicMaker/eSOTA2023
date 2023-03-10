@@ -2613,6 +2613,39 @@
         ]
     },
     {
+        "id": "1d1b3d31cb9799f3",
+        "type": "debug",
+        "z": "b2ea45338eb51cf5",
+        "name": "Activation URL",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "url",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9230eaf1a2808248",
+        "type": "debug",
+        "z": "b2ea45338eb51cf5",
+        "name": "debug 50",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 520,
+        "wires": []
+    },
+    {
         "id": "db5508ef120e57d9",
         "type": "ui_worldmap",
         "z": "b2ea45338eb51cf5",
@@ -2646,39 +2679,6 @@
         "mapwms": false,
         "x": 1300,
         "y": 660,
-        "wires": []
-    },
-    {
-        "id": "1d1b3d31cb9799f3",
-        "type": "debug",
-        "z": "b2ea45338eb51cf5",
-        "name": "Activation URL",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "url",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "9230eaf1a2808248",
-        "type": "debug",
-        "z": "b2ea45338eb51cf5",
-        "name": "debug 50",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 520,
         "wires": []
     },
     {
@@ -2717,7 +2717,7 @@
         "id": "4930872319fda356",
         "type": "switch",
         "z": "6464bc74006e0eec",
-        "name": "",
+        "name": "Map Action",
         "property": "payload.action",
         "propertyType": "msg",
         "rules": [
@@ -2735,11 +2735,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 450,
+        "x": 470,
         "y": 680,
         "wires": [
             [
-                "116ee5bdde2d3cdd"
+                "4ebda30d55a09443"
             ],
             [
                 "66384f0baa0167f6"
@@ -2805,8 +2805,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 680,
+        "x": 840,
+        "y": 700,
         "wires": []
     },
     {
@@ -2853,6 +2853,70 @@
                 "4930872319fda356"
             ]
         ]
+    },
+    {
+        "id": "4ebda30d55a09443",
+        "type": "change",
+        "z": "6464bc74006e0eec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.icon",
+                "pt": "msg",
+                "to": "locate",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 640,
+        "wires": [
+            [
+                "e7b4ec8590c9321e",
+                "116ee5bdde2d3cdd"
+            ]
+        ]
+    },
+    {
+        "id": "e7b4ec8590c9321e",
+        "type": "ui_worldmap",
+        "z": "6464bc74006e0eec",
+        "group": "937754e7ea577683",
+        "order": 1,
+        "width": "22",
+        "height": "12",
+        "name": "Activations MAP",
+        "lat": "54.4759",
+        "lon": "-3.1112",
+        "zoom": "6",
+        "layer": "EsriDG",
+        "cluster": "4",
+        "maxage": "0",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "showgrid": "true",
+        "showruler": "true",
+        "allowFileDrop": "true",
+        "path": "/gld",
+        "overlist": "TL",
+        "maplist": "OSMG,OSMC,OSMH,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop,HB",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 780,
+        "y": 560,
+        "wires": []
     },
     {
         "id": "2caf81e7978f455c",
