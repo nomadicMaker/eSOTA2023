@@ -2615,7 +2615,7 @@
         "lat": "",
         "lon": "",
         "zoom": "",
-        "layer": "EsriT",
+        "layer": "EsriS",
         "cluster": "4",
         "maxage": "120",
         "usermenu": "show",
