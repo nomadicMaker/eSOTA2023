@@ -128,6 +128,14 @@
         "env": []
     },
     {
+        "id": "73810d06b03818e0",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e699a6c8314d41b4",
         "type": "subflow",
         "name": "Radio Subflow",
@@ -4687,6 +4695,74 @@
         "statusType": "auto",
         "x": 540,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8d96118d225e0402",
+        "type": "switch",
+        "z": "73810d06b03818e0",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "978fa0c8b177318f",
+        "type": "inject",
+        "z": "73810d06b03818e0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.action",
+                "v": "\"click\"",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "b6ab9f18bb50e446"
+            ]
+        ]
+    },
+    {
+        "id": "b6ab9f18bb50e446",
+        "type": "debug",
+        "z": "73810d06b03818e0",
+        "name": "debug 54",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 280,
         "wires": []
     }
 ]
