@@ -2742,7 +2742,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "debug 50",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
