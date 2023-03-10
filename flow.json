@@ -120,6 +120,14 @@
         "env": []
     },
     {
+        "id": "ea5077ca216a29d7",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e699a6c8314d41b4",
         "type": "subflow",
         "name": "Radio Subflow",
@@ -4561,6 +4569,51 @@
         "statusType": "auto",
         "x": 540,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "dc62920589268bd8",
+        "type": "inject",
+        "z": "ea5077ca216a29d7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{“id”:“NCTH1MiP1Ghl”,“time”:1678392175,“expires”:1678435375,“event”:“message”,“topic”:“w6pngHamAlerts”,“message”:“fullCallsign=SV1ZZZ\\u0026callsign=SV1ZZZ\\u0026frequency=28.777\\u0026band=10m\\u0026mode=ssb\\u0026modeDetail=ssb\\u0026time=20%3A02\\u0026spotter=M0SNA\\u0026rawText=SIMULATED%20SPOT%3A%2020%3A02%20SV1ZZZ%20%2828.777%20SSB%29%2C%20from%20cluster%2C%20spotted%20by%20M0SNA%3A%20ZZTop%20in%20Greece\\u0026title=SIMULATED%20spot%20SV1ZZZ%20%2828.777%20SSB%29\\u0026comment=ZZTop%20in%20Greece\\u0026source=cluster\\u0026dxcc=236\\u0026entity=Greece\\u0026cq=20\\u0026continent=EU\\u0026homeDxcc=236\\u0026homeEntity=Greece\\u0026spotterDxcc=223\\u0026spotterEntity=England\\u0026spotterCq=14\\u0026spotterContinent=EU\\u0026triggerComment=”}",
+        "payloadType": "str",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "75a3ad5ae4ecb04f"
+            ]
+        ]
+    },
+    {
+        "id": "75a3ad5ae4ecb04f",
+        "type": "debug",
+        "z": "ea5077ca216a29d7",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 180,
         "wires": []
     }
 ]
