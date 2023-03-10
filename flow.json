@@ -2614,7 +2614,7 @@
         "name": "Activations MAP",
         "lat": "54.4759",
         "lon": "-3.1112",
-        "zoom": "4",
+        "zoom": "9",
         "layer": "EsriDG",
         "cluster": "4",
         "maxage": "120",
