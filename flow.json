@@ -2473,8 +2473,8 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "cont",
-                "v": "\"click\"",
+                "t": "eq",
+                "v": "'click'",
                 "vt": "str"
             },
             {
