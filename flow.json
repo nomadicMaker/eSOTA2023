@@ -4596,7 +4596,7 @@
         "y": 180,
         "wires": [
             [
-                "75a3ad5ae4ecb04f"
+                "a8e503af087ddf58"
             ]
         ]
     },
@@ -4615,5 +4615,27 @@
         "x": 460,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "a8e503af087ddf58",
+        "type": "http request",
+        "z": "ea5077ca216a29d7",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "75a3ad5ae4ecb04f"
+            ]
+        ]
     }
 ]
