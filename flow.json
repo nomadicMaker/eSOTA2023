@@ -2717,7 +2717,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "click ",
+                "v": "\"click\"",
                 "vt": "str"
             },
             {
