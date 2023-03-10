@@ -2572,7 +2572,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2671,6 +2671,37 @@
         "statusType": "auto",
         "x": 1260,
         "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4684958027cb53a1",
+        "type": "worldmap in",
+        "z": "b2ea45338eb51cf5",
+        "name": "",
+        "path": "/worldmap",
+        "events": "connect,disconnect,point,layer,bounds,files,draw,other",
+        "x": 1160,
+        "y": 980,
+        "wires": [
+            [
+                "b961cbfbf53cfaf2"
+            ]
+        ]
+    },
+    {
+        "id": "b961cbfbf53cfaf2",
+        "type": "debug",
+        "z": "b2ea45338eb51cf5",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 960,
         "wires": []
     },
     {
