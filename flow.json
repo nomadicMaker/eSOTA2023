@@ -48,6 +48,14 @@
         "env": []
     },
     {
+        "id": "6464bc74006e0eec",
+        "type": "tab",
+        "label": "Map Interactions",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "b2ea45338eb51cf5",
         "type": "tab",
         "label": "DB to Map",
@@ -115,14 +123,6 @@
         "id": "f083648b1148f65c",
         "type": "tab",
         "label": "N1mm Spot XML",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "6464bc74006e0eec",
-        "type": "tab",
-        "label": "Map Interactions",
         "disabled": false,
         "info": "",
         "env": []
@@ -2432,6 +2432,38 @@
         ]
     },
     {
+        "id": "4684958027cb53a1",
+        "type": "worldmap in",
+        "z": "6464bc74006e0eec",
+        "name": "",
+        "path": "/gld",
+        "events": "connect,disconnect,other",
+        "x": 250,
+        "y": 300,
+        "wires": [
+            [
+                "b961cbfbf53cfaf2"
+            ]
+        ]
+    },
+    {
+        "id": "b961cbfbf53cfaf2",
+        "type": "debug",
+        "z": "6464bc74006e0eec",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 280,
+        "wires": []
+    },
+    {
         "id": "3a03244380a72b00",
         "type": "inject",
         "z": "b2ea45338eb51cf5",
@@ -4586,38 +4618,6 @@
         "statusType": "auto",
         "x": 540,
         "y": 360,
-        "wires": []
-    },
-    {
-        "id": "4684958027cb53a1",
-        "type": "worldmap in",
-        "z": "6464bc74006e0eec",
-        "name": "",
-        "path": "/gld",
-        "events": "connect,disconnect,other",
-        "x": 250,
-        "y": 300,
-        "wires": [
-            [
-                "b961cbfbf53cfaf2"
-            ]
-        ]
-    },
-    {
-        "id": "b961cbfbf53cfaf2",
-        "type": "debug",
-        "z": "6464bc74006e0eec",
-        "name": "debug 51",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 280,
         "wires": []
     }
 ]
