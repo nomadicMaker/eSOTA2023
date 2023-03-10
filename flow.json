@@ -4702,12 +4702,12 @@
         "type": "switch",
         "z": "73810d06b03818e0",
         "name": "",
-        "property": "payload",
+        "property": "payload.action",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "",
+                "v": "click",
                 "vt": "str"
             }
         ],
@@ -4717,7 +4717,9 @@
         "x": 450,
         "y": 420,
         "wires": [
-            []
+            [
+                "c36644719e6631b9"
+            ]
         ]
     },
     {
@@ -4745,7 +4747,8 @@
         "y": 300,
         "wires": [
             [
-                "b6ab9f18bb50e446"
+                "b6ab9f18bb50e446",
+                "8d96118d225e0402"
             ]
         ]
     },
@@ -4763,6 +4766,23 @@
         "statusType": "auto",
         "x": 400,
         "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c36644719e6631b9",
+        "type": "debug",
+        "z": "73810d06b03818e0",
+        "name": "debug 55",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 420,
         "wires": []
     }
 ]
