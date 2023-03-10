@@ -4596,7 +4596,7 @@
         "y": 180,
         "wires": [
             [
-                "75a3ad5ae4ecb04f"
+                "8dfb52363eb21297"
             ]
         ]
     },
@@ -4615,5 +4615,21 @@
         "x": 460,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "8dfb52363eb21297",
+        "type": "json",
+        "z": "ea5077ca216a29d7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "75a3ad5ae4ecb04f"
+            ]
+        ]
     }
 ]
