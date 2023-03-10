@@ -2679,7 +2679,7 @@
         "z": "b2ea45338eb51cf5",
         "name": "",
         "path": "/gld",
-        "events": "connect,disconnect,point,layer,bounds,files,draw,other",
+        "events": "connect,disconnect,other",
         "x": 1150,
         "y": 980,
         "wires": [
@@ -2697,7 +2697,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 1440,
