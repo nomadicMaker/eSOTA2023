@@ -4728,7 +4728,7 @@
         "props": [
             {
                 "p": "payload.action",
-                "v": "\"click\"",
+                "v": "click",
                 "vt": "str"
             },
             {
