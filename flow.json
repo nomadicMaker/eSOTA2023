@@ -2041,7 +2041,8 @@
         "y": 200,
         "wires": [
             [
-                "064b71e6480a6942"
+                "064b71e6480a6942",
+                "e8d7bea16acd9e87"
             ]
         ]
     },
@@ -2096,7 +2097,7 @@
         "type": "debug",
         "z": "9daa7324b483ea34",
         "name": "Display HTTP from SOTA web site",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2141,9 +2142,7 @@
         "x": 370,
         "y": 280,
         "wires": [
-            [
-                "e8d7bea16acd9e87"
-            ]
+            []
         ]
     },
     {
