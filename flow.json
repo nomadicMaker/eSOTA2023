@@ -2666,7 +2666,7 @@
         "type": "function",
         "z": "b2ea45338eb51cf5",
         "name": "Create Summit URL - get Lat/Lon",
-        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\n    assoc = msg.payload.AssocCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload.SummitCode;\n    msg.summitURL = tString.concat(\"/\", summit);\n\n\nreturn msg;",
+        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\nassoc = msg.payload.AssocCode;\ntString = summitURL.concat(assoc);\n\nsummit = msg.payload.SummitCode;\nmsg.summitURL = tString.concat(\"/\", summit);\n\nmsg.CallSign = msg.payload.CallSign;\nmsg.AssocCode = msg.payload.AssocCode;\nmsg.SunnitCode = msg.payload.SummitCode;\nmsg.TimeStamp = msg.payload.TimeSTamp;\nmsg.Freq = msg.payload.Freq;\nmsg.Mode = msg.payload.Mode;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2729,7 +2729,8 @@
         "wires": [
             [
                 "1d1b3d31cb9799f3",
-                "15ee454f2da76a46"
+                "15ee454f2da76a46",
+                "092b56a9d5c8a03a"
             ]
         ]
     },
@@ -2909,7 +2910,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "debug 61",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2918,6 +2919,23 @@
         "statusType": "auto",
         "x": 840,
         "y": 320,
+        "wires": []
+    },
+    {
+        "id": "092b56a9d5c8a03a",
+        "type": "debug",
+        "z": "b2ea45338eb51cf5",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 300,
         "wires": []
     },
     {
