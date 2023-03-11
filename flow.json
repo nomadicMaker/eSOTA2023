@@ -411,7 +411,7 @@
     {
         "id": "4441a65c13a15ee4",
         "type": "sqlitedb",
-        "db": "/home/pi/alerts.db",
+        "db": "/home/pi/SOTAGLD2023.db",
         "mode": "RWC"
     },
     {
@@ -2112,14 +2112,14 @@
         "id": "ac559859835e4035",
         "type": "function",
         "z": "9daa7324b483ea34",
-        "name": "Extract ALERT Details FLAT",
-        "func": "\n\n    msg.params = {  $alertId: msg.payload.id, \n                    $alertTimeStamp: msg.payload.timeStamp, \n                    $alertActDate: msg.payload.dateActivated, \n                    $alertAssocCode: msg.payload.associationCode, \n                    $alertSummitCode: msg.payload.summitCode,\n                    $alertActCallsign: msg.payload.activatingCallsign, \n                    $alertFreq: msg.payload.frequency};\n\n\nreturn msg;",
+        "name": "Extract SPOT Details",
+        "func": "\n\n    msg.params = {  $spotId: msg.payload.id, \n                    $spotTimeStamp: msg.payload.timeStamp, \n                    $spotActCallsign: msg.payload.activatorCallsign, \n                    $spotAssocCode: msg.payload.associationCode, \n                    $spotSummitCode: msg.payload.summitCode,\n                    $spotComments: msg.payload.comments, \n                    $spotFreq: msg.payload.frequency,\n                    $spotMode: msg.payload.mode,\n                    $spotSummitDetails: msg.payload.summitDetails};\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
+        "x": 500,
         "y": 360,
         "wires": [
             [
@@ -2142,7 +2142,8 @@
         "y": 280,
         "wires": [
             [
-                "e8d7bea16acd9e87"
+                "e8d7bea16acd9e87",
+                "ac559859835e4035"
             ]
         ]
     },
@@ -2152,9 +2153,9 @@
         "z": "9daa7324b483ea34",
         "mydb": "4441a65c13a15ee4",
         "sqlquery": "prepared",
-        "sql": "INSERT INTO  alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq) VALUES ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq)",
+        "sql": "INSERT INTO  spots (Id, TimeStamp,  CallSign, AssocCode, SummitCode,Comments, Freq, Mode, SummitDetails) VALUES ($spotId, $spotTimeStamp, $spotActCallsign, $spotAssocCode, $spotSummitCode, $spotComments, $spotFreq, $spotMode, $spotSummitDetails)",
         "name": "",
-        "x": 730,
+        "x": 760,
         "y": 420,
         "wires": [
             [
