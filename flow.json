@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "9daa7324b483ea34",
+        "type": "tab",
+        "label": "SPOTS to DB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "3e863ac0512b83c0",
         "type": "tab",
         "label": "WSJT Capture and Parse",
@@ -2012,6 +2020,147 @@
         "x": 470,
         "y": 1520,
         "wires": []
+    },
+    {
+        "id": "89ce6596a5bdd5d1",
+        "type": "http request",
+        "z": "9daa7324b483ea34",
+        "name": "Get all SPOTS from SOTA via HTTP",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "https://api2.sota.org.uk/api/spots/10/all",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "064b71e6480a6942"
+            ]
+        ]
+    },
+    {
+        "id": "86e92d99389b99b6",
+        "type": "inject",
+        "z": "9daa7324b483ea34",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "89ce6596a5bdd5d1"
+            ]
+        ]
+    },
+    {
+        "id": "05712f4074523699",
+        "type": "debug",
+        "z": "9daa7324b483ea34",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e8d7bea16acd9e87",
+        "type": "debug",
+        "z": "9daa7324b483ea34",
+        "name": "Display HTTP from SOTA web site",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ac559859835e4035",
+        "type": "function",
+        "z": "9daa7324b483ea34",
+        "name": "Extract ALERT Details FLAT",
+        "func": "\n\n    msg.params = {  $alertId: msg.payload.id, \n                    $alertTimeStamp: msg.payload.timeStamp, \n                    $alertActDate: msg.payload.dateActivated, \n                    $alertAssocCode: msg.payload.associationCode, \n                    $alertSummitCode: msg.payload.summitCode,\n                    $alertActCallsign: msg.payload.activatingCallsign, \n                    $alertFreq: msg.payload.frequency};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "c5739a8d70228e7f"
+            ]
+        ]
+    },
+    {
+        "id": "064b71e6480a6942",
+        "type": "split",
+        "z": "9daa7324b483ea34",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "e8d7bea16acd9e87"
+            ]
+        ]
+    },
+    {
+        "id": "c5739a8d70228e7f",
+        "type": "sqlite",
+        "z": "9daa7324b483ea34",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO  alerts (ActId, ActTimeStamp, ActDate, AssocCode, SummitCode, ActCallSign, Freq) VALUES ($alertId, $alertTimeStamp, $alertActDate, $alertAssocCode,$alertSummitCode, $alertActCallsign, $alertFreq)",
+        "name": "",
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "05712f4074523699"
+            ]
+        ]
     },
     {
         "id": "e83b5168468ec975",
