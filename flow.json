@@ -58,7 +58,7 @@
     {
         "id": "b2ea45338eb51cf5",
         "type": "tab",
-        "label": "Alerts Table (DB) to Map",
+        "label": "Alerts and Spots Table (DB) to Map",
         "disabled": false,
         "info": "",
         "env": []
@@ -2632,7 +2632,7 @@
         "z": "b2ea45338eb51cf5",
         "mydb": "4441a65c13a15ee4",
         "sqlquery": "fixed",
-        "sql": "Select distinct ActCallSign, AssocCode, SummitCode from alerts ",
+        "sql": "Select distinct CallSign, AssocCode, SummitCode from alerts ",
         "name": "Unique call signs",
         "x": 310,
         "y": 600,
@@ -2666,7 +2666,7 @@
         "type": "function",
         "z": "b2ea45338eb51cf5",
         "name": "Create Summit URL - get Lat/Lon",
-        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\n    assoc = msg.payload.AssocCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload.SummitCode;\n    msg.payload = tString.concat(\"/\", summit);\n\n\nreturn msg;",
+        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\n    assoc = msg.payload.AssocCode;\n    tString = summitURL.concat(assoc);\n\n    summit = msg.payload.SummitCode;\n    msg.summitURL = tString.concat(\"/\", summit);\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2715,7 +2715,7 @@
                 "t": "set",
                 "p": "url",
                 "pt": "msg",
-                "to": "payload",
+                "to": "summitURL",
                 "tot": "msg"
             }
         ],
