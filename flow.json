@@ -58,7 +58,15 @@
     {
         "id": "b2ea45338eb51cf5",
         "type": "tab",
-        "label": "DB to Map",
+        "label": "Alerts Table (DB) to Map",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b75a9b64f2a068f9",
+        "type": "tab",
+        "label": "Spots Table (DB) to MAP",
         "disabled": false,
         "info": "",
         "env": []
@@ -2593,7 +2601,7 @@
         "id": "3a03244380a72b00",
         "type": "inject",
         "z": "b2ea45338eb51cf5",
-        "name": "",
+        "name": "Alerts Display",
         "props": [
             {
                 "p": "payload"
@@ -2610,7 +2618,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
+        "x": 130,
         "y": 560,
         "wires": [
             [
@@ -2829,6 +2837,143 @@
         "mapwms": false,
         "x": 1300,
         "y": 660,
+        "wires": []
+    },
+    {
+        "id": "ca8bdc6857d6deaa",
+        "type": "inject",
+        "z": "b2ea45338eb51cf5",
+        "name": "Spots Display",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "01558d0620f97ff5"
+            ]
+        ]
+    },
+    {
+        "id": "01558d0620f97ff5",
+        "type": "sqlite",
+        "z": "b2ea45338eb51cf5",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "fixed",
+        "sql": "Select distinct CallSign, AssocCode, SummitCode, TimeStamp, Freq, Mode from spots",
+        "name": "Unique SPOTS",
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "a21715ddda5e2b98"
+            ]
+        ]
+    },
+    {
+        "id": "a21715ddda5e2b98",
+        "type": "split",
+        "z": "b2ea45338eb51cf5",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "e2f773776966be42"
+            ]
+        ]
+    },
+    {
+        "id": "93852d273c2b8db3",
+        "type": "debug",
+        "z": "b75a9b64f2a068f9",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "54c5a2388634907f",
+        "type": "function",
+        "z": "b75a9b64f2a068f9",
+        "name": "Summit to /MAP pars",
+        "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n    \"name\": \"!\",\n    \"lat\": 99.99,\n    \"lon\": -99.99,\n    \"label\" : \"Hi\",\n    \"layer\" : \"GLD\",\n //   \"radius\": \"15500\",\n \"icon\" : \"friend\",\n \"clichable\" : true\n //\"iconSize\" : 8,\n //   \"iconColor\" : \"orange\"\n //   \"color\": \"yellow\"\n};\n\nlatlon.name = msg.payload.summitCode;\nlatlon.label = msg.payload.summitCode + ' ' + msg.payload.points + 'p';\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "93852d273c2b8db3",
+                "0526d311c0d1968b"
+            ]
+        ]
+    },
+    {
+        "id": "0526d311c0d1968b",
+        "type": "ui_worldmap",
+        "z": "b75a9b64f2a068f9",
+        "group": "937754e7ea577683",
+        "order": 1,
+        "width": "22",
+        "height": "12",
+        "name": "Activations MAP",
+        "lat": "54.4759",
+        "lon": "-3.1112",
+        "zoom": "6",
+        "layer": "EsriDG",
+        "cluster": "4",
+        "maxage": "0",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "showgrid": "true",
+        "showruler": "true",
+        "allowFileDrop": "true",
+        "path": "/gld",
+        "overlist": "TL",
+        "maplist": "OSMG,OSMC,OSMH,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop,HB",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 800,
+        "y": 340,
         "wires": []
     },
     {
