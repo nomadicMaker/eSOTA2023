@@ -2666,7 +2666,7 @@
         "type": "function",
         "z": "b2ea45338eb51cf5",
         "name": "Create Summit URL - get Lat/Lon",
-        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\nassoc = msg.payload.AssocCode;\ntString = summitURL.concat(assoc);\n\nsummit = msg.payload.SummitCode;\nmsg.summitURL = tString.concat(\"/\", summit);\n\nmsg.CallSign = msg.payload.CallSign;\nmsg.AssocCode = msg.payload.AssocCode;\nmsg.SunnitCode = msg.payload.SummitCode;\nmsg.TimeStamp = msg.payload.TimeSTamp;\nmsg.Freq = msg.payload.Freq;\nmsg.Mode = msg.payload.Mode;\n\nreturn msg;",
+        "func": "let summitURL = \"https://api2.sota.org.uk/api/summits/\";\nlet tString, assoc, summit = \"\";\n\nassoc = msg.payload.AssocCode;\ntString = summitURL.concat(assoc);\n\nsummit = msg.payload.SummitCode;\nmsg.summitURL = tString.concat(\"/\", summit);\n\nmsg.CallSign = msg.payload.CallSign;\nmsg.AssocCode = msg.payload.AssocCode;\nmsg.SunnitCode = msg.payload.SummitCode;\nmsg.TimeStamp = msg.payload.TimeStamp;\nmsg.Freq = msg.payload.Freq;\nmsg.Mode = msg.payload.Mode;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
