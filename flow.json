@@ -2634,11 +2634,11 @@
         "sqlquery": "fixed",
         "sql": "Select distinct SOTAId, CallSign, AssocCode, SummitCode from alerts ",
         "name": "Unique call signs",
-        "x": 310,
-        "y": 600,
+        "x": 330,
+        "y": 500,
         "wires": [
             [
-                "9f4218d09eab62a9"
+                "2b4e0af75fef315b"
             ]
         ]
     },
@@ -2653,8 +2653,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 510,
-        "y": 660,
+        "x": 550,
+        "y": 700,
         "wires": [
             [
                 "e2f773776966be42"
@@ -2767,7 +2767,8 @@
         "wires": [
             [
                 "78209fe35efe1ed5",
-                "db5508ef120e57d9"
+                "db5508ef120e57d9",
+                "848170cc75fc53ed"
             ]
         ]
     },
@@ -2877,11 +2878,11 @@
         "sqlquery": "fixed",
         "sql": "Select distinct SOTAId, CallSign, AssocCode, SummitCode, TimeStamp, Freq, Mode from spots",
         "name": "Unique SPOTS",
-        "x": 360,
-        "y": 300,
+        "x": 340,
+        "y": 260,
         "wires": [
             [
-                "a21715ddda5e2b98"
+                "67dea637bac4d650"
             ]
         ]
     },
@@ -2936,6 +2937,77 @@
         "statusType": "auto",
         "x": 1040,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "67dea637bac4d650",
+        "type": "change",
+        "z": "b2ea45338eb51cf5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "table",
+                "pt": "msg",
+                "to": "spot",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "a21715ddda5e2b98"
+            ]
+        ]
+    },
+    {
+        "id": "2b4e0af75fef315b",
+        "type": "change",
+        "z": "b2ea45338eb51cf5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "table",
+                "pt": "msg",
+                "to": "alert",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 640,
+        "wires": [
+            [
+                "9f4218d09eab62a9"
+            ]
+        ]
+    },
+    {
+        "id": "848170cc75fc53ed",
+        "type": "debug",
+        "z": "b2ea45338eb51cf5",
+        "name": "Table; ALERT or SPOT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "table",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 740,
         "wires": []
     },
     {
