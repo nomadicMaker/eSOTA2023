@@ -3221,7 +3221,7 @@
         "name": "Activations MAP",
         "lat": "54.4759",
         "lon": "-3.1112",
-        "zoom": "6",
+        "zoom": "4",
         "layer": "EsriDG",
         "cluster": "4",
         "maxage": "0",
@@ -3859,8 +3859,8 @@
         "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 940,
-        "y": 280,
+        "x": 900,
+        "y": 180,
         "wires": []
     },
     {
@@ -3940,8 +3940,8 @@
         "mapurl": "",
         "mapopt": "",
         "mapwms": false,
-        "x": 1230,
-        "y": 100,
+        "x": 1430,
+        "y": 80,
         "wires": []
     },
     {
@@ -3990,7 +3990,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1200,
+        "x": 1240,
         "y": 180,
         "wires": [
             [
