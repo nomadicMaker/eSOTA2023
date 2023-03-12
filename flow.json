@@ -3454,7 +3454,7 @@
         "type": "ui_text_input",
         "z": "12c7debef331bf5d",
         "name": "",
-        "label": "BAND :  ",
+        "label": "FREQ:  ",
         "tooltip": "",
         "group": "937754e7ea577683",
         "order": 7,
@@ -3467,7 +3467,7 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 440,
+        "x": 430,
         "y": 880,
         "wires": [
             [
