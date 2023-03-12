@@ -56,17 +56,17 @@
         "env": []
     },
     {
-        "id": "b2ea45338eb51cf5",
+        "id": "b75a9b64f2a068f9",
         "type": "tab",
-        "label": "Alerts and Spots Table (DB) to Map",
+        "label": "Spots Table (DB) to MAP",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "b75a9b64f2a068f9",
+        "id": "b2ea45338eb51cf5",
         "type": "tab",
-        "label": "Spots Table (DB) to MAP",
+        "label": "Alerts and Spots Table (DB) to Map",
         "disabled": false,
         "info": "",
         "env": []
@@ -3018,7 +3018,7 @@
         "wires": [
             [
                 "b961cbfbf53cfaf2",
-                "4981ef980258917c"
+                "2ea9154b6205f80e"
             ]
         ]
     },
@@ -3241,7 +3241,7 @@
         "mapurl": "",
         "mapopt": "",
         "mapwms": false,
-        "x": 820,
+        "x": 880,
         "y": 440,
         "wires": []
     },
@@ -3264,8 +3264,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 420,
+        "x": 380,
+        "y": 440,
         "wires": [
             [
                 "4930872319fda356"
@@ -3278,8 +3278,8 @@
         "z": "6464bc74006e0eec",
         "name": "Activator \"Clicked\" on Map",
         "info": "",
-        "x": 610,
-        "y": 600,
+        "x": 630,
+        "y": 580,
         "wires": []
     },
     {
@@ -3294,6 +3294,33 @@
         "x": 875,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "2ea9154b6205f80e",
+        "type": "change",
+        "z": "6464bc74006e0eec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "priorS2S",
+                "pt": "global",
+                "to": "currentS2S",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "4981ef980258917c"
+            ]
+        ]
     },
     {
         "id": "53a5b5873f6ea326",
