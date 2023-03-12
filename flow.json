@@ -3018,7 +3018,8 @@
         "wires": [
             [
                 "b961cbfbf53cfaf2",
-                "2ea9154b6205f80e"
+                "1adb3f3d1f1d0f03",
+                "f2285dce723c535f"
             ]
         ]
     },
@@ -3241,8 +3242,8 @@
         "mapurl": "",
         "mapopt": "",
         "mapwms": false,
-        "x": 880,
-        "y": 440,
+        "x": 920,
+        "y": 460,
         "wires": []
     },
     {
@@ -3296,10 +3297,37 @@
         "wires": []
     },
     {
-        "id": "2ea9154b6205f80e",
+        "id": "1adb3f3d1f1d0f03",
         "type": "change",
         "z": "6464bc74006e0eec",
         "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "priorS2S",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "083a05a10673cd49"
+            ]
+        ]
+    },
+    {
+        "id": "f2285dce723c535f",
+        "type": "change",
+        "z": "6464bc74006e0eec",
+        "name": "current -> prior S2S",
         "rules": [
             {
                 "t": "set",
@@ -3314,11 +3342,38 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 360,
+        "x": 300,
+        "y": 380,
         "wires": [
             [
                 "4981ef980258917c"
+            ]
+        ]
+    },
+    {
+        "id": "083a05a10673cd49",
+        "type": "change",
+        "z": "6464bc74006e0eec",
+        "name": "Icon to LOCATE",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.icon",
+                "pt": "msg",
+                "to": "friend",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 400,
+        "wires": [
+            [
+                "e7b4ec8590c9321e"
             ]
         ]
     },
