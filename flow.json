@@ -80,6 +80,14 @@
         "env": []
     },
     {
+        "id": "12c7debef331bf5d",
+        "type": "tab",
+        "label": "Log QSO",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f7e1a35dfed587da",
         "type": "tab",
         "label": "Create ALERTS.DB",
@@ -91,14 +99,6 @@
         "id": "3d5c21ab41d1c469",
         "type": "tab",
         "label": "Time Experiments",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "12c7debef331bf5d",
-        "type": "tab",
-        "label": "Log QSO",
         "disabled": false,
         "info": "",
         "env": []
@@ -3010,10 +3010,10 @@
         "id": "4684958027cb53a1",
         "type": "worldmap in",
         "z": "6464bc74006e0eec",
-        "name": "",
+        "name": "Clicked SOTA Map",
         "path": "/SOTA",
         "events": "connect,disconnect,other",
-        "x": 250,
+        "x": 230,
         "y": 300,
         "wires": [
             [
@@ -3204,7 +3204,8 @@
         "wires": [
             [
                 "e7b4ec8590c9321e",
-                "116ee5bdde2d3cdd"
+                "116ee5bdde2d3cdd",
+                "1cc5334521604704"
             ]
         ]
     },
@@ -3272,328 +3273,26 @@
         ]
     },
     {
-        "id": "2caf81e7978f455c",
-        "type": "function",
-        "z": "f7e1a35dfed587da",
-        "name": "Extract ALERT Details FOREACH",
-        "func": "\n\nmsg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 660,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "97ac9bdc6f7737df",
-        "type": "function",
-        "z": "f7e1a35dfed587da",
-        "name": "Extract ALERT Details ACT COUNT",
-        "func": "var actCount = flow.get('actCount');\n\n\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency};\n\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 660,
+        "id": "fe5c78aa671a4bd6",
+        "type": "comment",
+        "z": "6464bc74006e0eec",
+        "name": "Activator \"Clicked\" on Map",
+        "info": "",
+        "x": 610,
         "y": 600,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
-        "id": "f7148ace64a44524",
-        "type": "function",
-        "z": "f7e1a35dfed587da",
-        "name": "Extract ALERT Details FOREACH",
-        "func": "msg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 660,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b11a31a6443de6a5",
-        "type": "sqlite",
-        "z": "f7e1a35dfed587da",
-        "mydb": "4441a65c13a15ee4",
-        "sqlquery": "fixed",
-        "sql": "CREATE TABLE alerts (A_Id INTEGER PRIMARY KEY,ActId TEXT NOT NULL,ActTimeStamp TEXT NOT NULL,ActDate TEXT NOT NULL,AssocCode TEXT NOT NULL,SummitCode TEXT NOT NULL,ActCallSign TEXT NOT NULL,Freq TEXT NOT NULL)\n",
-        "name": "Create table in alerts.db",
-        "x": 710,
-        "y": 280,
-        "wires": [
-            [
-                "1a09be788d92da73"
-            ]
-        ]
-    },
-    {
-        "id": "bf2b3c16f4163ced",
-        "type": "inject",
-        "z": "f7e1a35dfed587da",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
+        "id": "1cc5334521604704",
+        "type": "link out",
+        "z": "6464bc74006e0eec",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "b27596f087092434"
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 460,
-        "y": 280,
-        "wires": [
-            [
-                "b11a31a6443de6a5"
-            ]
-        ]
-    },
-    {
-        "id": "1a09be788d92da73",
-        "type": "debug",
-        "z": "f7e1a35dfed587da",
-        "name": "debug 27",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "aea5e101d4b722ac",
-        "type": "inject",
-        "z": "3d5c21ab41d1c469",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 260,
-        "y": 240,
-        "wires": [
-            [
-                "e393f1ea420c154b"
-            ]
-        ]
-    },
-    {
-        "id": "e393f1ea420c154b",
-        "type": "function",
-        "z": "3d5c21ab41d1c469",
-        "name": "Time Now",
-        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(0,19);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 360,
-        "wires": [
-            [
-                "3cfab5178123dd75",
-                "ac487e074030e769"
-            ]
-        ]
-    },
-    {
-        "id": "3cfab5178123dd75",
-        "type": "function",
-        "z": "3d5c21ab41d1c469",
-        "name": "Add one HOUR",
-        "func": "msg.utc = new Date(msg.payload + 3600000);\nmsg.utc = msg.utc.toISOString().slice(0,19);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 440,
-        "wires": [
-            [
-                "dfc7abec7e082a62",
-                "e0fc15e4335d3281",
-                "a8c136216cdd766a"
-            ]
-        ]
-    },
-    {
-        "id": "dfc7abec7e082a62",
-        "type": "debug",
-        "z": "3d5c21ab41d1c469",
-        "name": "debug 28",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "utc",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "ac487e074030e769",
-        "type": "debug",
-        "z": "3d5c21ab41d1c469",
-        "name": "debug 29",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "utc",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "e0fc15e4335d3281",
-        "type": "function",
-        "z": "3d5c21ab41d1c469",
-        "name": "Extract original hour UTC ONLY",
-        "func": "msg.utcHr = new Date(msg.payload).getUTCHours();\n//msg.utcHr = msg.utcHr.toISOString();\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 890,
-        "y": 540,
-        "wires": [
-            [
-                "8d18f0483b765700"
-            ]
-        ]
-    },
-    {
-        "id": "8d18f0483b765700",
-        "type": "debug",
-        "z": "3d5c21ab41d1c469",
-        "name": "debug 30",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "utcHr",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "a8c136216cdd766a",
-        "type": "function",
-        "z": "3d5c21ab41d1c469",
-        "name": "YYYY-MM-DD conversion",
-        "func": "msg.tmpTime = Date.parse('1956-03-31T18:15:00');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 790,
-        "y": 700,
-        "wires": [
-            [
-                "834d53f9c73bded1",
-                "2cb5e503d80bdade"
-            ]
-        ]
-    },
-    {
-        "id": "834d53f9c73bded1",
-        "type": "debug",
-        "z": "3d5c21ab41d1c469",
-        "name": "debug 31",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "tmpTime",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "2cb5e503d80bdade",
-        "type": "function",
-        "z": "3d5c21ab41d1c469",
-        "name": "function 1",
-        "func": "msg.utc = new Date(msg.tmpTime);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 760,
-        "wires": [
-            [
-                "be18f6ce6aa3f393"
-            ]
-        ]
-    },
-    {
-        "id": "be18f6ce6aa3f393",
-        "type": "debug",
-        "z": "3d5c21ab41d1c469",
-        "name": "debug 32",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "utc",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 700,
+        "x": 875,
+        "y": 560,
         "wires": []
     },
     {
@@ -4125,10 +3824,10 @@
         "id": "75f57abcf5226120",
         "type": "comment",
         "z": "12c7debef331bf5d",
-        "name": "Collect the Q details ",
+        "name": "CollectPopulate (S2S) QSO details ",
         "info": "",
-        "x": 350,
-        "y": 520,
+        "x": 280,
+        "y": 460,
         "wires": []
     },
     {
@@ -4281,9 +3980,92 @@
         ]
     },
     {
-        "id": "cea9a6f6f4779bce",
-        "type": "inject",
+        "id": "b27596f087092434",
+        "type": "link in",
         "z": "12c7debef331bf5d",
+        "name": "Log QSO: S2S Call & Summit set",
+        "links": [
+            "1cc5334521604704"
+        ],
+        "x": 125,
+        "y": 600,
+        "wires": [
+            [
+                "086fb3fa582848c2"
+            ]
+        ]
+    },
+    {
+        "id": "2caf81e7978f455c",
+        "type": "function",
+        "z": "f7e1a35dfed587da",
+        "name": "Extract ALERT Details FOREACH",
+        "func": "\n\nmsg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97ac9bdc6f7737df",
+        "type": "function",
+        "z": "f7e1a35dfed587da",
+        "name": "Extract ALERT Details ACT COUNT",
+        "func": "var actCount = flow.get('actCount');\n\n\n\n    msg.params = {  $alertId: msg.payload[actCount].id, \n                    $alertTimeStamp: msg.payload[actCount].timeStamp, \n                    $alertActDate: msg.payload[actCount].dateActivated, \n                    $alertAssocCode: msg.payload[actCount].associationCode, \n                    $alertSummitCode: msg.payload[actCount].summitCode,\n                    $alertActCallsign: msg.payload[actCount].activatingCallsign, \n                    $alertFreq: msg.payload[actCount].frequency};\n\n\n\nactCount++;\nflow.set('actCount', actCount);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7148ace64a44524",
+        "type": "function",
+        "z": "f7e1a35dfed587da",
+        "name": "Extract ALERT Details FOREACH",
+        "func": "msg.payload.forEach((val) => {\n    // val.value and val.value_type are what you need\n\n\n    msg.params = {  $alertId: val.id, \n                    $alertTimeStamp: val.timeStamp, \n                    $alertActDate: val.dateActivated, \n                    $alertAssocCode: val.associationCode, \n                    $alertSummitCode: val.summitCode,\n                    $alertActCallsign: val.activatingCallsign, \n                    $alertFreq: val.frequency};\n\n\n\n})\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b11a31a6443de6a5",
+        "type": "sqlite",
+        "z": "f7e1a35dfed587da",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE alerts (A_Id INTEGER PRIMARY KEY,ActId TEXT NOT NULL,ActTimeStamp TEXT NOT NULL,ActDate TEXT NOT NULL,AssocCode TEXT NOT NULL,SummitCode TEXT NOT NULL,ActCallSign TEXT NOT NULL,Freq TEXT NOT NULL)\n",
+        "name": "Create table in alerts.db",
+        "x": 710,
+        "y": 280,
+        "wires": [
+            [
+                "1a09be788d92da73"
+            ]
+        ]
+    },
+    {
+        "id": "bf2b3c16f4163ced",
+        "type": "inject",
+        "z": "f7e1a35dfed587da",
         "name": "",
         "props": [
             {
@@ -4301,13 +4083,242 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 560,
+        "x": 460,
+        "y": 280,
         "wires": [
             [
-                "086fb3fa582848c2"
+                "b11a31a6443de6a5"
             ]
         ]
+    },
+    {
+        "id": "1a09be788d92da73",
+        "type": "debug",
+        "z": "f7e1a35dfed587da",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "aea5e101d4b722ac",
+        "type": "inject",
+        "z": "3d5c21ab41d1c469",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "e393f1ea420c154b"
+            ]
+        ]
+    },
+    {
+        "id": "e393f1ea420c154b",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "Time Now",
+        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(0,19);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "3cfab5178123dd75",
+                "ac487e074030e769"
+            ]
+        ]
+    },
+    {
+        "id": "3cfab5178123dd75",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "Add one HOUR",
+        "func": "msg.utc = new Date(msg.payload + 3600000);\nmsg.utc = msg.utc.toISOString().slice(0,19);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 440,
+        "wires": [
+            [
+                "dfc7abec7e082a62",
+                "e0fc15e4335d3281",
+                "a8c136216cdd766a"
+            ]
+        ]
+    },
+    {
+        "id": "dfc7abec7e082a62",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "utc",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ac487e074030e769",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "utc",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e0fc15e4335d3281",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "Extract original hour UTC ONLY",
+        "func": "msg.utcHr = new Date(msg.payload).getUTCHours();\n//msg.utcHr = msg.utcHr.toISOString();\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 540,
+        "wires": [
+            [
+                "8d18f0483b765700"
+            ]
+        ]
+    },
+    {
+        "id": "8d18f0483b765700",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "utcHr",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a8c136216cdd766a",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "YYYY-MM-DD conversion",
+        "func": "msg.tmpTime = Date.parse('1956-03-31T18:15:00');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 700,
+        "wires": [
+            [
+                "834d53f9c73bded1",
+                "2cb5e503d80bdade"
+            ]
+        ]
+    },
+    {
+        "id": "834d53f9c73bded1",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 31",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "tmpTime",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2cb5e503d80bdade",
+        "type": "function",
+        "z": "3d5c21ab41d1c469",
+        "name": "function 1",
+        "func": "msg.utc = new Date(msg.tmpTime);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 760,
+        "wires": [
+            [
+                "be18f6ce6aa3f393"
+            ]
+        ]
+    },
+    {
+        "id": "be18f6ce6aa3f393",
+        "type": "debug",
+        "z": "3d5c21ab41d1c469",
+        "name": "debug 32",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "utc",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 700,
+        "wires": []
     },
     {
         "id": "f875f97d92d0799d",
