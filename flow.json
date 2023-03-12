@@ -3940,8 +3940,8 @@
         "mapurl": "",
         "mapopt": "",
         "mapwms": false,
-        "x": 1210,
-        "y": 180,
+        "x": 1230,
+        "y": 100,
         "wires": []
     },
     {
@@ -3963,11 +3963,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 990,
+        "x": 970,
         "y": 340,
         "wires": [
             [
-                "c0b6816078941986"
+                "f25950c74b316f6e"
             ]
         ]
     },
@@ -3977,13 +3977,6 @@
         "z": "12c7debef331bf5d",
         "name": "Worked S2S Neutral (Green)",
         "rules": [
-            {
-                "t": "set",
-                "p": "payload.layer",
-                "pt": "msg",
-                "to": "Worked",
-                "tot": "str"
-            },
             {
                 "t": "set",
                 "p": "payload.icon",
@@ -3997,8 +3990,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1180,
-        "y": 260,
+        "x": 1200,
+        "y": 180,
         "wires": [
             [
                 "d4be72f9aa137403"
@@ -4081,6 +4074,33 @@
         "wires": [
             [
                 "086fb3fa582848c2"
+            ]
+        ]
+    },
+    {
+        "id": "f25950c74b316f6e",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "Worked S2S to Worked Layer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.layer",
+                "pt": "msg",
+                "to": "Worked",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1170,
+        "y": 260,
+        "wires": [
+            [
+                "c0b6816078941986"
             ]
         ]
     },
