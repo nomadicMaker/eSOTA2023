@@ -3009,7 +3009,7 @@
         "type": "function",
         "z": "b2ea45338eb51cf5",
         "name": "Set Layer = Freq ",
-        "func": "\n\nvar dotPos = msg.payload.Freq.label.indexOf('.');\n\nmsg.table = msg.payload.Freq.substring(0, dotPos);\n\n\nreturn msg;\n",
+        "func": "\n\nvar dotPos = msg.payload.Freq.indexOf('.');\n\nmsg.table = msg.payload.Freq.substring(0, dotPos);\n\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
