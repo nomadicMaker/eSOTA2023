@@ -2756,7 +2756,7 @@
         "type": "function",
         "z": "b2ea45338eb51cf5",
         "name": "Summit to /MAP pars",
-        "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n      \"name\": \"!\",\n      \"lat\": 99.99,\n      \"lon\": -99.99,\n      \"label\" : \"*\",\n      \"layer\" : \"Spots\",\n      \"icon\" : \"friend\",\n      \"popped\" : false,\n      \"clichable\" : true\n};\n\n//latlon.name = msg.SOTAId;\nlatlon.name = msg.payload.summitCode;\nlatlon.label = msg.CallSign + ' 15m '+ msg.Mode + ' ' + msg.payload.points + 'p' + ' -7m'\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
+        "func": "msg.payload = JSON.parse(msg.payload);\n\nvar latlon = {\n      \"name\": \"!\",\n      \"lat\": 99.99,\n      \"lon\": -99.99,\n      \"label\" : \"*\",\n      \"layer\" : \"Spots\",\n      \"icon\" : \"friend\",\n      \"popped\" : false,\n      \"clichable\" : true\n};\n\n//latlon.name = msg.SOTAId;\nlatlon.name = msg.payload.summitCode;\nlatlon.layer = msg.table;\nlatlon.label = msg.CallSign + ' 15m '+ msg.Mode + ' ' + msg.payload.points + 'p' + ' -7m'\nlatlon.lat = msg.payload.latitude;\nlatlon.lon = msg.payload.longitude;\n\nmsg.payload = latlon;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
