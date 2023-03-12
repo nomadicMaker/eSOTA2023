@@ -218,7 +218,7 @@
             "darkTheme": {
                 "default": "#097479",
                 "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "baseFont": "Palatino Linotype,Palatino,Book Antiqua,serif",
                 "edited": false,
                 "reset": false
             },
@@ -271,7 +271,7 @@
                     "edited": false
                 },
                 "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                    "value": "Palatino Linotype,Palatino,Book Antiqua,serif"
                 }
             },
             "angularTheme": {
