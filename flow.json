@@ -3642,11 +3642,13 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 110,
-        "y": 560,
+        "x": 90,
+        "y": 540,
         "wires": [
             [
-                "6b278cc40fddc06b"
+                "6b278cc40fddc06b",
+                "179a362af87475bd",
+                "f28dba4b5d94d57f"
             ]
         ]
     },
@@ -3668,8 +3670,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 120,
-        "y": 680,
+        "x": 160,
+        "y": 700,
         "wires": [
             [
                 "802af0a3109d065a"
@@ -3694,8 +3696,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 120,
-        "y": 740,
+        "x": 160,
+        "y": 780,
         "wires": [
             [
                 "1c1b20eceab8f806"
@@ -3720,8 +3722,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 120,
-        "y": 620,
+        "x": 260,
+        "y": 580,
         "wires": [
             [
                 "412e142f08f5ec3d"
@@ -3921,8 +3923,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 560,
+        "x": 320,
+        "y": 520,
         "wires": [
             [
                 "c0e156d2436f7c72",
@@ -3943,7 +3945,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
+        "x": 780,
         "y": 640,
         "wires": []
     },
@@ -3966,7 +3968,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
+        "x": 450,
         "y": 620,
         "wires": [
             [
@@ -3993,8 +3995,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 680,
+        "x": 360,
+        "y": 700,
         "wires": [
             [
                 "c0e156d2436f7c72"
@@ -4020,8 +4022,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 740,
+        "x": 360,
+        "y": 780,
         "wires": [
             [
                 "c0e156d2436f7c72"
@@ -4127,7 +4129,7 @@
         "name": "Collect the Q details ",
         "info": "",
         "x": 150,
-        "y": 480,
+        "y": 420,
         "wires": []
     },
     {
@@ -4215,6 +4217,47 @@
                 "d4be72f9aa137403"
             ]
         ]
+    },
+    {
+        "id": "179a362af87475bd",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f28dba4b5d94d57f",
+        "type": "debug",
+        "z": "12c7debef331bf5d",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "f875f97d92d0799d",
