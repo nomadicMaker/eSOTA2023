@@ -3250,7 +3250,7 @@
         "id": "4981ef980258917c",
         "type": "change",
         "z": "6464bc74006e0eec",
-        "name": "Save S2S target",
+        "name": "Update current S2S",
         "rules": [
             {
                 "t": "set",
@@ -3265,7 +3265,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
+        "x": 400,
         "y": 440,
         "wires": [
             [
@@ -3300,7 +3300,7 @@
         "id": "1adb3f3d1f1d0f03",
         "type": "change",
         "z": "6464bc74006e0eec",
-        "name": "",
+        "name": "Retrive priorS2S",
         "rules": [
             {
                 "t": "set",
@@ -3354,7 +3354,7 @@
         "id": "083a05a10673cd49",
         "type": "change",
         "z": "6464bc74006e0eec",
-        "name": "Icon to LOCATE",
+        "name": "Icon back to FRIEND",
         "rules": [
             {
                 "t": "set",
@@ -3369,7 +3369,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
+        "x": 740,
         "y": 400,
         "wires": [
             [
@@ -3982,6 +3982,13 @@
                 "p": "payload.icon",
                 "pt": "msg",
                 "to": "neutral",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.layer",
+                "pt": "msg",
+                "to": "Worked",
                 "tot": "str"
             }
         ],
