@@ -2866,7 +2866,7 @@
         "wires": [
             [
                 "8d75ffde1aa49222",
-                "67dea637bac4d650"
+                "1849bcdf4b662395"
             ]
         ]
     },
@@ -2922,12 +2922,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 620,
-        "y": 440,
+        "x": 240,
+        "y": 700,
         "wires": [
-            [
-                "e2f773776966be42"
-            ]
+            []
         ]
     },
     {
@@ -3005,6 +3003,25 @@
         "x": 1230,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "1849bcdf4b662395",
+        "type": "function",
+        "z": "b2ea45338eb51cf5",
+        "name": "Set Layer = Freq ",
+        "func": "\n\nvar dotPos = msg.payload.Freq.label.indexOf('.');\n\nmsg.table = msg.payload.Freq.substring(0, dotPos);\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 480,
+        "wires": [
+            [
+                "e2f773776966be42"
+            ]
+        ]
     },
     {
         "id": "4684958027cb53a1",
