@@ -3642,12 +3642,11 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 90,
-        "y": 540,
+        "x": 410,
+        "y": 600,
         "wires": [
             [
                 "6b278cc40fddc06b",
-                "179a362af87475bd",
                 "f28dba4b5d94d57f"
             ]
         ]
@@ -3670,8 +3669,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 160,
-        "y": 700,
+        "x": 440,
+        "y": 880,
         "wires": [
             [
                 "802af0a3109d065a"
@@ -3696,8 +3695,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 160,
-        "y": 780,
+        "x": 440,
+        "y": 960,
         "wires": [
             [
                 "1c1b20eceab8f806"
@@ -3722,8 +3721,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 260,
-        "y": 580,
+        "x": 520,
+        "y": 680,
         "wires": [
             [
                 "412e142f08f5ec3d"
@@ -3743,7 +3742,7 @@
         "format": "{{msg.utc}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1030,
+        "x": 1210,
         "y": 780,
         "wires": []
     },
@@ -3760,7 +3759,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 940,
+        "x": 1160,
         "y": 520,
         "wires": []
     },
@@ -3785,8 +3784,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 700,
-        "y": 820,
+        "x": 900,
+        "y": 920,
         "wires": [
             [
                 "647360c57dac0e61"
@@ -3804,7 +3803,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
+        "x": 1060,
         "y": 860,
         "wires": [
             [
@@ -3923,8 +3922,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 520,
+        "x": 620,
+        "y": 600,
         "wires": [
             [
                 "c0e156d2436f7c72",
@@ -3945,8 +3944,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 640,
+        "x": 980,
+        "y": 740,
         "wires": []
     },
     {
@@ -3968,8 +3967,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
-        "y": 620,
+        "x": 710,
+        "y": 740,
         "wires": [
             [
                 "c0e156d2436f7c72"
@@ -3995,8 +3994,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 700,
+        "x": 640,
+        "y": 860,
         "wires": [
             [
                 "c0e156d2436f7c72"
@@ -4022,8 +4021,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 780,
+        "x": 640,
+        "y": 940,
         "wires": [
             [
                 "c0e156d2436f7c72"
@@ -4094,8 +4093,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
-        "y": 520,
+        "x": 910,
+        "y": 600,
         "wires": [
             [
                 "75e2d3d21d3f8210"
@@ -4128,8 +4127,8 @@
         "z": "12c7debef331bf5d",
         "name": "Collect the Q details ",
         "info": "",
-        "x": 150,
-        "y": 420,
+        "x": 350,
+        "y": 520,
         "wires": []
     },
     {
@@ -4222,7 +4221,7 @@
         "id": "179a362af87475bd",
         "type": "change",
         "z": "12c7debef331bf5d",
-        "name": "",
+        "name": "Summit = S2S \"target\"",
         "rules": [
             {
                 "t": "set",
@@ -4237,8 +4236,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
-        "y": 640,
+        "x": 380,
+        "y": 780,
         "wires": [
             [
                 "ce1d8bc5735e9431"
@@ -4257,8 +4256,72 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 320,
-        "y": 460,
+        "x": 660,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "086fb3fa582848c2",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "Call from currentS2S.label",
+        "func": "var currentS2S = global.get('currentS2S');\n\nvar spacePos = currentS2S.label.indexOf(' ');\n\nmsg.payload = currentS2S.label.substring(0,spacePos);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 680,
+        "wires": [
+            [
+                "71cd36ac4fd568be"
+            ]
+        ]
+    },
+    {
+        "id": "cea9a6f6f4779bce",
+        "type": "inject",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "086fb3fa582848c2"
+            ]
+        ]
+    },
+    {
+        "id": "71cd36ac4fd568be",
+        "type": "debug",
+        "z": "12c7debef331bf5d",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 740,
         "wires": []
     },
     {
