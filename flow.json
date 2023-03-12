@@ -2767,7 +2767,8 @@
         "wires": [
             [
                 "78209fe35efe1ed5",
-                "848170cc75fc53ed"
+                "848170cc75fc53ed",
+                "2ba078481dc9fe9d"
             ]
         ]
     },
@@ -2874,7 +2875,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "debug 61",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2890,7 +2891,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "debug 62",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2961,7 +2962,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "Table; ALERT or SPOT",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2971,6 +2972,38 @@
         "statusType": "auto",
         "x": 1300,
         "y": 740,
+        "wires": []
+    },
+    {
+        "id": "2ba078481dc9fe9d",
+        "type": "worldmap",
+        "z": "b2ea45338eb51cf5",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/SOTA",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1230,
+        "y": 660,
         "wires": []
     },
     {
