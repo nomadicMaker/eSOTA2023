@@ -3734,7 +3734,7 @@
         "type": "debug",
         "z": "12c7debef331bf5d",
         "name": "debug 43",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4034,8 +4034,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
-        "y": 780,
+        "x": 440,
+        "y": 800,
         "wires": [
             [
                 "ce1d8bc5735e9431"
@@ -4047,7 +4047,7 @@
         "type": "debug",
         "z": "12c7debef331bf5d",
         "name": "debug 63",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4074,7 +4074,8 @@
         "wires": [
             [
                 "0540d768c9eb2522",
-                "179a362af87475bd"
+                "179a362af87475bd",
+                "83b3bbbf3fea740e"
             ]
         ]
     },
@@ -4118,6 +4119,33 @@
         "wires": [
             [
                 "c0b6816078941986"
+            ]
+        ]
+    },
+    {
+        "id": "83b3bbbf3fea740e",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "Band = S2S \"target\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "currentS2S.layer",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 880,
+        "wires": [
+            [
+                "56c7483ef433c26f"
             ]
         ]
     },
