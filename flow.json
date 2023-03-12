@@ -98,7 +98,7 @@
     {
         "id": "12c7debef331bf5d",
         "type": "tab",
-        "label": "UI Experiments",
+        "label": "Log QSO",
         "disabled": false,
         "info": "",
         "env": []
@@ -3871,8 +3871,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 100,
+        "x": 880,
+        "y": 60,
         "wires": []
     },
     {
@@ -4044,7 +4044,8 @@
         "wires": [
             [
                 "b2cbe28750d4be9a",
-                "80d728d0c089bd5e"
+                "80d728d0c089bd5e",
+                "e9f0c556dc5067c1"
             ]
         ]
     },
@@ -4061,7 +4062,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 940,
-        "y": 380,
+        "y": 400,
         "wires": []
     },
     {
@@ -4128,6 +4129,92 @@
         "x": 150,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "d4be72f9aa137403",
+        "type": "worldmap",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "false",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1220,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e9f0c556dc5067c1",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "Change Worked S2S Icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 340,
+        "wires": [
+            [
+                "c0b6816078941986"
+            ]
+        ]
+    },
+    {
+        "id": "c0b6816078941986",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "Worked S2S Neutral (Green)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.icon",
+                "pt": "msg",
+                "to": "neutral",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 260,
+        "wires": [
+            [
+                "d4be72f9aa137403"
+            ]
+        ]
     },
     {
         "id": "f875f97d92d0799d",
