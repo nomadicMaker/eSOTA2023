@@ -2739,7 +2739,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2861,8 +2861,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 550,
-        "y": 380,
+        "x": 530,
+        "y": 360,
         "wires": [
             [
                 "8d75ffde1aa49222",
@@ -2875,7 +2875,7 @@
         "type": "debug",
         "z": "b2ea45338eb51cf5",
         "name": "debug 61",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
