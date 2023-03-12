@@ -3979,16 +3979,16 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.icon",
+                "p": "payload.layer",
                 "pt": "msg",
-                "to": "neutral",
+                "to": "Worked",
                 "tot": "str"
             },
             {
                 "t": "set",
-                "p": "payload.layer",
+                "p": "payload.icon",
                 "pt": "msg",
-                "to": "Worked",
+                "to": "neutral",
                 "tot": "str"
             }
         ],
