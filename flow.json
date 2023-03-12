@@ -4172,8 +4172,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "",
-                "tot": "str"
+                "to": "currentS2S",
+                "tot": "global"
             }
         ],
         "action": "",
