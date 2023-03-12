@@ -2767,7 +2767,6 @@
         "wires": [
             [
                 "78209fe35efe1ed5",
-                "db5508ef120e57d9",
                 "848170cc75fc53ed"
             ]
         ]
@@ -2803,42 +2802,6 @@
         "statusType": "auto",
         "x": 1260,
         "y": 520,
-        "wires": []
-    },
-    {
-        "id": "db5508ef120e57d9",
-        "type": "ui_worldmap",
-        "z": "b2ea45338eb51cf5",
-        "group": "937754e7ea577683",
-        "order": 1,
-        "width": "22",
-        "height": "12",
-        "name": "Activations MAP",
-        "lat": "54.4759",
-        "lon": "-3.1112",
-        "zoom": "6",
-        "layer": "EsriDG",
-        "cluster": "4",
-        "maxage": "0",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "false",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "false",
-        "coords": "deg",
-        "showgrid": "true",
-        "showruler": "true",
-        "allowFileDrop": "true",
-        "path": "/gld",
-        "overlist": "TL",
-        "maplist": "OSMG,OSMC,OSMH,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop,HB",
-        "mapname": "",
-        "mapurl": "",
-        "mapopt": "",
-        "mapwms": false,
-        "x": 1300,
-        "y": 660,
         "wires": []
     },
     {
