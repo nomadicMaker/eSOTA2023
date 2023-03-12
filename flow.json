@@ -4228,8 +4228,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "",
-                "tot": "str"
+                "to": "currentS2S.name",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -4240,7 +4240,9 @@
         "x": 160,
         "y": 640,
         "wires": [
-            []
+            [
+                "ce1d8bc5735e9431"
+            ]
         ]
     },
     {
