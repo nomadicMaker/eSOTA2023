@@ -3409,7 +3409,7 @@
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "File.svg",
+        "icon": "font-awesome/fa-automobile",
         "payload": "LogQ",
         "payloadType": "str",
         "topic": "topic",
