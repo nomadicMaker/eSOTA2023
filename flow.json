@@ -3409,7 +3409,7 @@
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "",
+        "icon": "File.svg",
         "payload": "LogQ",
         "payloadType": "str",
         "topic": "topic",
