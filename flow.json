@@ -5545,8 +5545,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "11",
-                "tot": "str"
+                "to": "eventScoreQs",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -5572,8 +5572,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "22",
-                "tot": "str"
+                "to": "eventScore.Pts",
+                "tot": "global"
             }
         ],
         "action": "",
