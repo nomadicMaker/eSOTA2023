@@ -481,16 +481,6 @@
         "className": ""
     },
     {
-        "id": "236b105e413eeec2",
-        "type": "ui_spacer",
-        "z": "a6d97f83866efa29",
-        "name": "spacer",
-        "group": "937754e7ea577683",
-        "order": 9,
-        "width": 4,
-        "height": 1
-    },
-    {
         "id": "0b6304b6d7c9e265",
         "type": "function",
         "z": "e699a6c8314d41b4",
@@ -3297,8 +3287,8 @@
         "z": "6464bc74006e0eec",
         "group": "937754e7ea577683",
         "order": 1,
-        "width": "22",
-        "height": "12",
+        "width": 22,
+        "height": 12,
         "name": "Activations MAP",
         "lat": "54.4759",
         "lon": "-3.1112",
@@ -5404,7 +5394,7 @@
         "type": "ui_text",
         "z": "c265f1d37fb0197f",
         "group": "937754e7ea577683",
-        "order": 10,
+        "order": 11,
         "width": 3,
         "height": 1,
         "name": "",
@@ -5470,7 +5460,7 @@
         "type": "ui_text",
         "z": "c265f1d37fb0197f",
         "group": "937754e7ea577683",
-        "order": 8,
+        "order": 9,
         "width": 2,
         "height": 1,
         "name": "",
@@ -5505,9 +5495,45 @@
         "y": 460,
         "wires": [
             [
-                "e9c0c0528252d610"
+                "e9c0c0528252d610",
+                "b9d5da5c0cf6fd5d",
+                "5385596fe13ad033"
             ]
         ]
+    },
+    {
+        "id": "b9d5da5c0cf6fd5d",
+        "type": "ui_text",
+        "z": "c265f1d37fb0197f",
+        "group": "937754e7ea577683",
+        "order": 10,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Qs:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 670,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5385596fe13ad033",
+        "type": "ui_text",
+        "z": "c265f1d37fb0197f",
+        "group": "937754e7ea577683",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "name": "",
+        "label": "Pts: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 690,
+        "y": 600,
+        "wires": []
     },
     {
         "id": "8d96118d225e0402",
