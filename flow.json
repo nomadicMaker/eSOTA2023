@@ -5535,9 +5535,45 @@
         "y": 360,
         "wires": [
             [
-                "e9c0c0528252d610"
+                "e9c0c0528252d610",
+                "a10a5fbede878480",
+                "081c5004f33baf39"
             ]
         ]
+    },
+    {
+        "id": "a10a5fbede878480",
+        "type": "ui_text",
+        "z": "c265f1d37fb0197f",
+        "group": "937754e7ea577683",
+        "order": 1,
+        "width": "1",
+        "height": "1",
+        "name": "",
+        "label": "Qs:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 670,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "081c5004f33baf39",
+        "type": "ui_text",
+        "z": "c265f1d37fb0197f",
+        "group": "937754e7ea577683",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "name": "",
+        "label": "Points: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 670,
+        "y": 540,
+        "wires": []
     },
     {
         "id": "8d96118d225e0402",
