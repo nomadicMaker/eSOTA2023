@@ -3316,7 +3316,7 @@
         "showgrid": "true",
         "showruler": "true",
         "allowFileDrop": "true",
-        "path": "/SOTA",
+        "path": "/worldmap",
         "overlist": "TL",
         "maplist": "OSMG,OSMC,OSMH,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop,HB",
         "mapname": "",
