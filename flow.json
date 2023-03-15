@@ -3154,47 +3154,10 @@
         "y": 640,
         "wires": [
             [
-                "e7b4ec8590c9321e",
                 "116ee5bdde2d3cdd",
                 "1cc5334521604704"
             ]
         ]
-    },
-    {
-        "id": "e7b4ec8590c9321e",
-        "type": "ui_worldmap",
-        "z": "6464bc74006e0eec",
-        "group": "937754e7ea577683",
-        "order": 1,
-        "width": "22",
-        "height": "12",
-        "name": "Activations MAP",
-        "lat": "54.4759",
-        "lon": "-3.1112",
-        "zoom": "4",
-        "layer": "EsriDG",
-        "cluster": "4",
-        "maxage": "0",
-        "usermenu": "show",
-        "layers": "show",
-        "panit": "false",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "false",
-        "coords": "deg",
-        "showgrid": "true",
-        "showruler": "true",
-        "allowFileDrop": "true",
-        "path": "/SOTA",
-        "overlist": "TL",
-        "maplist": "OSMG,OSMC,OSMH,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop,HB",
-        "mapname": "",
-        "mapurl": "",
-        "mapopt": "",
-        "mapwms": false,
-        "x": 920,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "4981ef980258917c",
@@ -3322,9 +3285,7 @@
         "x": 740,
         "y": 400,
         "wires": [
-            [
-                "e7b4ec8590c9321e"
-            ]
+            []
         ]
     },
     {
