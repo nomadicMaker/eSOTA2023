@@ -185,17 +185,6 @@
         "color": "#DDAA99"
     },
     {
-        "id": "937754e7ea577683",
-        "type": "ui_group",
-        "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P  ||   S2S: 4 || Chaser Pts: 23  ||  Qs: 12  || 09:43 UTC",
-        "tab": "7a6b7462852c07e3",
-        "order": 1,
-        "disp": true,
-        "width": "22",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "7a6b7462852c07e3",
         "type": "ui_tab",
         "name": "evOTA Visualizer",
@@ -479,6 +468,17 @@
         "order": 1,
         "disp": true,
         "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "937754e7ea577683",
+        "type": "ui_group",
+        "name": "SOTA Event (G/LD June 2023) - Activator: M0SNA/P  ||   S2S: 4 || Chaser Pts: 23  ||  Qs: 12  || 09:43 UTC",
+        "tab": "7a6b7462852c07e3",
+        "order": 1,
+        "disp": true,
+        "width": "22",
         "collapse": false,
         "className": ""
     },
@@ -3091,52 +3091,6 @@
         ]
     },
     {
-        "id": "9031ae66e8b2dd82",
-        "type": "inject",
-        "z": "6464bc74006e0eec",
-        "name": "",
-        "props": [
-            {
-                "p": "payload.action",
-                "v": "click",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 560,
-        "wires": [
-            [
-                "e85ddcb87ae0c282",
-                "4930872319fda356"
-            ]
-        ]
-    },
-    {
-        "id": "e85ddcb87ae0c282",
-        "type": "debug",
-        "z": "6464bc74006e0eec",
-        "name": "debug 57",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 320,
-        "y": 500,
-        "wires": []
-    },
-    {
         "id": "116ee5bdde2d3cdd",
         "type": "debug",
         "z": "6464bc74006e0eec",
@@ -3168,35 +3122,6 @@
         "x": 620,
         "y": 800,
         "wires": []
-    },
-    {
-        "id": "5458d4e8eec9a39d",
-        "type": "inject",
-        "z": "6464bc74006e0eec",
-        "name": "House",
-        "props": [
-            {
-                "p": "payload.action",
-                "v": "house",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 800,
-        "wires": [
-            [
-                "4930872319fda356"
-            ]
-        ]
     },
     {
         "id": "4ebda30d55a09443",
