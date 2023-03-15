@@ -5514,7 +5514,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "className": "",
-        "x": 670,
+        "x": 870,
         "y": 480,
         "wires": []
     },
@@ -5554,7 +5554,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
+        "x": 650,
         "y": 480,
         "wires": [
             [
@@ -5588,6 +5588,52 @@
                 "5385596fe13ad033"
             ]
         ]
+    },
+    {
+        "id": "d1dd24f1e8f5484c",
+        "type": "inject",
+        "z": "c265f1d37fb0197f",
+        "name": "@ start, init variables",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "9658171d6ac7acea"
+            ]
+        ]
+    },
+    {
+        "id": "9658171d6ac7acea",
+        "type": "debug",
+        "z": "c265f1d37fb0197f",
+        "name": "Event Counters RESET",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 60,
+        "wires": []
     },
     {
         "id": "8d96118d225e0402",
