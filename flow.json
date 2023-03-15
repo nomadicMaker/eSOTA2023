@@ -5478,7 +5478,7 @@
         "id": "fa297e7492116fbd",
         "type": "change",
         "z": "c265f1d37fb0197f",
-        "name": "S2S = 4",
+        "name": "S2S = 7",
         "rules": [
             {
                 "t": "set",
@@ -5659,14 +5659,14 @@
                 "t": "set",
                 "p": "eventScore.Qs",
                 "pt": "global",
-                "to": "0",
+                "to": "99",
                 "tot": "num"
             },
             {
                 "t": "set",
                 "p": "eventScore.Pts",
                 "pt": "global",
-                "to": "0",
+                "to": "17",
                 "tot": "num"
             }
         ],
