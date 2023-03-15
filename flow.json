@@ -3383,7 +3383,7 @@
         "tooltip": "",
         "group": "937754e7ea577683",
         "order": 7,
-        "width": 4,
+        "width": "3",
         "height": 1,
         "passthru": true,
         "mode": "text",
