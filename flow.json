@@ -5484,7 +5484,7 @@
                 "t": "set",
                 "p": "eventScore.S2S",
                 "pt": "global",
-                "to": "4",
+                "to": "7",
                 "tot": "num"
             }
         ],
