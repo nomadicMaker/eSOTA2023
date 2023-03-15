@@ -5647,6 +5647,27 @@
                 "pt": "msg",
                 "to": "Event Counters RESET ",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "eventScore.S2S",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "eventScore.Qs",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "eventScore.Pts",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
             }
         ],
         "action": "",
