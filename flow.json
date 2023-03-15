@@ -5614,7 +5614,7 @@
         "y": 100,
         "wires": [
             [
-                "9658171d6ac7acea"
+                "0aea331aa8a39fb6"
             ]
         ]
     },
@@ -5631,9 +5631,36 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 550,
-        "y": 60,
+        "x": 770,
+        "y": 80,
         "wires": []
+    },
+    {
+        "id": "0aea331aa8a39fb6",
+        "type": "change",
+        "z": "c265f1d37fb0197f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Event Counters RESET ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "9658171d6ac7acea"
+            ]
+        ]
     },
     {
         "id": "8d96118d225e0402",
