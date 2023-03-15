@@ -5432,9 +5432,9 @@
         "wires": [
             [
                 "647360c57dac0e61",
-                "fa297e7492116fbd",
                 "6bcec5cc22718465",
-                "dbef196153ae3e58"
+                "dbef196153ae3e58",
+                "6b241a57e78e3189"
             ]
         ]
     },
@@ -5475,33 +5475,6 @@
         "wires": []
     },
     {
-        "id": "fa297e7492116fbd",
-        "type": "change",
-        "z": "c265f1d37fb0197f",
-        "name": "S2S = 7",
-        "rules": [
-            {
-                "t": "set",
-                "p": "eventScore.S2S",
-                "pt": "global",
-                "to": "7",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 360,
-        "wires": [
-            [
-                "6b241a57e78e3189"
-            ]
-        ]
-    },
-    {
         "id": "b9d5da5c0cf6fd5d",
         "type": "ui_text",
         "z": "c265f1d37fb0197f",
@@ -5531,7 +5504,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 690,
+        "x": 790,
         "y": 600,
         "wires": []
     },
@@ -5539,7 +5512,7 @@
         "id": "dbef196153ae3e58",
         "type": "change",
         "z": "c265f1d37fb0197f",
-        "name": "Total Q count = 11",
+        "name": "Total Q count = Global VAR",
         "rules": [
             {
                 "t": "set",
@@ -5554,7 +5527,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
+        "x": 600,
         "y": 480,
         "wires": [
             [
@@ -5566,7 +5539,7 @@
         "id": "6bcec5cc22718465",
         "type": "change",
         "z": "c265f1d37fb0197f",
-        "name": "S2S Chaser = 22",
+        "name": "S2S Chaser = Global VAR",
         "rules": [
             {
                 "t": "set",
@@ -5581,7 +5554,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
+        "x": 530,
         "y": 600,
         "wires": [
             [
@@ -5687,7 +5660,7 @@
         "id": "6b241a57e78e3189",
         "type": "change",
         "z": "c265f1d37fb0197f",
-        "name": "",
+        "name": "S2S = Global VAR",
         "rules": [
             {
                 "t": "set",
@@ -5702,8 +5675,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 360,
+        "x": 590,
+        "y": 380,
         "wires": [
             [
                 "e9c0c0528252d610"
