@@ -5432,7 +5432,9 @@
         "wires": [
             [
                 "647360c57dac0e61",
-                "fa297e7492116fbd"
+                "fa297e7492116fbd",
+                "6bcec5cc22718465",
+                "dbef196153ae3e58"
             ]
         ]
     },
@@ -5491,13 +5493,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
-        "y": 460,
+        "x": 480,
+        "y": 360,
         "wires": [
             [
-                "e9c0c0528252d610",
-                "b9d5da5c0cf6fd5d",
-                "5385596fe13ad033"
+                "e9c0c0528252d610"
             ]
         ]
     },
@@ -5534,6 +5534,60 @@
         "x": 690,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "dbef196153ae3e58",
+        "type": "change",
+        "z": "c265f1d37fb0197f",
+        "name": "Total Q count = 11",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "11",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 480,
+        "wires": [
+            [
+                "b9d5da5c0cf6fd5d"
+            ]
+        ]
+    },
+    {
+        "id": "6bcec5cc22718465",
+        "type": "change",
+        "z": "c265f1d37fb0197f",
+        "name": "S2S Chaser = 22",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "22",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 600,
+        "wires": [
+            [
+                "5385596fe13ad033"
+            ]
+        ]
     },
     {
         "id": "8d96118d225e0402",
