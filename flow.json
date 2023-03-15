@@ -144,6 +144,14 @@
         "env": []
     },
     {
+        "id": "c265f1d37fb0197f",
+        "type": "tab",
+        "label": "UI Time Counter Updater",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "73810d06b03818e0",
         "type": "tab",
         "label": "Flow 1",
@@ -3453,23 +3461,6 @@
         ]
     },
     {
-        "id": "c25f86dbe6fba2d1",
-        "type": "ui_text",
-        "z": "12c7debef331bf5d",
-        "group": "937754e7ea577683",
-        "order": 9,
-        "width": 3,
-        "height": 1,
-        "name": "",
-        "label": "UTC :",
-        "format": "{{msg.utc}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1210,
-        "y": 780,
-        "wires": []
-    },
-    {
         "id": "75e2d3d21d3f8210",
         "type": "ui_text",
         "z": "12c7debef331bf5d",
@@ -3485,54 +3476,6 @@
         "x": 1160,
         "y": 520,
         "wires": []
-    },
-    {
-        "id": "372c2bbaee5be19a",
-        "type": "inject",
-        "z": "12c7debef331bf5d",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 910,
-        "y": 920,
-        "wires": [
-            [
-                "647360c57dac0e61"
-            ]
-        ]
-    },
-    {
-        "id": "647360c57dac0e61",
-        "type": "function",
-        "z": "12c7debef331bf5d",
-        "name": "Time Now",
-        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(11,19);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 860,
-        "wires": [
-            [
-                "c25f86dbe6fba2d1"
-            ]
-        ]
     },
     {
         "id": "f62becd6087bf41d",
@@ -3810,7 +3753,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Get OP Name from Call",
-        "func": "msg.payload = 'Frankie';\n\nreturn msg;",
+        "func": "msg.payload = 'Peter';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5455,6 +5398,71 @@
         "x": 540,
         "y": 360,
         "wires": []
+    },
+    {
+        "id": "c25f86dbe6fba2d1",
+        "type": "ui_text",
+        "z": "c265f1d37fb0197f",
+        "group": "937754e7ea577683",
+        "order": 9,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "UTC :",
+        "format": "{{msg.utc}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "372c2bbaee5be19a",
+        "type": "inject",
+        "z": "c265f1d37fb0197f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "647360c57dac0e61"
+            ]
+        ]
+    },
+    {
+        "id": "647360c57dac0e61",
+        "type": "function",
+        "z": "c265f1d37fb0197f",
+        "name": "Time Now",
+        "func": "msg.utc = (new Date(msg.payload));\nmsg.utc = msg.utc.toISOString().slice(11,19);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "c25f86dbe6fba2d1"
+            ]
+        ]
     },
     {
         "id": "8d96118d225e0402",
