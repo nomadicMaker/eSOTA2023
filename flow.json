@@ -5437,11 +5437,12 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 290,
-        "y": 260,
+        "x": 170,
+        "y": 380,
         "wires": [
             [
-                "647360c57dac0e61"
+                "647360c57dac0e61",
+                "fa297e7492116fbd"
             ]
         ]
     },
@@ -5461,6 +5462,50 @@
         "wires": [
             [
                 "c25f86dbe6fba2d1"
+            ]
+        ]
+    },
+    {
+        "id": "e9c0c0528252d610",
+        "type": "ui_text",
+        "z": "c265f1d37fb0197f",
+        "group": "937754e7ea577683",
+        "order": 8,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "S2S:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fa297e7492116fbd",
+        "type": "change",
+        "z": "c265f1d37fb0197f",
+        "name": "S2S = 4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "4",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "e9c0c0528252d610"
             ]
         ]
     },
