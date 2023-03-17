@@ -3727,8 +3727,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
-        "y": 440,
+        "x": 1090,
+        "y": 400,
         "wires": []
     },
     {
@@ -4021,11 +4021,11 @@
         "type": "sqlite",
         "z": "12c7debef331bf5d",
         "mydb": "4441a65c13a15ee4",
-        "sqlquery": "prepared",
+        "sqlquery": "msg.topic",
         "sql": "select distinct OpFirstName from opNames where CallSign = $callS",
         "name": "Name from Call/Name Table",
-        "x": 840,
-        "y": 460,
+        "x": 860,
+        "y": 440,
         "wires": [
             [
                 "b2cbe28750d4be9a"
@@ -4037,7 +4037,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Flow.CallSign stuffed into PARAMS (for SQLIte)",
-        "func": "\n\n    msg.params = {  $callS: flow.get(\"callSign\") \n            };\n\n\nreturn msg;",
+        "func": "\nmsg.topic = 'select distinct OpFirstName from opNames where CallSign = $callS'\n\nmsg.payload = [flow.get(\"callSign\")]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
