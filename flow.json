@@ -5876,8 +5876,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 670,
-        "y": 160,
+        "x": 370,
+        "y": 360,
         "wires": [
             [
                 "f53e33e82bc3c21f"
@@ -5896,8 +5896,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 330,
-        "y": 240,
+        "x": 270,
+        "y": 60,
         "wires": [
             [
                 "f6d98f607dccb884"
@@ -5915,8 +5915,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 550,
-        "y": 280,
+        "x": 310,
+        "y": 220,
         "wires": [
             [
                 "55e25cba797342b4"
@@ -5928,15 +5928,48 @@
         "type": "debug",
         "z": "3649899bbd8a5dfc",
         "name": "debug 64",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 240,
+        "x": 900,
+        "y": 160,
         "wires": []
+    },
+    {
+        "id": "da861247b774aef2",
+        "type": "sqlite",
+        "z": "3649899bbd8a5dfc",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO  opNames (CallSign, OpFirstName) VALUES ($callSign, $opFirstName)",
+        "name": "",
+        "x": 700,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17cc16a6e0c7d72c",
+        "type": "function",
+        "z": "3649899bbd8a5dfc",
+        "name": "Extract Call/NameDetails",
+        "func": "msg.params = {\n                    $callSign: msg.payload.col1,\n                    $opFirstName: msg.payload.col2 \n            };\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "da861247b774aef2"
+            ]
+        ]
     }
 ]
