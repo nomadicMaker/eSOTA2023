@@ -3592,7 +3592,7 @@
             [
                 "c0e156d2436f7c72",
                 "56e2f799ef77544e",
-                "b1eb25f5fdb62018"
+                "4f0cc75728631d6e"
             ]
         ]
     },
@@ -4022,13 +4022,32 @@
         "z": "12c7debef331bf5d",
         "mydb": "4441a65c13a15ee4",
         "sqlquery": "fixed",
-        "sql": "select distinct OpFirstName from opNames where CallSign = flow.get(\"callSign\")",
+        "sql": "select distinct OpFirstName from opNames where CallSign = $callS",
         "name": "Name from Call/Name Table",
         "x": 840,
-        "y": 500,
+        "y": 460,
         "wires": [
             [
                 "b2cbe28750d4be9a"
+            ]
+        ]
+    },
+    {
+        "id": "4f0cc75728631d6e",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "Flow.CallSign stuffed into PARAMS (for SQLIte)",
+        "func": "\n\n    msg.params = {  $callS: flow.get(\"callSign\") \n            };\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 520,
+        "wires": [
+            [
+                "b1eb25f5fdb62018"
             ]
         ]
     },
