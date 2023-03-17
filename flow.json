@@ -160,6 +160,14 @@
         "env": []
     },
     {
+        "id": "3649899bbd8a5dfc",
+        "type": "tab",
+        "label": "SOTA Names to DB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e699a6c8314d41b4",
         "type": "subflow",
         "name": "Radio Subflow",
@@ -5823,5 +5831,112 @@
                 "8d96118d225e0402"
             ]
         ]
+    },
+    {
+        "id": "70d74e9ed8d45bd2",
+        "type": "inject",
+        "z": "3649899bbd8a5dfc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "ed311d99fba1e560"
+            ]
+        ]
+    },
+    {
+        "id": "55e25cba797342b4",
+        "type": "csv",
+        "z": "3649899bbd8a5dfc",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "f53e33e82bc3c21f"
+            ]
+        ]
+    },
+    {
+        "id": "ed311d99fba1e560",
+        "type": "file in",
+        "z": "3649899bbd8a5dfc",
+        "name": "Read SOTA Name CSV",
+        "filename": "/home/pi/sotacallsigns.csv ",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "f6d98f607dccb884"
+            ]
+        ]
+    },
+    {
+        "id": "f6d98f607dccb884",
+        "type": "split",
+        "z": "3649899bbd8a5dfc",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 550,
+        "y": 280,
+        "wires": [
+            [
+                "55e25cba797342b4"
+            ]
+        ]
+    },
+    {
+        "id": "f53e33e82bc3c21f",
+        "type": "debug",
+        "z": "3649899bbd8a5dfc",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 240,
+        "wires": []
     }
 ]
