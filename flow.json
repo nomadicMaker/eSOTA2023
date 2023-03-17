@@ -3033,10 +3033,10 @@
         "id": "4684958027cb53a1",
         "type": "worldmap in",
         "z": "6464bc74006e0eec",
-        "name": "Clicked SOTA Map",
+        "name": "Clicked Activations MAP",
         "path": "/GLD",
         "events": "connect,disconnect,other",
-        "x": 230,
+        "x": 250,
         "y": 300,
         "wires": [
             [
@@ -3470,7 +3470,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "className": "",
-        "x": 1190,
+        "x": 1230,
         "y": 600,
         "wires": []
     },
@@ -3585,8 +3585,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 620,
+        "x": 580,
+        "y": 600,
         "wires": [
             [
                 "c0e156d2436f7c72",
@@ -4025,7 +4025,7 @@
         "y": 420,
         "wires": [
             [
-                "f814cd0ca4396e0c"
+                "462a951b173d6dee"
             ]
         ]
     },
@@ -4034,7 +4034,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Flow.CallSign stuffed into PARAMS (for SQLIte)",
-        "func": "msg.topic = 'select distinct OpFirstName from opNames where CallSign = $callS'\n\nvar cs = flow.get(\"callSign\").toUpperCase();\n\nif (cs.indexOf(\"/\") != -1) {\n    msg.payload = [cs.substring(0, cs.indexOf(\"/\"))];\n} else {\n    msg.payload = [cs];\n}\n\n\nreturn msg;",
+        "func": "msg.topic = 'select distinct OpFirstName from opNames where CallSign = $callS'\n\nvar cs = flow.get(\"callSign\").toUpperCase();\nflow.set(\"callSign\", cs);\n\nif (cs.indexOf(\"/\") != -1) {\n    msg.payload = [cs.substring(0, cs.indexOf(\"/\"))];\n} else {\n    msg.payload = [cs];\n}\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4096,9 +4096,7 @@
         "x": 1020,
         "y": 460,
         "wires": [
-            [
-                "dd8f9c8a86579ad3"
-            ]
+            []
         ]
     },
     {
@@ -4177,6 +4175,25 @@
         "x": 1040,
         "y": 680,
         "wires": []
+    },
+    {
+        "id": "462a951b173d6dee",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "function 4",
+        "func": "msg.payload = msg.payload[0].OpFirstName.toUpperCase();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 420,
+        "wires": [
+            [
+                "dd8f9c8a86579ad3"
+            ]
+        ]
     },
     {
         "id": "2caf81e7978f455c",
