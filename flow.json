@@ -5889,7 +5889,7 @@
         "type": "file in",
         "z": "3649899bbd8a5dfc",
         "name": "Read SOTA Name CSV",
-        "filename": "/home/pi/sotacallsigns.csv ",
+        "filename": "/home/pi/sotacallsigns.csv",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
