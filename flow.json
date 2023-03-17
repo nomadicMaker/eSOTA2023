@@ -3470,7 +3470,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "className": "",
-        "x": 1130,
+        "x": 1190,
         "y": 600,
         "wires": []
     },
@@ -4045,25 +4045,69 @@
         "y": 460,
         "wires": [
             [
-                "a4d3cd7107d94010"
+                "dd8f9c8a86579ad3"
             ]
         ]
     },
     {
-        "id": "a4d3cd7107d94010",
-        "type": "debug",
+        "id": "dd8f9c8a86579ad3",
+        "type": "switch",
         "z": "12c7debef331bf5d",
-        "name": "debug 66",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1160,
+        "name": "Not in DB",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1080,
         "y": 520,
-        "wires": []
+        "wires": [
+            [
+                "75e2d3d21d3f8210"
+            ],
+            [
+                "7f9821597d35d13e"
+            ]
+        ]
+    },
+    {
+        "id": "7f9821597d35d13e",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "??",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 620,
+        "wires": [
+            [
+                "75e2d3d21d3f8210"
+            ]
+        ]
     },
     {
         "id": "2caf81e7978f455c",
