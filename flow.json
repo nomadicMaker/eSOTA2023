@@ -3974,7 +3974,7 @@
         "y": 420,
         "wires": [
             [
-                "464523967524581d"
+                "1293829bbce122e8"
             ]
         ]
     },
@@ -4016,8 +4016,25 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 440,
+        "x": 1140,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1293829bbce122e8",
+        "type": "function",
+        "z": "12c7debef331bf5d",
+        "name": "Name or ?",
+        "func": "msg.payload = msg.payload[0].OpFirstName || '?';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 500,
         "wires": [
             [
                 "75e2d3d21d3f8210"
