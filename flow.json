@@ -3697,7 +3697,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "qData to JSON in payload using tableData",
-        "func": "var qList = flow.get('savedLogs') || [];\n\nqList.unshift(\n    {\n        \"callSign\": flow.get('callSign'),\n        \"opName\": flow.get('opName'),\n        \"opSummit\": flow.get('opSummit'),\n        \"qBand\": flow.get('qBand'),\n        \"qMode\": flow.get('qMode'),\n        \"qUTC\": new Date(flow.get('qUTC').getTime())\n    }\n);\n\nmsg.payload = qList;\n\nflow.set(\"savedLogs\", qList);\n\nreturn msg;",
+        "func": "var qList = flow.get('savedLogs') || [];\n\nqList.unshift(\n    {\n        \"callSign\": flow.get('callSign'),\n        \"opName\": flow.get('opName'),\n        \"opSummit\": flow.get('opSummit'),\n        \"qBand\": flow.get('qBand'),\n        \"qMode\": flow.get('qMode'),\n        \"qUTC\": new Date(flow.get('qUTC')).getTime()\n    }\n);\n\nmsg.payload = qList;\n\nflow.set(\"savedLogs\", qList);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
