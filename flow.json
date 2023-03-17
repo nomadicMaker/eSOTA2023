@@ -3983,7 +3983,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Flow.CallSign stuffed into PARAMS (for SQLIte)",
-        "func": "msg.topic = 'select distinct OpFirstName from opNames where CallSign = $callS'\n\nvar cs = flow.get(\"callSign\");\n\nmsg.payload = [cs];\n\n//msg.CSINDEX = cs.indexOf(\"/\");\nif (cs.indexOf(\"/\") != -1) {\n    msg.payload = [cs.substring(0, cs.indexOf(\"/\"))];\n}\n\n\nreturn msg;",
+        "func": "msg.topic = 'select distinct OpFirstName from opNames where CallSign = $callS'\n\nvar cs = flow.get(\"callSign\").toUpperCase();\n\nif (cs.indexOf(\"/\") != -1) {\n    msg.payload = [cs.substring(0, cs.indexOf(\"/\"))];\n} else {\n    msg.payload = [cs];\n}\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
