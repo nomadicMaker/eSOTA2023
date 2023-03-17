@@ -4021,7 +4021,7 @@
         "type": "sqlite",
         "z": "12c7debef331bf5d",
         "mydb": "4441a65c13a15ee4",
-        "sqlquery": "fixed",
+        "sqlquery": "prepared",
         "sql": "select distinct OpFirstName from opNames where CallSign = $callS",
         "name": "Name from Call/Name Table",
         "x": 840,
