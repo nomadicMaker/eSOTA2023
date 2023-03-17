@@ -3781,6 +3781,16 @@
                 "formatterParams": {
                     "target": "_blank"
                 }
+            },
+            {
+                "field": "qDay",
+                "title": "Date",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
             }
         ],
         "outputs": 0,
