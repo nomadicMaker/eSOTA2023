@@ -3913,7 +3913,7 @@
         "type": "debug",
         "z": "12c7debef331bf5d",
         "name": "SQL Msg",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
