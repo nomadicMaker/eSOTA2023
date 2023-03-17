@@ -3591,7 +3591,8 @@
         "wires": [
             [
                 "c0e156d2436f7c72",
-                "56e2f799ef77544e"
+                "56e2f799ef77544e",
+                "b1eb25f5fdb62018"
             ]
         ]
     },
@@ -3708,7 +3709,6 @@
         "y": 320,
         "wires": [
             [
-                "b2cbe28750d4be9a",
                 "80d728d0c089bd5e",
                 "e9f0c556dc5067c1"
             ]
@@ -3718,16 +3718,17 @@
         "id": "b2cbe28750d4be9a",
         "type": "debug",
         "z": "12c7debef331bf5d",
-        "name": "debug 45",
+        "name": "OP NAME",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 400,
+        "x": 1050,
+        "y": 440,
         "wires": []
     },
     {
@@ -3920,8 +3921,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 540,
+        "x": 560,
+        "y": 420,
         "wires": []
     },
     {
@@ -4012,6 +4013,22 @@
         "wires": [
             [
                 "56c7483ef433c26f"
+            ]
+        ]
+    },
+    {
+        "id": "b1eb25f5fdb62018",
+        "type": "sqlite",
+        "z": "12c7debef331bf5d",
+        "mydb": "4441a65c13a15ee4",
+        "sqlquery": "fixed",
+        "sql": "select distinct OpFirstName from opNames where CallSign = flow.get(\"callSign\")",
+        "name": "Name from Call/Name Table",
+        "x": 840,
+        "y": 500,
+        "wires": [
+            [
+                "b2cbe28750d4be9a"
             ]
         ]
     },
