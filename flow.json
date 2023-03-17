@@ -3470,8 +3470,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "className": "",
-        "x": 1160,
-        "y": 520,
+        "x": 1110,
+        "y": 560,
         "wires": []
     },
     {
@@ -3585,12 +3585,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 620,
-        "y": 600,
+        "x": 640,
+        "y": 620,
         "wires": [
             [
                 "c0e156d2436f7c72",
-                "56e2f799ef77544e",
                 "4f0cc75728631d6e"
             ]
         ]
@@ -3714,23 +3713,6 @@
         ]
     },
     {
-        "id": "b2cbe28750d4be9a",
-        "type": "debug",
-        "z": "12c7debef331bf5d",
-        "name": "OP NAME",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1090,
-        "y": 400,
-        "wires": []
-    },
-    {
         "id": "80d728d0c089bd5e",
         "type": "ui_table",
         "z": "12c7debef331bf5d",
@@ -3745,25 +3727,6 @@
         "x": 900,
         "y": 180,
         "wires": []
-    },
-    {
-        "id": "56e2f799ef77544e",
-        "type": "function",
-        "z": "12c7debef331bf5d",
-        "name": "Get OP Name from Call",
-        "func": "msg.payload = 'Peter';\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 910,
-        "y": 600,
-        "wires": [
-            [
-                "75e2d3d21d3f8210"
-            ]
-        ]
     },
     {
         "id": "11c5290297ec0fd1",
@@ -3909,23 +3872,6 @@
         ]
     },
     {
-        "id": "f28dba4b5d94d57f",
-        "type": "debug",
-        "z": "12c7debef331bf5d",
-        "name": "SQL Msg",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1080,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "086fb3fa582848c2",
         "type": "function",
         "z": "12c7debef331bf5d",
@@ -4024,11 +3970,11 @@
         "sqlquery": "msg.topic",
         "sql": "select distinct OpFirstName from opNames where CallSign = $callS",
         "name": "Name from Call/Name Table",
-        "x": 860,
-        "y": 440,
+        "x": 800,
+        "y": 420,
         "wires": [
             [
-                "b2cbe28750d4be9a"
+                "464523967524581d"
             ]
         ]
     },
@@ -4043,12 +3989,38 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
+        "x": 720,
         "y": 520,
         "wires": [
             [
-                "b1eb25f5fdb62018",
-                "f28dba4b5d94d57f"
+                "b1eb25f5fdb62018"
+            ]
+        ]
+    },
+    {
+        "id": "464523967524581d",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].OpFirstName",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 440,
+        "wires": [
+            [
+                "75e2d3d21d3f8210"
             ]
         ]
     },
