@@ -4032,7 +4032,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload[0].OpFirstName;",
+                "to": "payload[0].OpFirstName",
                 "tot": "msg"
             }
         ],
