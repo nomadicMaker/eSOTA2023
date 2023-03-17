@@ -5929,7 +5929,7 @@
         "type": "debug",
         "z": "3649899bbd8a5dfc",
         "name": "debug 64",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5970,7 +5970,8 @@
         "y": 380,
         "wires": [
             [
-                "da861247b774aef2"
+                "da861247b774aef2",
+                "f53e33e82bc3c21f"
             ]
         ]
     },
