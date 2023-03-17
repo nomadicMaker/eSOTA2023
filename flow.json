@@ -5873,7 +5873,7 @@
         "ret": "\\n",
         "temp": "",
         "skip": "0",
-        "strings": true,
+        "strings": false,
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 370,
