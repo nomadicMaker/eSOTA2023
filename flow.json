@@ -3470,8 +3470,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "className": "",
-        "x": 1110,
-        "y": 560,
+        "x": 1130,
+        "y": 600,
         "wires": []
     },
     {
@@ -4045,9 +4045,25 @@
         "y": 460,
         "wires": [
             [
-                "75e2d3d21d3f8210"
+                "a4d3cd7107d94010"
             ]
         ]
+    },
+    {
+        "id": "a4d3cd7107d94010",
+        "type": "debug",
+        "z": "12c7debef331bf5d",
+        "name": "debug 66",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "2caf81e7978f455c",
