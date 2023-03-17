@@ -4053,7 +4053,7 @@
         "id": "dd8f9c8a86579ad3",
         "type": "switch",
         "z": "12c7debef331bf5d",
-        "name": "Not in DB",
+        "name": "Name found?",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -4071,7 +4071,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1080,
+        "x": 1100,
         "y": 520,
         "wires": [
             [
@@ -4086,7 +4086,7 @@
         "id": "7f9821597d35d13e",
         "type": "change",
         "z": "12c7debef331bf5d",
-        "name": "",
+        "name": "Zippo name",
         "rules": [
             {
                 "t": "set",
@@ -4101,7 +4101,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
+        "x": 1030,
         "y": 620,
         "wires": [
             [
