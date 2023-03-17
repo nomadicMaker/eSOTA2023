@@ -3974,7 +3974,7 @@
         "y": 420,
         "wires": [
             [
-                "1293829bbce122e8"
+                "f814cd0ca4396e0c"
             ]
         ]
     },
@@ -4023,18 +4023,26 @@
         ]
     },
     {
-        "id": "1293829bbce122e8",
-        "type": "function",
+        "id": "f814cd0ca4396e0c",
+        "type": "change",
         "z": "12c7debef331bf5d",
-        "name": "Name or ?",
-        "func": "msg.payload = msg.payload[0].OpFirstName;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1130,
-        "y": 500,
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].OpFirstName;",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 460,
         "wires": [
             [
                 "75e2d3d21d3f8210"
