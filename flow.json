@@ -3375,8 +3375,7 @@
         "y": 600,
         "wires": [
             [
-                "6b278cc40fddc06b",
-                "f28dba4b5d94d57f"
+                "6b278cc40fddc06b"
             ]
         ]
     },
@@ -3913,16 +3912,17 @@
         "id": "f28dba4b5d94d57f",
         "type": "debug",
         "z": "12c7debef331bf5d",
-        "name": "debug 63",
+        "name": "SQL Msg",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 420,
+        "x": 1080,
+        "y": 460,
         "wires": []
     },
     {
@@ -4047,7 +4047,8 @@
         "y": 520,
         "wires": [
             [
-                "b1eb25f5fdb62018"
+                "b1eb25f5fdb62018",
+                "f28dba4b5d94d57f"
             ]
         ]
     },
