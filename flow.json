@@ -3733,6 +3733,16 @@
                 }
             },
             {
+                "field": "opName",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
                 "field": "opSummit",
                 "title": "S2S",
                 "width": "",
