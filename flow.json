@@ -3026,7 +3026,7 @@
         "type": "worldmap in",
         "z": "6464bc74006e0eec",
         "name": "Clicked SOTA Map",
-        "path": "/SOTA",
+        "path": "/GLD",
         "events": "connect,disconnect,other",
         "x": 230,
         "y": 300,
