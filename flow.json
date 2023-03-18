@@ -445,36 +445,6 @@
         "hidden": false
     },
     {
-        "id": "9224e7358c1036ac",
-        "type": "ui_tab",
-        "name": "Configuration",
-        "icon": "dashboard",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "0da33e22d2c5081a",
-        "type": "ui_group",
-        "name": "Config",
-        "tab": "9224e7358c1036ac",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "12a5ad02ebaae79c",
-        "type": "ui_spacer",
-        "z": "12c7debef331bf5d",
-        "name": "spacer",
-        "group": "0da33e22d2c5081a",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
         "id": "96497aade1213555",
         "type": "ui_group",
         "name": "Event Logs",
@@ -3711,8 +3681,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 320,
+        "x": 510,
+        "y": 220,
         "wires": [
             [
                 "80d728d0c089bd5e",
@@ -3962,7 +3932,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
+        "x": 180,
         "y": 680,
         "wires": [
             [
@@ -4050,8 +4020,8 @@
         "sqlquery": "msg.topic",
         "sql": "select distinct OpFirstName from opNames where CallSign = $callS",
         "name": "Name from Call/Name Table",
-        "x": 800,
-        "y": 420,
+        "x": 840,
+        "y": 440,
         "wires": [
             [
                 "462a951b173d6dee"
@@ -4218,8 +4188,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 900,
-        "y": 260,
+        "x": 560,
+        "y": 360,
         "wires": [
             [
                 "0540d768c9eb2522",
