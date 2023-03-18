@@ -3772,11 +3772,15 @@
                 }
             }
         ],
-        "outputs": 0,
-        "cts": false,
+        "outputs": 1,
+        "cts": true,
         "x": 900,
         "y": 180,
-        "wires": []
+        "wires": [
+            [
+                "8f70b0b1fcdd948b"
+            ]
+        ]
     },
     {
         "id": "11c5290297ec0fd1",
@@ -4204,6 +4208,22 @@
                 "ce1d8bc5735e9431"
             ]
         ]
+    },
+    {
+        "id": "8f70b0b1fcdd948b",
+        "type": "debug",
+        "z": "12c7debef331bf5d",
+        "name": "debug 68",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "2caf81e7978f455c",
