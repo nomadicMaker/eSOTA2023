@@ -168,6 +168,14 @@
         "env": []
     },
     {
+        "id": "b9ba54e8f6ec7293",
+        "type": "tab",
+        "label": "Config Activations etc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e699a6c8314d41b4",
         "type": "subflow",
         "name": "Radio Subflow",
@@ -3718,7 +3726,7 @@
         "z": "12c7debef331bf5d",
         "group": "96497aade1213555",
         "name": "Q Logs",
-        "order": 0,
+        "order": 1,
         "width": "18",
         "height": "10",
         "columns": [
@@ -3793,11 +3801,13 @@
                 }
             }
         ],
-        "outputs": 0,
-        "cts": false,
+        "outputs": 1,
+        "cts": true,
         "x": 900,
         "y": 180,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "11c5290297ec0fd1",
@@ -6165,5 +6175,81 @@
         "x": 520,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "2ae5abe356142265",
+        "type": "ui_text_input",
+        "z": "b9ba54e8f6ec7293",
+        "name": "",
+        "label": "New Act Summit ",
+        "tooltip": "",
+        "group": "96497aade1213555",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "d7e7cdb5125900b4"
+            ]
+        ]
+    },
+    {
+        "id": "d7e7cdb5125900b4",
+        "type": "debug",
+        "z": "b9ba54e8f6ec7293",
+        "name": "debug 67",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "33563d71c940c81f",
+        "type": "ui_switch",
+        "z": "b9ba54e8f6ec7293",
+        "name": "",
+        "label": "Export CSV",
+        "tooltip": "",
+        "group": "96497aade1213555",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "d7e7cdb5125900b4"
+            ]
+        ]
     }
 ]
