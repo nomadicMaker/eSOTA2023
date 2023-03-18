@@ -3716,7 +3716,8 @@
         "wires": [
             [
                 "80d728d0c089bd5e",
-                "e9f0c556dc5067c1"
+                "e9f0c556dc5067c1",
+                "3cee0f419fd1a3e2"
             ]
         ]
     },
@@ -3801,13 +3802,11 @@
                 }
             }
         ],
-        "outputs": 1,
-        "cts": true,
+        "outputs": 0,
+        "cts": false,
         "x": 900,
         "y": 180,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "11c5290297ec0fd1",
@@ -4197,6 +4196,34 @@
         "wires": [
             [
                 "dd8f9c8a86579ad3"
+            ]
+        ]
+    },
+    {
+        "id": "3cee0f419fd1a3e2",
+        "type": "change",
+        "z": "12c7debef331bf5d",
+        "name": "Clear Call/Name",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "0540d768c9eb2522",
+                "75e2d3d21d3f8210"
             ]
         ]
     },
