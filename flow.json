@@ -6231,7 +6231,7 @@
         "height": "1",
         "passthru": true,
         "mode": "text",
-        "delay": 300,
+        "delay": "0",
         "topic": "topic",
         "sendOnBlur": true,
         "className": "",
