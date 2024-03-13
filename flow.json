@@ -6286,22 +6286,6 @@
         "wires": []
     },
     {
-        "id": "05e45bc65e44c682",
-        "type": "xml",
-        "z": "9e41248b1ab58bd5",
-        "name": "",
-        "property": "payload",
-        "attr": "",
-        "chr": "",
-        "x": 450,
-        "y": 200,
-        "wires": [
-            [
-                "cedf146ef9ea34c0"
-            ]
-        ]
-    },
-    {
         "id": "c89a683e8348c194",
         "type": "inject",
         "z": "9e41248b1ab58bd5",
@@ -6326,7 +6310,7 @@
         "y": 280,
         "wires": [
             [
-                "05e45bc65e44c682"
+                "cedf146ef9ea34c0"
             ]
         ]
     },
