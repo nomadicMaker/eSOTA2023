@@ -6372,8 +6372,26 @@
         "y": 300,
         "wires": [
             [
-                "6338ea53fb392fb7"
+                "6338ea53fb392fb7",
+                "1fa727aba3e4aea4"
             ]
         ]
+    },
+    {
+        "id": "1fa727aba3e4aea4",
+        "type": "debug",
+        "z": "9e41248b1ab58bd5",
+        "name": "debug 70",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.contactinfo.call[0]",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 400,
+        "wires": []
     }
 ]
