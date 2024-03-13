@@ -6270,35 +6270,6 @@
         ]
     },
     {
-        "id": "4530f99310951b6d",
-        "type": "inject",
-        "z": "9e41248b1ab58bd5",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "N1MM Q",
-        "payload": " <contactinfo>     <app>N1MM</app>     <contestname>CWOPS</contestname>     <contestnr>73</contestnr>     <timestamp>2020-01-17 16 :43:38</timestamp>     <mycall>W2XYZ</mycall>     <band>3.5</band>     <rxfreq>352519</rxfreq>     <txfreq>352519</txfreq>     <operator></operator>     <mode>CW</mode>     <call>WlAW</call>     <countryprefix>K</countryprefix>     <wpxprefix>Wl</wpxprefix>     <stationprefix>W2XYZ</stationprefix>     <continent>NA</continent>     <snt>599</snt>     <sntnr>5</sntnr>     <rcv>599</rcv>     <rcvnr>0</rcvnr>     <gridsquare></gridsquare>     <exchangel></exchangel>     <section></section>     <comment></comment>     <qth></qth>     <name></name>     <power></power>     <misctext></misctext>     <zone>0</zone>     <prec></prec>     <ck>0</ck>     <ismultiplierl>l</ismultiplierl>     <ismultiplier2>0</ismultiplier2>     <ismultiplier3>0</ismultiplier3>     <points>l</points>     <radionr>l</radionr>     <run1run2>1<run1run2>     <RoverLocation></RoverLocation>     <RadioInterfaced>l</RadioInterfaced>     <NetworkedCompNr>0</NetworkedCompNr>     <IsOriginal>False</IsOriginal>     <NetBiosName></NetBiosName>     <IsRunQSO>0</IsRunQSO>     <StationName>CONTEST-PC</StationName>     <ID>f9ffac4fcd3e479ca86e137df1338531</ID>     <IsClaimedQso>1</IsClaimedQso> </contactinfo>",
-        "payloadType": "str",
-        "x": 150,
-        "y": 200,
-        "wires": [
-            [
-                "32d9aba3c621434c"
-            ]
-        ]
-    },
-    {
         "id": "6338ea53fb392fb7",
         "type": "debug",
         "z": "9e41248b1ab58bd5",
@@ -6315,18 +6286,47 @@
         "wires": []
     },
     {
-        "id": "32d9aba3c621434c",
-        "type": "json",
+        "id": "05e45bc65e44c682",
+        "type": "xml",
         "z": "9e41248b1ab58bd5",
         "name": "",
         "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 430,
+        "attr": "",
+        "chr": "",
+        "x": 510,
         "y": 200,
         "wires": [
             [
                 "6338ea53fb392fb7"
+            ]
+        ]
+    },
+    {
+        "id": "c89a683e8348c194",
+        "type": "inject",
+        "z": "9e41248b1ab58bd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "<Q><call>W6PNG</call></Q>",
+        "payloadType": "str",
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "05e45bc65e44c682"
             ]
         ]
     }
