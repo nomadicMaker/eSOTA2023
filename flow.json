@@ -6294,7 +6294,7 @@
         "y": 200,
         "wires": [
             [
-                "cd2aa36a7e21adc9"
+                "32d9aba3c621434c"
             ]
         ]
     },
@@ -6315,15 +6315,15 @@
         "wires": []
     },
     {
-        "id": "cd2aa36a7e21adc9",
-        "type": "xml",
+        "id": "32d9aba3c621434c",
+        "type": "json",
         "z": "9e41248b1ab58bd5",
         "name": "",
         "property": "payload",
-        "attr": "",
-        "chr": "",
-        "x": 350,
-        "y": 300,
+        "action": "",
+        "pretty": false,
+        "x": 430,
+        "y": 200,
         "wires": [
             [
                 "6338ea53fb392fb7"
