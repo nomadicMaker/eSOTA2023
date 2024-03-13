@@ -6293,11 +6293,11 @@
         "property": "payload",
         "attr": "",
         "chr": "",
-        "x": 510,
+        "x": 450,
         "y": 200,
         "wires": [
             [
-                "6338ea53fb392fb7"
+                "cedf146ef9ea34c0"
             ]
         ]
     },
@@ -6327,6 +6327,22 @@
         "wires": [
             [
                 "05e45bc65e44c682"
+            ]
+        ]
+    },
+    {
+        "id": "cedf146ef9ea34c0",
+        "type": "json",
+        "z": "9e41248b1ab58bd5",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 260,
+        "wires": [
+            [
+                "6338ea53fb392fb7"
             ]
         ]
     }
