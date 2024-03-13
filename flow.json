@@ -6320,7 +6320,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "<Q><call>W6PNG</call></Q>",
+        "payload": "<Q><call>W6PNG</call><name>Paul</name></Q>",
         "payloadType": "str",
         "x": 190,
         "y": 280,
