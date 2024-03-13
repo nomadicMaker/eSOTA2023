@@ -4159,7 +4159,7 @@
         "type": "function",
         "z": "12c7debef331bf5d",
         "name": "Op Name ",
-        "func": "if (msg.payload[0].OpFirstName != undefined)\n    msg.payload = msg.payload[0].OpFirstName.toUpperCase();\nelse\n    msg.payload = '?';\nflow.set('opName', msg.payload);\n\nreturn msg;",
+        "func": "if (msg.payload[0] != undefined)\n    msg.payload = msg.payload[0].OpFirstName.toUpperCase();\nelse\n    msg.payload = '?';\nflow.set('opName', msg.payload);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
