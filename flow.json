@@ -6317,7 +6317,7 @@
         "type": "function",
         "z": "9e41248b1ab58bd5",
         "name": "function 4",
-        "func": "msg.payload = \"<Q><call>W6PNG</call><name>Paul</name></Q>\";\nreturn msg;",
+        "func": "msg.payload = \n\"<contactinfo><call>W6PNG</call><name>Paul</name></contactinfo>\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
