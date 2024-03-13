@@ -6309,8 +6309,54 @@
         "x": 190,
         "y": 280,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c356e9a87b533a8",
+        "type": "function",
+        "z": "9e41248b1ab58bd5",
+        "name": "function 4",
+        "func": "msg.payload = \"<Q><call>W6PNG</call><name>Paul</name></Q>\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 400,
+        "wires": [
             [
                 "6338ea53fb392fb7"
+            ]
+        ]
+    },
+    {
+        "id": "4c13af30f5fd5085",
+        "type": "inject",
+        "z": "9e41248b1ab58bd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [
+                "7c356e9a87b533a8"
             ]
         ]
     }
